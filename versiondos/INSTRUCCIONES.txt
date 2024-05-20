@@ -1,0 +1,11 @@
+Para funcionar se requiere PHP/MYSQL y tener instalado una libreria en el servidor llamado "IMAGICK" que es fundamental para que realice las imagenes.
+instalar libreria Zip-php
+Se adjunta un PDF con los datos del servidor donde estaba funcionando, para que puedan instalar las version adecuada de PHP e Imagick.
+
+
+*BASE DE DATOS: El archivo versiondos.sql.gz, se debe crear una base de datos, e importar el archivo.
+
+*DATOS DE DB: En include/funciones.php se deben agregar los datos de conexion a la DB.
+
+En ajax.php, test.php, comprimir.php se debe modificar la ruta de acceso al archivo, podran ver que algunas rutas apuntan a: chat.getsingular.com/versiondos.
+Cambiar por la nueva ruta en el servidor.

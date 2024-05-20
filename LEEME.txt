@@ -1,0 +1,3 @@
+Dentro de la carpeta de cada sistema, se encuentran las instrucciones, y la base de datos para que el sistema funcione.
+
+Tambien se encuentra el PDF de PHPINFO para que se pueda replicar las caracteristicas del servidor.

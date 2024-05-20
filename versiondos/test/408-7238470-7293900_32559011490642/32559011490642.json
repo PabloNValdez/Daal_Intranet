@@ -1,0 +1,185 @@
+{
+  "orderId" : "408-7238470-7293900",
+  "orderItemId" : "32559011490642",
+  "merchantId" : "AJLHPVH4199KV",
+  "marketplaceId" : "A1RKKUPIHCS9HS",
+  "asin" : "B096MBNN84",
+  "title" : "Getsingular Felpudo Personalizado Fotos y Texto | Felpudos de Fibra de Coco con Base Antideslizante | Felpudos Originales para la Entrada de casa | Mi Diseño - 33 x 60 cm",
+  "quantity" : 1,
+  "customizationData" : {
+    "type" : "PageContainerCustomization",
+    "children" : [ {
+      "type" : "PreviewContainerCustomization",
+      "name" : "Mi Diseño/33 x 60",
+      "label" : "Diseña tu felpudo",
+      "children" : [ {
+        "type" : "FlatContainerCustomization",
+        "children" : [ {
+          "type" : "PlacementContainerCustomization",
+          "name" : "Imagen",
+          "label" : "Imagen 1",
+          "children" : [ {
+            "type" : "ImageCustomization",
+            "label" : "Fotografía",
+            "image" : {
+              "imageName" : "daf6d6ca-2d88-469d-b4de-8cc3901aba30.png",
+              "buyerFilename" : "cd5a30b6-ff1e-43d4-aee1-117776069cd2.jpeg"
+            }
+          } ],
+          "dimension" : {
+            "width" : 400,
+            "height" : 399
+          },
+          "position" : {
+            "x" : 0,
+            "y" : 1
+          },
+          "buyerPlacement" : {
+            "position" : {
+              "x" : 233.78571428571425,
+              "y" : 106.00000000000001
+            },
+            "dimension" : {
+              "width" : 1536,
+              "height" : 2048
+            },
+            "scale" : {
+              "scaleX" : 0.08778599330357144,
+              "scaleY" : 0.08778599330357144
+            },
+            "angleOfRotation" : 0
+          }
+        }, {
+          "type" : "ContainerCustomization",
+          "name" : "Fuente",
+          "label" : "Texto 1",
+          "children" : [ {
+            "type" : "FontCustomization",
+            "label" : "Añade texto",
+            "fontSelection" : {
+              "family" : "Arial"
+            }
+          }, {
+            "type" : "ColorCustomization",
+            "label" : "Colores disponibles",
+            "colorSelection" : {
+              "name" : "Negro",
+              "value" : "#000000",
+              "colorModel" : "rgb"
+            }
+          }, {
+            "type" : "ContainerCustomization",
+            "children" : [ {
+              "type" : "PlacementContainerCustomization",
+              "name" : "Texto",
+              "label" : "Entrada de texto 1",
+              "children" : [ {
+                "type" : "TextCustomization",
+                "label" : "Texto",
+                "inputValue" : "Bienvenido a mi casa \nMe tienes que saludar \nSino, no entras "
+              } ],
+              "dimension" : {
+                "width" : 348,
+                "height" : 192
+              },
+              "position" : {
+                "x" : 26,
+                "y" : 100
+              },
+              "buyerPlacement" : {
+                "position" : {
+                  "x" : 35.99999999999997,
+                  "y" : 159.019531952926
+                },
+                "dimension" : {
+                  "width" : 1814.070247933884,
+                  "height" : 672.6835834710741
+                },
+                "scale" : {
+                  "scaleX" : 0.10848018178425624,
+                  "scaleY" : 0.10848018178425624
+                },
+                "angleOfRotation" : 0
+              }
+            } ]
+          } ]
+        }, {
+          "type" : "OptionCustomization",
+          "name" : "Color del felpudo",
+          "label" : "Color",
+          "optionSelection" : {
+            "name" : "Marrón",
+            "label" : "Marrón",
+            "additionalCost" : {
+              "amount" : 0
+            },
+            "thumbnailImage" : {
+              "imageUrl" : "https://m.media-amazon.com/images/S/gestalt-seller-images-prod-eu-west-1/A1RKKUPIHCS9HS/AJLHPVH4199KV/baebd482-5108-44ea-8d0b-00274d5033bc.jpg",
+              "dimension" : {
+                "width" : 1000,
+                "height" : 1000
+              }
+            }
+          },
+          "displayValue" : "Marrón"
+        } ]
+      } ],
+      "baseImage" : {
+        "imageUrl" : "https://m.media-amazon.com/images/S/gestalt-seller-images-prod-eu-west-1/A1RKKUPIHCS9HS/AJLHPVH4199KV/112c7c97-3101-42a8-8388-f6627deeb138.png",
+        "dimension" : {
+          "width" : 400,
+          "height" : 400
+        }
+      },
+      "snapshot" : {
+        "imageName" : "70e13802-92b9-5189-1c2a-07fcfa9ce37b.jpg",
+        "dimension" : {
+          "width" : 400,
+          "height" : 400
+        }
+      },
+      "svg" : "fefe07f2-4906-441c-a239-519113f6e0d1.svg"
+    } ]
+  },
+  "customizationInfo" : {
+    "version3.0" : {
+      "surfaces" : [ {
+        "name" : "Diseña tu felpudo",
+        "areas" : [ {
+          "customizationType" : "ImagePrinting",
+          "Dimensions" : {
+            "width" : 400,
+            "height" : 399
+          },
+          "Position" : {
+            "x" : 0,
+            "y" : 1
+          },
+          "name" : "Imagen",
+          "svgImage" : "fefe07f2-4906-441c-a239-519113f6e0d1.svg"
+        }, {
+          "customizationType" : "ImagePrinting",
+          "Dimensions" : {
+            "width" : 348,
+            "height" : 192
+          },
+          "Position" : {
+            "x" : 26,
+            "y" : 100
+          },
+          "name" : "Texto",
+          "svgImage" : "fefe07f2-4906-441c-a239-519113f6e0d1.svg"
+        }, {
+          "customizationType" : "Options",
+          "name" : "Color del felpudo",
+          "label" : "Color",
+          "optionValue" : "Marrón",
+          "priceDelta" : {
+            "value" : 0.0
+          },
+          "optionImage" : ""
+        } ]
+      } ]
+    }
+  }
+}

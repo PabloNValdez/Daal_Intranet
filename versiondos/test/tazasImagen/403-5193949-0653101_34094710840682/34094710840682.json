@@ -1,0 +1,160 @@
+{
+  "orderId" : "403-5193949-0653101",
+  "orderItemId" : "34094710840682",
+  "merchantId" : "AJLHPVH4199KV",
+  "marketplaceId" : "A1RKKUPIHCS9HS",
+  "asin" : "B07ZD1MMRN",
+  "title" : "Taza personalizada con foto y texto | Tazas desayuno personalizadas | Taza de cerámica Premium | Regalos originales con foto para hombre, mujer, niños, profesores | Color: Negro",
+  "quantity" : 1,
+  "vendorCode" : {
+    "present" : false
+  },
+  "customizationData" : {
+    "type" : "PageContainerCustomization",
+    "children" : [ {
+      "type" : "PreviewContainerCustomization",
+      "name" : "679 Premium Negro",
+      "label" : "Tazas personalizadas",
+      "children" : [ {
+        "type" : "FlatContainerCustomization",
+        "children" : [ {
+          "type" : "PlacementContainerCustomization",
+          "name" : "Imagen",
+          "label" : "Imagen 1",
+          "children" : [ {
+            "type" : "ImageCustomization",
+            "label" : "Fotografía",
+            "image" : {
+              "imageName" : "0afac099-8e55-475d-be17-7c1c29df545f.png",
+              "buyerFilename" : "Honey Badger insignia  test.png"
+            }
+          } ],
+          "dimension" : {
+            "width" : 400,
+            "height" : 400
+          },
+          "position" : {
+            "x" : 0,
+            "y" : 0
+          },
+          "buyerPlacement" : {
+            "position" : {
+              "x" : 125,
+              "y" : 119.9501953125
+            },
+            "dimension" : {
+              "width" : 1024,
+              "height" : 1024
+            },
+            "scale" : {
+              "scaleX" : 0.15566730499267578,
+              "scaleY" : 0.15566730499267578
+            },
+            "angleOfRotation" : 0
+          }
+        }, {
+          "type" : "ContainerCustomization",
+          "name" : "Fuente",
+          "label" : "Texto 1",
+          "children" : [ {
+            "type" : "FontCustomization",
+            "label" : "Fuente",
+            "fontSelection" : {
+              "family" : "Stencil"
+            }
+          }, {
+            "type" : "ColorCustomization",
+            "label" : "Color del texto",
+            "colorSelection" : {
+              "name" : "Gris oscuro",
+              "value" : "#615F5F",
+              "colorModel" : "rgb"
+            }
+          }, {
+            "type" : "ContainerCustomization",
+            "children" : [ {
+              "type" : "PlacementContainerCustomization",
+              "name" : "Texto",
+              "label" : "Entrada de texto 1",
+              "children" : [ {
+                "type" : "TextCustomization",
+                "label" : "Texto",
+                "inputValue" : "Honey Badger \n"
+              } ],
+              "dimension" : {
+                "width" : 400,
+                "height" : 400
+              },
+              "position" : {
+                "x" : 0,
+                "y" : 0
+              },
+              "buyerPlacement" : {
+                "position" : {
+                  "x" : 86.80091390434515,
+                  "y" : 266.82150978546497
+                },
+                "dimension" : {
+                  "width" : 2743.78125,
+                  "height" : 882.5932799999997
+                },
+                "scale" : {
+                  "scaleX" : 0.05162280073013744,
+                  "scaleY" : 0.05162280073013744
+                },
+                "angleOfRotation" : 270.1282211233936
+              }
+            } ]
+          } ]
+        } ]
+      } ],
+      "baseImage" : {
+        "imageUrl" : "https://m.media-amazon.com/images/S/gestalt-seller-images-prod-eu-west-1/A1RKKUPIHCS9HS/AJLHPVH4199KV/f54b5d1f-0f59-497b-93e8-d059042662c5.png",
+        "dimension" : {
+          "width" : 1600,
+          "height" : 1600
+        }
+      },
+      "snapshot" : {
+        "imageName" : "bab358b4-63e0-7cd4-7c19-85a1e90ad89d.jpg",
+        "dimension" : {
+          "width" : 400,
+          "height" : 400
+        }
+      },
+      "svg" : "c5b7ca78-8d7f-3723-c216-187575da812a.svg"
+    } ]
+  },
+  "customizationInfo" : {
+    "version3.0" : {
+      "surfaces" : [ {
+        "name" : "Tazas personalizadas",
+        "areas" : [ {
+          "customizationType" : "ImagePrinting",
+          "Dimensions" : {
+            "width" : 400,
+            "height" : 400
+          },
+          "Position" : {
+            "x" : 0,
+            "y" : 0
+          },
+          "name" : "Imagen",
+          "svgImage" : "c5b7ca78-8d7f-3723-c216-187575da812a.svg"
+        }, {
+          "customizationType" : "ImagePrinting",
+          "Dimensions" : {
+            "width" : 400,
+            "height" : 400
+          },
+          "Position" : {
+            "x" : 0,
+            "y" : 0
+          },
+          "name" : "Texto",
+          "svgImage" : "c5b7ca78-8d7f-3723-c216-187575da812a.svg"
+        } ]
+      } ]
+    }
+  }
+}

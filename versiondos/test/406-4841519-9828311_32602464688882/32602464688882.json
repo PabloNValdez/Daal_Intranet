@@ -1,0 +1,157 @@
+{
+  "orderId" : "406-4841519-9828311",
+  "orderItemId" : "32602464688882",
+  "merchantId" : "AJLHPVH4199KV",
+  "marketplaceId" : "A1RKKUPIHCS9HS",
+  "asin" : "B096MB641C",
+  "title" : "Getsingular Felpudo Personalizado Fotos y Texto | Felpudos de Fibra de Coco con Base Antideslizante | Felpudos Originales para la Entrada de casa | Mi Diseño - 60 x 100 cm",
+  "quantity" : 2,
+  "customizationData" : {
+    "type" : "PageContainerCustomization",
+    "children" : [ {
+      "type" : "PreviewContainerCustomization",
+      "name" : "Mi Diseño/33 x 60",
+      "label" : "Diseña tu felpudo",
+      "children" : [ {
+        "type" : "FlatContainerCustomization",
+        "children" : [ {
+          "type" : "PlacementContainerCustomization",
+          "name" : "Imagen",
+          "label" : "Imagen 1",
+          "children" : [ {
+            "type" : "ImageCustomization",
+            "label" : "Fotografía",
+            "image" : {
+              "imageName" : "dba80632-a995-4c67-b45b-96478e262adc.jpg",
+              "buyerFilename" : "fachada detalle.jpg"
+            }
+          } ],
+          "dimension" : {
+            "width" : 400,
+            "height" : 399
+          },
+          "position" : {
+            "x" : 0,
+            "y" : 1
+          },
+          "buyerPlacement" : {
+            "position" : {
+              "x" : 55.92270565994498,
+              "y" : 117.72185023956526
+            },
+            "dimension" : {
+              "width" : 1403,
+              "height" : 1870
+            },
+            "scale" : {
+              "scaleX" : 0.08731451858846777,
+              "scaleY" : 0.08731451858846777
+            },
+            "angleOfRotation" : 0
+          }
+        }, {
+          "type" : "ContainerCustomization",
+          "name" : "Fuente",
+          "label" : "Texto 1",
+          "children" : [ {
+            "type" : "FontCustomization",
+            "label" : "Añade texto",
+            "fontSelection" : {
+              "family" : "Stencil"
+            }
+          }, {
+            "type" : "ColorCustomization",
+            "label" : "Colores disponibles",
+            "colorSelection" : {
+              "name" : "Gris oscuro",
+              "value" : "#615F5F",
+              "colorModel" : "rgb"
+            }
+          }, {
+            "type" : "ContainerCustomization",
+            "children" : [ {
+              "type" : "PlacementContainerCustomization",
+              "name" : "Texto",
+              "label" : "Entrada de texto 1",
+              "children" : [ {
+                "type" : "TextCustomization",
+                "label" : "Texto",
+                "inputValue" : "FARMACIA \nRURAL"
+              } ],
+              "dimension" : {
+                "width" : 325,
+                "height" : 180
+              },
+              "position" : {
+                "x" : 38,
+                "y" : 104
+              },
+              "buyerPlacement" : {
+                "position" : {
+                  "x" : 187.00118275951502,
+                  "y" : 157.33746285572445
+                },
+                "dimension" : {
+                  "width" : 835.9263281249998,
+                  "height" : 397.16697599999986
+                },
+                "scale" : {
+                  "scaleX" : 0.20339570114106006,
+                  "scaleY" : 0.20339570114106006
+                },
+                "angleOfRotation" : 359.40753784197716
+              }
+            } ]
+          } ]
+        } ]
+      } ],
+      "baseImage" : {
+        "imageUrl" : "https://m.media-amazon.com/images/S/gestalt-seller-images-prod-eu-west-1/A1RKKUPIHCS9HS/AJLHPVH4199KV/60c08532fe56de46deb66d60a9383573.png",
+        "dimension" : {
+          "width" : 400,
+          "height" : 400
+        }
+      },
+      "snapshot" : {
+        "imageName" : "c29cabb0-7019-a662-0305-e82b229a9977.jpg",
+        "dimension" : {
+          "width" : 400,
+          "height" : 400
+        }
+      },
+      "svg" : "160bc1fa-1e0d-1dd7-2760-78b434840657.svg"
+    } ]
+  },
+  "customizationInfo" : {
+    "version3.0" : {
+      "surfaces" : [ {
+        "name" : "Diseña tu felpudo",
+        "areas" : [ {
+          "customizationType" : "ImagePrinting",
+          "Dimensions" : {
+            "width" : 400,
+            "height" : 399
+          },
+          "Position" : {
+            "x" : 0,
+            "y" : 1
+          },
+          "name" : "Imagen",
+          "svgImage" : "160bc1fa-1e0d-1dd7-2760-78b434840657.svg"
+        }, {
+          "customizationType" : "ImagePrinting",
+          "Dimensions" : {
+            "width" : 325,
+            "height" : 180
+          },
+          "Position" : {
+            "x" : 38,
+            "y" : 104
+          },
+          "name" : "Texto",
+          "svgImage" : "160bc1fa-1e0d-1dd7-2760-78b434840657.svg"
+        } ]
+      } ]
+    }
+  }
+}

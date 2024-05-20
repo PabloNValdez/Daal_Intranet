@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="3200" height="3200" viewBox="0 0 400 400" xml:space="preserve">
+<desc>Created with Fabric.js 3.2.0</desc>
+<defs>
+	<style type="text/css"><![CDATA[
+		@font-face {
+			font-family: 'font-49f4375c-de95-4c76-b27c-af';
+			src: url('https://m.media-amazon.com/images/S/gestalt-fonts-eu-prod-eu-west-1/custom-fonts/A1RKKUPIHCS9HS/AJLHPVH4199KV/4ef615f7-288b-4ac1-8175-9a7b0cb285ec.woff');
+		}
+]]></style>
+</defs>
+<g transform="matrix(1 0 0 1 201 201)"  >
+<rect style="stroke: rgb(231,118,0); stroke-width: 2; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-opacity: 0; fill-rule: nonzero; opacity: 1; visibility: hidden;"  x="-200" y="-200" rx="0" ry="0" width="400" height="400" />
+</g>
+<g clip-path="url(#CLIPPATH_5)"  >
+<g transform="matrix(0.1556673 0 0 0.1556673 204.70166016 199.65185547)"  >
+<clipPath id="CLIPPATH_5" >
+	<rect transform="matrix(1 0 0 1 200.5 200.5)" x="-200" y="-200" rx="0" ry="0" width="400" height="400" />
+</clipPath>
+	<image style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"  xlink:href="0afac099-8e55-475d-be17-7c1c29df545f.png" x="-512" y="-512" width="1024" height="1024"></image>
+</g>
+</g>
+<g style="" clip-path="url(#CLIPPATH_6)"  >
+<g transform="matrix(0.00011553 -0.05162267 0.05162267 0.00011553 109.76618292 196.02607824)"  >
+<clipPath id="CLIPPATH_6" >
+	<rect transform="matrix(1 0 0 1 200.5 200.5)" x="-200" y="-200" rx="0" ry="0" width="400" height="400" />
+</clipPath>
+		<text xml:space="preserve" font-family="font-49f4375c-de95-4c76-b27c-af" font-size="361.59999999999997" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(97,95,95); fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-1371.890625" y="-123.399616" style="white-space: pre; ">Honey Badger </tspan></text>
+</g>
+</g>
+</svg>

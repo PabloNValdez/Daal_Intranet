@@ -1,0 +1,157 @@
+{
+  "orderId" : "408-2774295-5811500",
+  "orderItemId" : "34048212654362",
+  "merchantId" : "AJLHPVH4199KV",
+  "marketplaceId" : "A1RKKUPIHCS9HS",
+  "asin" : "B0CNTCQPGN",
+  "title" : "Taza mágica. Taza mágica personalizada que cambia de color cuando se calienta. Taza personalizada con foto y texto. Regalos originales. Regalos personalizados. Capacidad de 330 ml.",
+  "quantity" : 2,
+  "vendorCode" : {
+    "present" : false
+  },
+  "customizationData" : {
+    "type" : "PageContainerCustomization",
+    "children" : [ {
+      "type" : "PreviewContainerCustomization",
+      "name" : "Taza mágica",
+      "label" : "Taza mágica",
+      "children" : [ {
+        "type" : "FlatContainerCustomization",
+        "children" : [ {
+          "type" : "PlacementContainerCustomization",
+          "name" : "Taza mágica",
+          "children" : [ {
+            "type" : "ImageCustomization",
+            "label" : "Imagen",
+            "image" : {
+              "imageName" : "11d33f72-19ab-4ffb-8f9f-efe8cf013648.jpg",
+              "buyerFilename" : "Screenshot_2023-12-11-09-44-46-714_com.miui.mediaeditor.jpg"
+            }
+          } ],
+          "dimension" : {
+            "width" : 400,
+            "height" : 400
+          },
+          "position" : {
+            "x" : 0,
+            "y" : 0
+          },
+          "buyerPlacement" : {
+            "position" : {
+              "x" : -2.3397573517091246,
+              "y" : 26.907144091404177
+            },
+            "dimension" : {
+              "width" : 1080,
+              "height" : 1080
+            },
+            "scale" : {
+              "scaleX" : 0.37037037037037035,
+              "scaleY" : 0.37037037037037035
+            },
+            "angleOfRotation" : 0
+          }
+        }, {
+          "type" : "ContainerCustomization",
+          "name" : "Texto",
+          "children" : [ {
+            "type" : "FontCustomization",
+            "label" : "Nombre de fuente",
+            "fontSelection" : {
+              "family" : "Chewy"
+            }
+          }, {
+            "type" : "ColorCustomization",
+            "label" : "Color de fuente",
+            "colorSelection" : {
+              "name" : "Blanco",
+              "value" : "#fff",
+              "colorModel" : "rgb"
+            }
+          }, {
+            "type" : "ContainerCustomization",
+            "children" : [ {
+              "type" : "PlacementContainerCustomization",
+              "name" : "Taza mágica",
+              "children" : [ {
+                "type" : "TextCustomization",
+                "label" : "Entrada de texto",
+                "inputValue" : "Os quiero "
+              } ],
+              "dimension" : {
+                "width" : 329,
+                "height" : 145
+              },
+              "position" : {
+                "x" : 37,
+                "y" : 126
+              },
+              "buyerPlacement" : {
+                "position" : {
+                  "x" : 44.095557889493264,
+                  "y" : 126.46322088223019
+                },
+                "dimension" : {
+                  "width" : 425.04607539849,
+                  "height" : 124.26208053691275
+                },
+                "scale" : {
+                  "scaleX" : 0.19087290764600023,
+                  "scaleY" : 0.19087290764600023
+                },
+                "angleOfRotation" : 0
+              }
+            } ]
+          } ]
+        } ]
+      } ],
+      "baseImage" : {
+        "imageUrl" : "https://m.media-amazon.com/images/S/gestalt-seller-images-prod-eu-west-1/A1RKKUPIHCS9HS/AJLHPVH4199KV/6817ac9b-9763-476b-9c4c-1cff35264b9f.png",
+        "dimension" : {
+          "width" : 400,
+          "height" : 400
+        }
+      },
+      "snapshot" : {
+        "imageName" : "b12f020e-f521-a9cc-ac6c-6eaa50d614f4.jpg",
+        "dimension" : {
+          "width" : 400,
+          "height" : 400
+        }
+      },
+      "svg" : "592f7737-4bf3-2a00-1242-a42b3f38d3d7.svg"
+    } ]
+  },
+  "customizationInfo" : {
+    "version3.0" : {
+      "surfaces" : [ {
+        "name" : "Taza mágica",
+        "areas" : [ {
+          "customizationType" : "ImagePrinting",
+          "Dimensions" : {
+            "width" : 400,
+            "height" : 400
+          },
+          "Position" : {
+            "x" : 0,
+            "y" : 0
+          },
+          "name" : "Taza mágica",
+          "svgImage" : "592f7737-4bf3-2a00-1242-a42b3f38d3d7.svg"
+        }, {
+          "customizationType" : "ImagePrinting",
+          "Dimensions" : {
+            "width" : 329,
+            "height" : 145
+          },
+          "Position" : {
+            "x" : 37,
+            "y" : 126
+          },
+          "name" : "Taza mágica",
+          "svgImage" : "592f7737-4bf3-2a00-1242-a42b3f38d3d7.svg"
+        } ]
+      } ]
+    }
+  }
+}

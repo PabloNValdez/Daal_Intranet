@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="3200" height="3200" viewBox="0 0 400 400" xml:space="preserve">
+<desc>Created with Fabric.js 3.2.0</desc>
+<defs>
+	<style type="text/css"><![CDATA[
+		@font-face {
+			font-family: 'font-b421375c-765d-48b8-9738-65';
+			src: url('https://m.media-amazon.com/images/S/gestalt-fonts-eu-prod-eu-west-1/custom-fonts/A1RKKUPIHCS9HS/AJLHPVH4199KV/d4837d48cfde80b79f5802c5a70910ea.woff');
+		}
+]]></style>
+</defs>
+<g transform="matrix(1 0 0 1 201.5 197)"  >
+<rect style="stroke: rgb(231,118,0); stroke-width: 2; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-opacity: 0; fill-rule: nonzero; opacity: 1; visibility: hidden;"  x="-162.5" y="-88" rx="0" ry="0" width="325" height="176" />
+</g>
+<g clip-path="url(#CLIPPATH_12)"  >
+<g transform="matrix(0.11545107 0 0 0.11545107 206.22679123 149.5201738)"  >
+<clipPath id="CLIPPATH_12" >
+	<rect transform="matrix(1 0 0 1 200.5 201)" x="-200" y="-199.5" rx="0" ry="0" width="400" height="399" />
+</clipPath>
+	<image style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"  xlink:href="c9d9f71f-8d2e-425a-9ec7-08f906f50254.jpg" x="-1536" y="-2040" width="3072" height="4080"></image>
+</g>
+</g>
+<g style="" clip-path="url(#CLIPPATH_13)"  >
+<g transform="matrix(0.07086837 0.0000677 -0.0000677 0.07086837 326.92092018 151.07924969)"  >
+<clipPath id="CLIPPATH_13" >
+	<rect transform="matrix(1 0 0 1 201 196.5)" x="-162.5" y="-88" rx="0" ry="0" width="325" height="176" />
+</clipPath>
+		<text xml:space="preserve" font-family="font-b421375c-765d-48b8-9738-65" font-size="159.10399999999998" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(172,171,171); fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-508.11509375" y="-367.12611584" >Benvinguts!</tspan><tspan x="-250.34796875" y="49.98093056" >Laura</tspan><tspan x="-213.7183125" y="258.53445376" >Kora</tspan><tspan x="-328.46275" y="467.08797696" >Guillem</tspan></text>
+</g>
+</g>
+</svg>

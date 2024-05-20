@@ -1,0 +1,146 @@
+{
+  "orderId" : "402-8491600-6178719",
+  "orderItemId" : "34025942283322",
+  "merchantId" : "AJLHPVH4199KV",
+  "marketplaceId" : "A1RKKUPIHCS9HS",
+  "asin" : "B0CNTCQPGN",
+  "title" : "Taza mágica. Taza mágica personalizada que cambia de color cuando se calienta. Taza personalizada con foto y texto. Regalos originales. Regalos personalizados. Capacidad de 330 ml.",
+  "quantity" : 1,
+  "vendorCode" : {
+    "present" : false
+  },
+  "customizationData" : {
+    "type" : "PageContainerCustomization",
+    "children" : [ {
+      "type" : "PreviewContainerCustomization",
+      "name" : "Taza mágica",
+      "label" : "Taza mágica",
+      "children" : [ {
+        "type" : "FlatContainerCustomization",
+        "children" : [ {
+          "type" : "PlacementContainerCustomization",
+          "name" : "Taza mágica",
+          "children" : [ {
+            "type" : "ImageCustomization",
+            "label" : "Imagen",
+            "image" : {
+              "imageName" : "18d1743f-49fa-4fb5-a3aa-e7200045aaaa.jpg",
+              "buyerFilename" : "IMG_20231210_224112.jpg"
+            }
+          } ],
+          "dimension" : {
+            "width" : 400,
+            "height" : 400
+          },
+          "position" : {
+            "x" : 0,
+            "y" : 0
+          },
+          "buyerPlacement" : {
+            "position" : {
+              "x" : 42.35297707950366,
+              "y" : 127.47737335920233
+            },
+            "dimension" : {
+              "width" : 1440,
+              "height" : 671
+            },
+            "scale" : {
+              "scaleX" : 0.22142328635997968,
+              "scaleY" : 0.22142328635997968
+            },
+            "angleOfRotation" : 0
+          }
+        }, {
+          "type" : "ContainerCustomization",
+          "name" : "Texto",
+          "children" : [ {
+            "type" : "FontCustomization",
+            "label" : "Nombre de fuente",
+            "fontSelection" : {
+              "family" : "Arial"
+            }
+          }, {
+            "type" : "ColorCustomization",
+            "label" : "Color de fuente",
+            "colorSelection" : {
+              "name" : "Gris",
+              "value" : "#999999",
+              "colorModel" : "rgb"
+            }
+          }, {
+            "type" : "ContainerCustomization",
+            "children" : [ {
+              "type" : "PlacementContainerCustomization",
+              "name" : "Taza mágica",
+              "children" : [ {
+                "type" : "TextCustomization",
+                "label" : "Entrada de texto",
+                "inputValue" : ""
+              } ],
+              "dimension" : {
+                "width" : 329,
+                "height" : 145
+              },
+              "position" : {
+                "x" : 37,
+                "y" : 126
+              }
+            } ]
+          } ]
+        } ]
+      } ],
+      "baseImage" : {
+        "imageUrl" : "https://m.media-amazon.com/images/S/gestalt-seller-images-prod-eu-west-1/A1RKKUPIHCS9HS/AJLHPVH4199KV/6817ac9b-9763-476b-9c4c-1cff35264b9f.png",
+        "dimension" : {
+          "width" : 400,
+          "height" : 400
+        }
+      },
+      "snapshot" : {
+        "imageName" : "a3f47af7-feb4-c396-0f8d-e2ea4a5de26a.jpg",
+        "dimension" : {
+          "width" : 400,
+          "height" : 400
+        }
+      },
+      "svg" : "875f64d4-fea2-0ce1-ffde-67039d287984.svg"
+    } ]
+  },
+  "customizationInfo" : {
+    "version3.0" : {
+      "surfaces" : [ {
+        "name" : "Taza mágica",
+        "areas" : [ {
+          "customizationType" : "ImagePrinting",
+          "Dimensions" : {
+            "width" : 400,
+            "height" : 400
+          },
+          "Position" : {
+            "x" : 0,
+            "y" : 0
+          },
+          "name" : "Taza mágica",
+          "svgImage" : "875f64d4-fea2-0ce1-ffde-67039d287984.svg"
+        }, {
+          "customizationType" : "TextPrinting",
+          "colorName" : "Gris",
+          "fill" : "#999999",
+          "fontFamily" : "Arial",
+          "Dimensions" : {
+            "width" : 329,
+            "height" : 145
+          },
+          "Position" : {
+            "x" : 37,
+            "y" : 126
+          },
+          "name" : "Taza mágica",
+          "label" : "Entrada de texto",
+          "text" : ""
+        } ]
+      } ]
+    }
+  }
+}

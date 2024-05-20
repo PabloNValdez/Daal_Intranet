@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+  <link href="assets/images/favicon.png" rel="icon" />
+  <title>Magento 2 | Getsingular</title>
+
+
+  <!-- Stylesheet
+============================== -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
+  <!-- Font Awesome Icon -->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css" />
+  <!-- Magnific Popup -->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/magnific-popup/magnific-popup.min.css" />
+  <!-- Highlight Syntax -->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/highlight.js/styles/github.css" />
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
+
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="lds-ellipsis">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <!-- Preloader End -->
+
+  <!-- Document Wrapper   
+=============================== -->
+  <div id="main-wrapper">
+
+    <!-- Header
+  ============================ -->
+    <header id="header" class="sticky-top">
+      <!-- Navbar -->
+      <nav class="primary-menu navbar navbar-expand-lg navbar-dropdown-dark">
+        <div class="container-fluid">
+          <!-- Sidebar Toggler -->
+          <button id="sidebarCollapse" class="navbar-toggler d-block d-md-none" type="button"><span></span><span
+              class="w-75"></span><span class="w-50"></span></button>
+
+          <!-- Logo -->
+          <a class="logo ml-md-3" href="index.html" title="iDocs Template">
+            <h3>Tutorial Magento</h3>
+          </a>
+          <!-- Logo End -->
+
+          <!-- Navbar Toggler
+		<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#header-nav"><span></span><span></span><span></span></button>
+        
+		<div id="header-nav" class="collapse navbar-collapse justify-content-end">
+          <ul class="navbar-nav">
+            <li class="dropdown"> <a class="dropdown-toggle" href="#">Dropdown</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#">Dropdown Action</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="index.html">Action</a></li>
+                    <li><a class="dropdown-item" href="feature-header-dark.html">Another Action</a></li>
+                    <li><a class="dropdown-item" href="feature-header-primary.html">Something Else Here</a></li>
+                    <li><a class="dropdown-item" href="index-2.html">Another Link</a></li>
+                  </ul>
+                </li>
+                <li><a class="dropdown-item" href="#">Another Action</a>
+                <li><a class="dropdown-item" href="#">Something Else Here</a></li>
+              </ul>
+            </li>
+            <li><a target="_blank" href="https://themeforest.net/user/harnishdesign/portfolio?ref=HarnishDesign">Other Template</a></li>
+            <li><a target="_blank" href="https://themeforest.net/user/harnishdesign/#contact?ref=HarnishDesign">Support</a></li>
+          </ul>
+        </div>
+        <ul class="social-icons social-icons-sm ml-lg-2 mr-2">
+          <li class="social-icons-twitter"><a data-toggle="tooltip" href="http://www.twitter.com/harnishdesign/" target="_blank" title="" data-original-title="Twitter"><i class="fab fa-twitter"></i></a></li>
+          <li class="social-icons-facebook"><a data-toggle="tooltip" href="http://www.facebook.com/harnishdesign/" target="_blank" title="" data-original-title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+          <li class="social-icons-dribbble"><a data-toggle="tooltip" href="http://www.dribbble.com/harnishdesign/" target="_blank" title="" data-original-title="Dribbble"><i class="fab fa-dribbble"></i></a></li>
+        </ul>
+      </div>-->
+      </nav>
+      <!-- Navbar End -->
+    </header>
+    <!-- Header End -->
+
+    <!-- Content
+  ============================ -->
+    <div id="content" role="main">
+
+      <!-- Sidebar Navigation
+	============================ -->
+      <div class="idocs-navigation bg-light">
+        <ul class="nav flex-column ">
+
+
+          <li class="nav-item"><a class="nav-link" href="#primer_grupo">Magento</a>
+            <ul class="nav flex-column">
+              <li class="nav-item"><a class="nav-link" href="#productos_simples">Productos Simples</a></li>
+              <li class="nav-item"><a class="nav-link" href="#personalizacion_productos">Diseñador de producto
+                  Simples</a></li>
+              <li class="nav-item"><a class="nav-link" href="#productos_configurables">Productos configurables</a></li>
+              <li class="nav-item"><a class="nav-link" href="#personalizacion_configurables">Diseñador de producto
+                  configurables</a></li>
+              <li class="nav-item"><a class="nav-link" href="#duplicar_productos">Duplicar productos</a></li>
+              <li class="nav-item"><a class="nav-link" href="#regla_catalogo">Regla de precio de catálogo</a></li>
+              <li class="nav-item"><a class="nav-link" href="#regla_carrito">Regla de precio para el carrito de
+                  compras</a></li>
+
+            </ul>
+          </li>
+        </ul>
+
+
+      </div>
+
+      <!-- Docs Content
+	============================ -->
+      <div class="idocs-content">
+        <div class="container">
+
+          <!-- Magento
+		============================ -->
+          <section id="primer_grupo"></section>
+          <h1>Productos en Magento</h1>
+          <h2>Creación de productos en Magento</h2>
+
+          <hr class="divider">
+
+          <!-- productos simples
+		============================ -->
+
+
+
+          <section id="productos_simples">
+            <h2>Productos Simples.</h2>
+            <p class="lead">Carga de productos simples en Magento.</p>
+            <p>Los productos simples son aquellos que no disponen de variantes, o productos hijos. Son productos únicos.
+            </p>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="smart-player-embed-iframe" id="embeddedSmartPlayerInstance"
+                src="https://www.youtube.com/embed/m945v4TJXks?controls=0" scrolling="no" frameborder="0"
+                webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+              </iframe>
+            </div>
+
+            <h4>Datos básicos del producto</h4>
+            <p><strong>Grupo de tributación</strong></p>
+            <p>- Se utiliza el IVA del 21%.</p>
+            <p><strong>Cantidad</strong></p>
+            <p>- Es importante que se inserte una cantidad, o el producto no se mostrará en el listado de la tienda.</p>
+            <p><strong>Estado de existencias</strong></p>
+            <p>- Es importante que se elija: en Estado de Existencia, o el producto no se mostrará.</p>
+            <p><strong>Peso</strong></p>
+            <p>- Se debe agregar un valor a peso del producto, o el producto se creara como producto virtual.</p>
+
+            <p><strong>Visibilidad</strong></p>
+            <p><i class="fas fa-angle-right"></i> No es visible individualmente: El producto no se mostrará en
+              resultados de búsquedas, ni en el listado de la tienda. Esta opción se debe elegir, si el producto es una
+              variante de otro producto.</p>
+            <p><i class="fas fa-angle-right"></i> Catálogo: El producto no se mostrará en el listado de la tienda, pero
+              no en resultados de búsquedas.</p>
+            <p><i class="fas fa-angle-right"></i> Search: El producto no se mostrará en el resultado de la tienda, pero
+              no en el catálogo.</p>
+            <p><i class="fas fa-angle-right"></i> Catálogo, búsqueda: El producto se mostrará en el resultado de la
+              tienda, y tambien en el catálogo.</p>
+
+
+            <h4>Imágenes y Videos</h4>
+            <p><strong>Texto alternativo</strong></p>
+            <p>- Al subir una imagen es importante que se agregue un texto alternativo.</p>
+            <p><strong>Cargo / Roles de imagenes</strong></p>
+            <p><i class="fas fa-angle-right"></i> Base: Es la primer imagen por defecto que se mostrará en la pagina del
+              producto. Tambien es la imagen por defecto que se utiliza para el zoom del producto.</p>
+            <p><i class="fas fa-angle-right"></i> Small / Pequeño: se utiliza en el listados de
+              categorías y en el resultados de búsqueda. Tambien en los modulos como Up-sells, Cross-sells y New
+              Product List.</p>
+            <p><i class="fas fa-angle-right"></i> Thumbnail / Miniatura: La imagen por defecto que se mostrara en el
+              carritos de compra. Y en algunos bloques como producto relacionado.</p>
+            <p><i class="fas fa-angle-right"></i> Swatch / Muestra: Se utliza para ilustrar el color, el patrón o la
+              textura en productos con variantes.</p>
+            <p><i class="fas fa-angle-right"></i> Ocultar de la página de producto: Es importante que se seleccione esta
+              opcion para imagenes que se desean ocultar en la pagina de producto, pero que sigan estando disponible
+              para el Area de Diseño, como las mascaras de recorte.</p>
+            <h4>Optimización de los motores de búsqueda </h4>
+            <p>- Es importante completar la informacion para los motores de busqueda. </p>
+            <h4>Opciones Personalizables</h4>
+            <p>- Brinda al cliente opciones respecto al producto. Como el color, tamaño, etc. Se utiliza para crear
+              variaciones simples.</p>
+
+          </section>
+          <hr class="divider">
+          <section id="personalizacion_productos">
+            <h2>Diseñador de Productos.</h2>
+            <p class="lead">En el siguiente video se muestra como activar el diseñador de productos sin mascara de
+              recorte.</p>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="smart-player-embed-iframe" id="embeddedSmartPlayerInstance"
+                src="https://www.youtube.com/embed/6y5IkM9dGa8" scrolling="no" frameborder="0" webkitAllowFullScreen
+                mozallowfullscreen allowFullScreen>
+              </iframe>
+            </div><br>
+            <h4><strong>Diseñador de producto</strong></h4>
+            <p>- Enable Product Designer: Se debe activar esta opción, para permitir al cliente personalizar y diseñar
+              el producto.</p>
+            <p><strong>Bleed, Safe, Cut Line</strong></p>
+            <p>Es importante activar e indicar las líneas de seguridad, y de sangrado, ya que permiten que los recortes
+              en impresión sean correctos.</p>
+            <p><i class="fas fa-angle-right"></i> Linea de seguridad: Todo el texto, o contenido que se encuentre por
+              fuera de la línea de seguridad, será recortado.</p>
+            <p><i class="fas fa-angle-right"></i> Línea de sangrado: Permite que toda la imagen llegue al borde, fuera
+              de la línea de corte, de modo que los colores se puedan imprimir en el borde del papel sin mostrar
+              márgenes blancos.</p>
+            <p><strong>Show Bleed Line On</strong></p>
+            <p><i class="fas fa-angle-right"></i> Se debe indicar donde se requiere mostrar la linea de sangrado. Se
+              debe marcar las 3 opciones (Canvas Area, Preview/Download, Output).</p>
+            <p><strong>Show Safety Line On</strong></p>
+            <p><i class="fas fa-angle-right"></i> Se debe indicar donde se requiere mostrar la linea de seguridad. Se
+              debe marcar las 3 opciones (Canvas Area, Preview/Download, Output).</p>
+            <h4><strong>Design Areas / Areas de Diseño</strong></h4>
+            <p>En el area de diseño se indica la superficie de diseño, y los datos de recorte del diseño.</p>
+            <p><strong>Mutliple Design Areas / Múltiples Areas de Diseño</strong></p>
+            <p>En algunos productos se permiten varias superficies de diseños (caras de impresión).</p>
+            <p>- Lado De La Imagen: Se debe seleccionar si el área de diseño corresponde a la parte de adelante, o de
+              atras del producto. </p>
+            <p>- Output Based On: Se debe seleccionar el tipo de salida, (By Design Area Size) </p>
+            <p>- Precio, Ancho, Altura: Se debe indicar el tamaño de salida a impresión. </p>
+          </section>
+          <hr class="divider">
+
+
+
+          <section id="productos_configurables">
+            <h2>Productos Configurables</h2>
+            <p class="lead">Los productos configurables son aquellos que disponen de variantes, o productos hijos.
+              Productos que pueden ser configurados por el cliente.</p>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="smart-player-embed-iframe" id="embeddedSmartPlayerInstance"
+                src="https://www.youtube.com/embed/ZPA4Fk68Ec8" scrolling="no" frameborder="0" webkitAllowFullScreen
+                mozallowfullscreen allowFullScreen>
+              </iframe>
+            </div>
+            <br>
+            <h4>Datos básicos del producto</h4>
+            <p><strong>Grupo de tributación</strong></p>
+            <p>- Se utiliza el IVA del 21%.</p>
+            <p><strong>Cantidad</strong></p>
+            <p>- Es importante que se inserte una cantidad, o el producto no se mostrará en el listado de la tienda.</p>
+            <p><strong>Estado de existencias</strong></p>
+            <p>- Es importante que se elija: en Estado de Existencia, o el producto no se mostrará.</p>
+            <p><strong>Peso</strong></p>
+            <p>- Se debe agregar un valor a peso del producto, o el producto se creara como producto virtual.</p>
+
+            <p><strong>Visibilidad</strong></p>
+            <p><i class="fas fa-angle-right"></i> No es visible individualmente: El producto no se mostrará en
+              resultados de búsquedas, ni en el listado de la tienda. Esta opción se debe elegir, si el producto es una
+              variante de otro producto.</p>
+            <p><i class="fas fa-angle-right"></i> Catálogo: El producto no se mostrará en el listado de la tienda, pero
+              no en resultados de búsquedas.</p>
+            <p><i class="fas fa-angle-right"></i> Search: El producto no se mostrará en el resultado de la tienda, pero
+              no en el catálogo.</p>
+            <p><i class="fas fa-angle-right"></i> Catálogo, búsqueda: El producto se mostrará en el resultado de la
+              tienda, y tambien en el catálogo.</p>
+
+
+            <h4>Imágenes y Videos</h4>
+            <p><strong>Texto alternativo</strong></p>
+            <p>- Al subir una imagen es importante que se agregue un texto alternativo.</p>
+            <p><strong>Cargo / Roles de imagenes</strong></p>
+            <p><i class="fas fa-angle-right"></i> Base: Es la primer imagen por defecto que se mostrará en la pagina del
+              producto. Tambien es la imagen por defecto que se utiliza para el zoom del producto.</p>
+            <p><i class="fas fa-angle-right"></i> Small / Pequeño: se utiliza en el listados de
+              categorías y en el resultados de búsqueda. Tambien en los modulos como Up-sells, Cross-sells y New
+              Product List.</p>
+            <p><i class="fas fa-angle-right"></i> Thumbnail / Miniatura: La imagen por defecto que se mostrara en el
+              carritos de compra. Y en algunos bloques como producto relacionado.</p>
+            <p><i class="fas fa-angle-right"></i> Swatch / Muestra: Se utliza para ilustrar el color, el patrón o la
+              textura en productos con variantes.</p>
+            <p><i class="fas fa-angle-right"></i> Ocultar de la página de producto: Es importante que se seleccione esta
+              opcion para imagenes que se desean ocultar en la pagina de producto, pero que sigan estando disponible
+              para el Area de Diseño, como las mascaras de recorte.</p>
+            <h4>Optimización de los motores de búsqueda </h4>
+            <p>- Es importante completar la informacion para los motores de busqueda. </p>
+            <h4>Opciones Personalizables</h4>
+            <p>- Brinda al cliente opciones respecto al producto. Como el color, tamaño, etc. Se utiliza para crear
+              variaciones simples.</p>
+            <h4>Configuración</h4>
+            <p>Los productos configurables permiten a los clientes elegir opciones (Por ejemplo: color, tamaño, etc). Es
+              necesario, crear un producto simple para cada configuración (Ejemplo: un producto para cada color).
+              Magento dispone de un modulo que permite crear esas variaciones automaticamente, pero tambien se pueden
+              agregar variaciones, o productos simples de manera manual</p>
+            <p><strong>Paso 1: Seleccionarlos atributos</strong></p>
+            <p>- Se debe seleccionar o crear los atributos que se requieren para el producto. Por ejemplo, si se desea
+              crear variantes de botellas por capacidad. Se debe seleccionar el atributo de Capacidad botella.</p>
+            <p><strong>Paso 2: Valores de atributo</strong></p>
+            <p>- Se debe Seleccionar valores de cada atributo que desea incluir en el producto. Cada combinación única
+              de valores crea un SKU de producto único. Se puede seleccionar los valores que se encuentran creados, o
+              crear nuevos valores.</p>
+            <p><strong>Paso 3: Conjunto de Imágenes, Precio, y Cantidades</strong></p>
+            <p>- En este apartado se puede configurar las imagenes, precios, y la cantidad en stock de cada producto que
+              se va a crear.</p>
+            <p>- <strong>IMAGENES: </strong>Se puede utilizar un conjunto de imagenes para todas la combinaciones, subir
+              imagenes individualmente para cada producto, o subir las imagenes, despues de crear los productos.</p>
+            <p>- <strong>PRECIO: </strong>Se puede utilizar un precio unico para todas las variantes, o asignar un
+              precio por cada producto, por ejemplo en botellas: 350ml - 9,67€, 500ml - 10,88€.</p>
+            <p>- <strong>CANTIDAD: </strong>Al igual que las imagenes, y el precio, se puede asignar una cantidad para
+              todas las variantes, o asignar una cantidad individual en cada producto.</p>
+            <p><strong>Paso 4: Resumen</strong></p>
+            <p>Se puede ver un resumen de como se crearan las variantes del producto.</p>
+
+
+
+          </section>
+          <hr class="divider">
+
+
+          <section id="personalizacion_configurables">
+            <h2>Diseñador de Productos configurables (Con mascara de recorte)</h2>
+            <p class="lead">En el siguiente video se muestra como activar el diseñador de productos con mascara de
+              recorte en productos configurables</p>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="smart-player-embed-iframe" id="embeddedSmartPlayerInstance"
+                src="https://www.youtube.com/embed/4q0shhnZxhs" scrolling="no" frameborder="0" webkitAllowFullScreen
+                mozallowfullscreen allowFullScreen>
+              </iframe>
+            </div>
+            <h4><strong>Diseñador de producto</strong></h4>
+            <p>- Enable Product Designer: Se debe activar esta opción, para permitir al cliente personalizar y diseñar
+              el producto.</p>
+            <p><strong>Bleed, Safe, Cut Line</strong></p>
+            <p>Es importante activar e indicar las líneas de seguridad, y de sangrado, ya que permiten que los recortes
+              en impresión sean correctos.</p>
+            <p><i class="fas fa-angle-right"></i> Linea de seguridad: Todo el texto, o contenido que se encuentre por
+              fuera de la línea de seguridad, será recortado.</p>
+            <p><i class="fas fa-angle-right"></i> Línea de sangrado: Permite que toda la imagen llegue al borde, fuera
+              de la línea de corte, de modo que los colores se puedan imprimir en el borde del papel sin mostrar
+              márgenes blancos.</p>
+            <p><strong>Show Bleed Line On</strong></p>
+            <p><i class="fas fa-angle-right"></i> Se debe indicar donde se requiere mostrar la linea de sangrado. Se
+              debe marcar las 3 opciones (Canvas Area, Preview/Download, Output).</p>
+            <p><strong>Show Safety Line On</strong></p>
+            <p><i class="fas fa-angle-right"></i> Se debe indicar donde se requiere mostrar la linea de seguridad. Se
+              debe marcar las 3 opciones (Canvas Area, Preview/Download, Output).</p>
+            <h4><strong>Design Areas / Areas de Diseño</strong></h4>
+            <p>En el area de diseño se indica la superficie de diseño, y los datos de recorte del diseño.</p>
+            <p><strong>Mutliple Design Areas / Múltiples Areas de Diseño</strong></p>
+            <p>En algunos productos se permiten varias superficies de diseños (caras de impresión).</p>
+            <p>- Lado De La Imagen: Se debe seleccionar si el área de diseño corresponde a la parte de adelante, o de
+              atras del producto. </p>
+            <p>- Output Based On: Se debe seleccionar el tipo de salida, (By Design Area Size) </p>
+            <p>- Precio, Ancho, Altura: Se debe indicar el tamaño de salida a impresión. </p>
+            <br>
+          </section><br>
+          <hr class="divider">
+
+          <section id="duplicar_productos">
+            <h2>Duplicar productos en Getsingular</h2>
+            <p class="lead">En el siguiente video se muestra como duplicar un producto en Magento 2</p>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="smart-player-embed-iframe" id="embeddedSmartPlayerInstance"
+                src="https://www.youtube.com/embed/JXi0sZrbNnk" scrolling="no" frameborder="0" webkitAllowFullScreen
+                mozallowfullscreen allowFullScreen>
+              </iframe>
+            </div>
+            <br>
+            <h4><strong>Datos importante a tener en cuenta</strong></h4>
+            <p>- Al duplicar un producto, todos los datos e información del producto se duplican automáticamente, y
+              Magento genera una URL temporal para el producto.</p>
+            <p><strong>URL Key en SEO</strong></p>
+            <p>Antes de guardar el producto duplicado, hay que escribir una URL adecuada para el nuevo producto. <br>
+              Es importante evitar crear varias URL para un producto, ya que se generan redirecciones sin sentido, que
+              pueden afectar en un futuro la URL del producto.</p>
+            <br>
+            <p class="lead">En el siguiente video se muestra como modificar el diseñador de productos, despues de
+              duplicar previamente el producto</p>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="smart-player-embed-iframe" id="embeddedSmartPlayerInstance"
+                src="https://www.youtube.com/embed/KcpcAdaAXv0" scrolling="no" frameborder="0" webkitAllowFullScreen
+                mozallowfullscreen allowFullScreen>
+              </iframe>
+            </div>
+          </section><br>
+          <hr class="divider">
+
+
+          <section id="regla_catalogo">
+            <div class="jumbotron jumbotron-fluid">
+              <div class="container">
+                <h1 class="display-4">Promociones</h1>
+                <p class="lead">Magento 2 dispone de dos tipos de regla de descuento. 1) Regla de precio para el
+                  catalogo
+                  completo, y 2) Regla de descuento solo para el carrito de compra.</p>
+              </div>
+
+            </div>
+
+
+            <h2>Regla de precio para el catalogo</h2>
+            <p class="lead">En este tipo de regla de descuento, el visitante no debe ingresar ningún cupón de descuento
+              para obtener dicho descuento. 
+
+              Se puede aplicar descuentos indicando condiciones, como descuento por categoría, atributos, o
+              combinaciones. </p>
+            <p class="lead">Este tipo de reglas se aplican antes de que los productos se añadan al carrito, por lo que
+              podrán visualizarse en la tienda sin optar por la opción de compra. Además, estas reglas pueden ser
+              utilizadas para crear ofertas y descuentos a productos sin que sea necesario generar cupones de descuento.
+            </p>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="smart-player-embed-iframe" id="embeddedSmartPlayerInstance"
+                src="https://www.youtube.com/embed/tHTnyOasHIo" scrolling="no" frameborder="0" webkitAllowFullScreen
+                mozallowfullscreen allowFullScreen>
+              </iframe>
+            </div>
+            <br>
+            <h4><strong>Datos importante a tener en cuenta</strong></h4>
+            <h3><strong>Informacion B&aacute;sica</strong></h3>
+
+            <p><strong>Nombre de la regla:</strong>&nbsp;ej: &ldquo;Promoci&oacute;n 20&rdquo;.</p>
+
+            <p><em>Consejo: Recomendamos que este campo se llene con un nombre corto, claro y que exprese el sentido de
+                la promoci&oacute;n.</em></p>
+
+            <p><strong>Descripci&oacute;n</strong>: ej: &ldquo;20% de descuento para productos de la categor&iacute;a X,
+              en compras mayores a 500&rdquo;</p>
+
+            <p><em>Consejo: Lo ideal es que este campo refleje de la manera m&aacute;s detallada posible la regla, para
+                contar con una referencia precisa.</em></p>
+
+            <p><strong>Estado</strong>: Activo</p>
+
+            <p><em>Consejo mantener una regla inactiva har&aacute; que no se aplique. Es recomendable esta opci&oacute;n
+                en el caso de querer guardar una regla para usar m&aacute;s adelante o repetir su uso en otro
+                per&iacute;odo.</em></p>
+
+            <p><strong>Grupo de clientes:</strong>&nbsp;seleccionar el grupo que corresponda o varios.</p>
+
+            <p><strong>Rango de fecha:&nbsp;</strong>completamos los campos en el caso de que deseemos que la
+              promoci&oacute;n sea por un per&iacute;odo determinado. Sino lo dejamos vac&iacute;os.</p>
+
+            <p><strong>Prioridad:&nbsp;</strong>Este campo determina que regla de precios ser&aacute; aplicada cuando se
+              aplican m&aacute;s de una regla en el cat&aacute;logo. 1 es la prioridad m&aacute;s alta.</p>
+
+            <p><em>Consejo: es recomendable, en el caso de tener preferencias en relaci&oacute;n a las reglas que se
+                aplicar&aacute;n en el precio de un producto, ser claros con la jerarqu&iacute;as de las
+                prioridades.&nbsp;</em></p>
+
+            <h3><strong>Definir la condici&oacute;n de las reglas:</strong></h3>
+
+            <p>S&oacute;lo es necesario agregar una condicion, cuando el descuento no se va a aplicar a todos los
+              productos de la tienda. Las condiciones permiten aplicar descuentos a productos de categorias, precios, o
+              atributos.</p>
+
+            <p>Por ejemplo: Puedes aplicar un descuento del 10% a los articulos de la categoria &quot;San
+              Valentin&quot;. En este caso, todos los dem&aacute;s productos que no se encuentren en la categoria
+              &quot;San Valentin&quot; no tendran el descuento del 10%.</p>
+
+            <h3><strong>Acciones</strong></h3>
+
+            <p><strong>Aplicar</strong>:</p>
+
+            <p>En este apartado se debe elegir el modo en que funcionara el descuento, si sera un monto fijo, un
+              descuento por porcentaje, etc.</p>
+
+            <p><strong>Monto de descuento:</strong></p>
+
+            <p>Aqui se debe agregar el valor del descuento. Si en el apartado anterior, se indica que el descuento sera
+              por porcentaje, y en el monto del descuento se agrega &quot;10&quot;, se aplicara un descuento del 10%.
+            </p>
+
+
+          </section>
+          <br>
+          <hr class="divider">
+
+          <section id="regla_carrito">
+
+
+
+            <h2>Regla de precio para el carrito de compras</h2>
+            <p class="lead">Permite crear reglas de precios, que se aplican solamente al carrito de compras. El cliente
+              está obligado a ingresar un "cupón de descuento" para obtener dicho descuento a la hora de efectuar la
+              compra.</p>
+            <p class="lead">Es recomendable usar este tipo de reglas cuando queremos que el descuento se aplique en el
+              carrito de compras. Para crear una regla en el carrito, accedemos a la opción “Reglas de precios del
+              carrito de compras” desde el menú Promociones. <br>El procedimiento es similar que en la opción anterior,
+              sólo que contamos con la posibilidad de crear un cupón. </p>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="smart-player-embed-iframe" id="embeddedSmartPlayerInstance"
+                src="https://www.youtube.com/embed/aX6senfUKnA" scrolling="no" frameborder="0" webkitAllowFullScreen
+                mozallowfullscreen allowFullScreen>
+              </iframe>
+            </div>
+            <br>
+            <h4><strong>Datos importante a tener en cuenta</strong></h4>
+            <h3><strong>Informacion B&aacute;sica</strong></h3>
+
+            <p><strong>Nombre de la regla:</strong>&nbsp;ej: &ldquo;Promoci&oacute;n 20&rdquo;.</p>
+
+            <p><em>Consejo: Recomendamos que este campo se llene con un nombre corto, claro y que exprese el sentido de
+                la promoci&oacute;n.</em></p>
+
+            <p><strong>Descripci&oacute;n</strong>: ej: &ldquo;20% de descuento para productos de la categor&iacute;a X,
+              en compras mayores a 500&rdquo;</p>
+
+            <p><em>Consejo: Lo ideal es que este campo refleje de la manera m&aacute;s detallada posible la regla, para
+                contar con una referencia precisa.</em></p>
+
+            <p><strong>Estado</strong>: Activo</p>
+
+            <p><em>Consejo mantener una regla inactiva har&aacute; que no se aplique. Es recomendable esta opci&oacute;n
+                en el caso de querer guardar una regla para usar m&aacute;s adelante o repetir su uso en otro
+                per&iacute;odo.</em></p>
+
+            <p><strong>Grupo de clientes:</strong>&nbsp;seleccionar el grupo que corresponda o varios.</p>
+
+            <p><strong>Cup&oacute;n:&nbsp;</strong>Se debe indicar si el descuento se aplicara usando un codigo de
+              cupon, o no.</p>
+
+            <p><strong>C&oacute;digo de cup&oacute;n</strong>: Es el codigo del cupon, por ejemplo: &quot;VAL15&quot; es
+              el codigo que ingresara el cliente, tambien se puede obtar para se cree un codigo de cupon automatico.</p>
+
+            <p><strong>Usos por cup&oacute;n:</strong> Aqui se indica, cuantas veces se puede utilizar el cupon.</p>
+
+            <p><strong>Usos por cliente:</strong> Se indica cuantas veces un cliente puede volver a utilizar el cupon.
+              Si se indica 1, solo podra aplicar una unica vez el descuento.</p>
+
+            <p><strong>Rango de fecha:&nbsp;</strong>completamos los campos en el caso de que deseemos que la
+              promoci&oacute;n sea por un per&iacute;odo determinado. Sino lo dejamos vac&iacute;os.</p>
+
+            <p><strong>Prioridad:&nbsp;</strong>Este campo determina que regla de precios ser&aacute; aplicada cuando se
+              aplican m&aacute;s de una regla en el cat&aacute;logo. 1 es la prioridad m&aacute;s alta.</p>
+
+            <p><em>Consejo: es recomendable, en el caso de tener preferencias en relaci&oacute;n a las reglas que se
+                aplicar&aacute;n en el precio de un producto, ser claros con la jerarqu&iacute;as de las
+                prioridades.&nbsp;</em></p>
+
+            <h3><strong>Definir la condici&oacute;n de las reglas:</strong></h3>
+
+            <p>S&oacute;lo es necesario agregar una condicion, cuando el descuento no se va a aplicar a todos los
+              productos de la tienda. Las condiciones permiten aplicar descuentos a productos de categorias, precios, o
+              atributos.</p>
+
+            <p>Por ejemplo: Puedes aplicar un descuento del 10% a los articulos de la categoria &quot;San
+              Valentin&quot;. En este caso, todos los dem&aacute;s productos que no se encuentren en la categoria
+              &quot;San Valentin&quot; no tendran el descuento del 10%.</p>
+
+            <h3><strong>Acciones</strong></h3>
+
+            <p><strong>Aplicar</strong>:</p>
+
+            <p>En este apartado se debe elegir el modo en que funcionara el descuento, si sera un monto fijo, un
+              descuento por porcentaje, etc.</p>
+
+            <p><strong>Monto de descuento:</strong></p>
+
+            <p>Aqui se debe agregar el valor del descuento. Si en el apartado anterior, se indica que el descuento sera
+              por porcentaje, y en el monto del descuento se agrega &quot;10&quot;, se aplicara un descuento del 10%.
+            </p>
+
+            <p><strong>Se aplica la m&aacute;xima cantidad descontada:</strong>&nbsp;Se indica cuantos productos del
+              carrito tendran descuento, si indicamos que 3, quiere decir que el cuarto producto no recibira descuento,
+              y tendra el precio publicado.</p>
+
+            <p><strong>Paso de cantidad descontada (comprar X):&nbsp;</strong>Si aplicamos un 8 en este campo, entonces
+              el descuento ser&aacute; aplicado a todos los productos a partir del octavo producto que sea
+              a&ntilde;adido al carrito. Si hay m&aacute;s de 8 productos en el carrito, no se obtendr&aacute; descuento
+              hasta que se introduzca el producto n&uacute;mero 16, donde se le aplicar&aacute; un descuento del 10% a
+              los 16 productos. Estos descuentos contin&uacute;an para cada factor de 8&nbsp;</p>
+
+            <p><strong>Apl&iacute;quese a la cantidad de env&iacute;o</strong>: Si se marca en &quot;SI&quot; el
+              descuento se aplicara a todos los productos, y tambien el precio del envio. Es recomendable dejar
+              seleccionado en &quot;NO&quot;</p>
+
+            <p><strong>Apl&iacute;quese la regla s&oacute;lo a los art&iacute;culos del carro que se ajusten a las
+                siguientes condiciones (dejar en blanco para todos los art&iacute;culos)</strong>:&nbsp; Permite crear
+              una condicion especial, para ofrecer &quot;Envios gratuitos&quot;, por ejemplo para articulos de ciertas categorias, o cuando el cliente compre mas de 50 euros.</p>
+          </section>
+          <br>
+          <hr class="divider">
+
+
+        </div>
+      </div>
+
+    </div>
+    <!-- Content end -->
+
+  </div>
+  <!-- Document Wrapper end -->
+
+  <!-- Back To Top -->
+  <a id="back-to-top" data-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i
+      class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript
+============================ -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Highlight JS -->
+  <script src="assets/vendor/highlight.js/highlight.min.js"></script>
+  <!-- Easing -->
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <!-- Magnific Popup -->
+  <script src="assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+  <!-- Custom Script -->
+  <script src="assets/js/theme.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,300 @@
+Nuevo nombre: 2024-02-23~20240223-18445
+XML: subidas//2024-02-23~20240223-18445/Botellas/Botellas_Agua_500_Blanco_Diseno/403-9124286-6141912_35927041233002/35927041233002.xml
+#Seleccionando el tipo de botella: 
+#Botella de equipos: 
+XML: subidas//2024-02-23~20240223-18445/Botellas/Botellas_Agua_500_Blanco_Diseno/403-9124286-6141912_35927041233002/35927041233002.xml
+-----------------------
+Botella R. Madrid
+MARTÍN 
+Fugaz One
+#000000
+
+Fuente:  Fugaz One
+Texto:  MARTÍN 
+Texto:  #000000
+Botella creada correctamente subidas/2024-02-23~20240223-18445/Botellas/Botellas_Agua_500_Blanco_Diseno/403-9124286-6141912_35927041233002/botella.png
+XML: subidas//2024-02-23~20240223-18445/Botellas/Botellas_Agua_500_Blanco_Diseno/406-5205866-3595543_35929140279602/35929140279602.xml
+#Seleccionando el tipo de botella: 
+#Botella de equipos: 
+XML: subidas//2024-02-23~20240223-18445/Botellas/Botellas_Agua_500_Blanco_Diseno/406-5205866-3595543_35929140279602/35929140279602.xml
+-----------------------
+Botella Athletic Bilbao
+Aitor
+Titan One
+#000000
+
+Fuente:  Titan One
+Texto:  Aitor
+Texto:  #000000
+Botella creada correctamente subidas/2024-02-23~20240223-18445/Botellas/Botellas_Agua_500_Blanco_Diseno/406-5205866-3595543_35929140279602/botella.png
+XML: subidas//2024-02-23~20240223-18445/Botellas/Botellas_Agua_500_Plata_Diseno/404-9490330-1676302_35942691475682/35942691475682.xml
+#Seleccionando el tipo de botella: 
+#Botella de Deportes: 
+XML: subidas//2024-02-23~20240223-18445/Botellas/Botellas_Agua_500_Plata_Diseno/404-9490330-1676302_35942691475682/35942691475682.xml
+-----------------------
+Baloncesto 1
+JAN AGUADO
+Audiowide
+#000000
+0
+Fuente: Audiowide
+Botella creada correctamente subidas/2024-02-23~20240223-18445/Botellas/Botellas_Agua_500_Plata_Diseno/404-9490330-1676302_35942691475682/botella.png
+XML: subidas//2024-02-23~20240223-18445/Espinilleras/Espinilleras_Talla_S/171-9164834-6783561_35934180035362/35934180035362.xml
+-----------------------
+Contando Espinilleras
+El pedido ya existe. No se ha insertado ningún registro.
+XML: subidas//2024-02-23~20240223-18445/Felpudos/Felpudo_33x60/407-3170124-7601137_35936448636202/35936448636202.xml
+-----------------------
+Famlia 5
+Frase Superior Familia Feliz
+Ianire 
+Asier
+Frase superior Familia Feliz se escribio correctamente
+Felpudo creado correctamentesubidas/2024-02-23~20240223-18445/Felpudos/Felpudo_33x60/407-3170124-7601137_35936448636202/felpudo.png
+XML: subidas//2024-02-23~20240223-18445/Felpudos/Felpudo_40x70/171-0479420-1482753_35939789176122/35939789176122.xml
+-----------------------
+Mi Diseño/40 x 70
+Frase Superior 
+No se encontró el valor con el nombre especificado.
+No se encontró el valor con el nombre especificado.
+XML: subidas//2024-02-23~20240223-18445/Placas_Spotify/Placa_Spotify_BASE/406-1440591-6469947_35936211167122/35936211167122.xml
+-----------------------
+Es URL
+Comenzó el procesamiento del pedido: 406-1440591-6469947_35936211167122
+La variante es: Placa_Spotify_BASE
+Cancion: Ayer
+Artista: Anuel AA
+Duracion: 04:40
+QR: temp/QR/imagen_transparente.png
+Llaveros: 
+Tipos de placa: 
+El pedido ya existe. No se ha insertado ningún registro.
+Placa creada correctamente: subidas/2024-02-23~20240223-18445/Placas_Spotify/Placa_Spotify_BASE/406-1440591-6469947_35936211167122/placa.png
+Frase de la base: Felices 18 Nacho, Mi persona favorita
+Se escribio el texto de la madera correctamente
+XML: subidas//2024-02-23~20240223-18445/Placas_Spotify/Placa_Spotify_BASE/408-9546879-4374722_35935420785242/35935420785242.xml
+-----------------------
+Es URL
+Comenzó el procesamiento del pedido: 408-9546879-4374722_35935420785242
+La variante es: Placa_Spotify_BASE
+Cancion: Wrecking Ball
+Artista: Bruce Springsteen
+Duracion: 0
+QR: 0
+Llaveros: 
+Tipos de placa: 
+El pedido ya existe. No se ha insertado ningún registro.
+Placa creada correctamente: subidas/2024-02-23~20240223-18445/Placas_Spotify/Placa_Spotify_BASE/408-9546879-4374722_35935420785242/placa.png
+Frase de la base: Siempre juntos ante las adversidades
+Se escribio el texto de la madera correctamente
+XML: subidas//2024-02-23~20240223-18445/Tazas/Taza_Mosqueton_Negro/403-4765173-9350757_35935180613322/35935180613322.xml
+#Seleccionando el tipo de taza: 
+XML: subidas//2024-02-23~20240223-18445/Tazas/Tazas_Blanco_Padre/408-7272722-8789118_35932064522682/35932064522682.xml
+#Seleccionando el tipo de taza: 
+XML: subidas//2024-02-23~20240223-18445/Tazas/Tazas_Magica/171-5847143-8406753_35931467722802/35931467722802.xml
+#Seleccionando el tipo de taza: 
+Leyendo tazas mágicas
+XML: subidas//2024-02-23~20240223-18445/Tazas/Tazas_Magica/171-5847143-8406753_35931467722802/35931467722802.xml
+-----------------------  
+Taza Mágica 
+#615F5F
+Imagen cliente Ancho 769
+Imagen cliente Alto 770
+Imagen escala x 0.46394524170496
+Imagen escala y 0.46394524170496
+Imagen posicion x 24.362929286548
+Imagen posicion y 110.02224191059
+Rotacion: 0
+Primer escalado de Imagen
+356.77389087111
+357.23783611282
+Escalado de Imagen final
+1230.8699235053
+1232.4705345892
+posicion imagene escalado
+24.362929286548
+110.02224191059
+Posicion Escalada Imagen final
+84.05210603859
+379.57673459153
+La fuente es: Arial
+Felpudo creado correctamente subidas/2024-02-23~20240223-18445/Tazas/Tazas_Magica/171-5847143-8406753_35931467722802/_taza.png
+XML: subidas//2024-02-23~20240223-18445/Tazas/Tazas_Magica/403-0718612-8779521_35939587811002/35939587811002.xml
+#Seleccionando el tipo de taza: 
+Leyendo tazas mágicas
+XML: subidas//2024-02-23~20240223-18445/Tazas/Tazas_Magica/403-0718612-8779521_35939587811002/35939587811002.xml
+-----------------------  
+Taza Mágica 
+#615F5F
+Imagen cliente Ancho 1865
+Imagen cliente Alto 1139
+Imagen escala x 0.13836254216233
+Imagen escala y 0.13836254216233
+Imagen posicion x 121.53126323893
+Imagen posicion y 120.71480830742
+Rotacion: 0.026926082594429
+Primer escalado de Imagen
+258.04614113274
+157.59493552289
+Escalado de Imagen final
+890.25918690795
+543.70252755397
+posicion imagene escalado
+121.53126323893
+120.71480830742
+Posicion Escalada Imagen final
+419.28285817429
+416.4660886606
+La fuente es: Pacifico
+Texto del cliente: Felicidades.
+Siempre podemos reunirnos
+alrededor de una taza de cafe
+Tamaño texto
+482.50718753061
+151.70775352414
+Error al guardar la imagen: The path does not exist: /home/chat.getsingular/public_html/versiondos/fuentes/Pacifico-Regular.ttf
+XML: subidas//2024-02-23~20240223-18445/Tazas/Tazas_Magica/403-7516655-9131563_35942027950362/35942027950362.xml
+#Seleccionando el tipo de taza: 
+Leyendo tazas mágicas
+XML: subidas//2024-02-23~20240223-18445/Tazas/Tazas_Magica/403-7516655-9131563_35942027950362/35942027950362.xml
+-----------------------  
+Taza Mágica 
+#615F5F
+Imagen cliente Ancho 1233
+Imagen cliente Alto 831
+Imagen escala x 0.19564551869905
+Imagen escala y 0.19564551869905
+Imagen posicion x 133.1720098244
+Imagen posicion y 115.80341945704
+Rotacion: 0.014033385389185
+Primer escalado de Imagen
+241.23092455592
+162.58142603891
+Escalado de Imagen final
+832.24668971794
+560.90591983423
+posicion imagene escalado
+133.1720098244
+115.80341945704
+Posicion Escalada Imagen final
+459.44343389419
+399.52179712679
+La fuente es: Pacifico
+Texto del cliente: Siempre en nuestro corazón 
+Tamaño texto
+569.78503815019
+55.706709426866
+Error al guardar la imagen: The path does not exist: /home/chat.getsingular/public_html/versiondos/fuentes/Pacifico-Regular.ttf
+XML: subidas//2024-02-23~20240223-18445/Tazas/Tazas_Magica/406-9946117-4713110_35930362959522/35930362959522.xml
+#Seleccionando el tipo de taza: 
+Leyendo tazas mágicas
+XML: subidas//2024-02-23~20240223-18445/Tazas/Tazas_Magica/406-9946117-4713110_35930362959522/35930362959522.xml
+-----------------------  
+Taza Mágica 
+#043DB3
+Imagen cliente Ancho 2296
+Imagen cliente Alto 4080
+Imagen escala x 0.17421602787456
+Imagen escala y 0.17421602787456
+Imagen posicion x -5.3968157087053
+Imagen posicion y -94.368223478123
+Rotacion: 0
+Primer escalado de Imagen
+400
+710.80139372822
+Escalado de Imagen final
+1380
+2452.2648083624
+posicion imagene escalado
+-5.3968157087053
+-94.368223478123
+Posicion Escalada Imagen final
+-18.619014195033
+-325.57037099952
+La fuente es: Arial
+Felpudo creado correctamente subidas/2024-02-23~20240223-18445/Tazas/Tazas_Magica/406-9946117-4713110_35930362959522/_taza.png
+XML: subidas//2024-02-23~20240223-18445/Tazas/Tazas_Magica/407-4672815-6541940_35931510877362/35931510877362.xml
+#Seleccionando el tipo de taza: 
+Leyendo tazas mágicas
+XML: subidas//2024-02-23~20240223-18445/Tazas/Tazas_Magica/407-4672815-6541940_35931510877362/35931510877362.xml
+-----------------------  
+Taza Mágica 
+#615F5F
+Imagen cliente Ancho 1600
+Imagen cliente Alto 1204
+Imagen escala x 0.35603694932133
+Imagen escala y 0.35603694932133
+Imagen posicion x -177.78073089701
+Imagen posicion y -31
+Rotacion: 0
+Primer escalado de Imagen
+569.65911891413
+428.66848698288
+Escalado de Imagen final
+1965.3239602537
+1478.9062800909
+posicion imagene escalado
+-177.78073089701
+-31
+Posicion Escalada Imagen final
+-613.34352159468
+-106.95
+La fuente es: Arial
+Felpudo creado correctamente subidas/2024-02-23~20240223-18445/Tazas/Tazas_Magica/407-4672815-6541940_35931510877362/_taza.png
+XML: subidas//2024-02-23~20240223-18445/Tazas/Tazas_Magica/407-6757348-7135517_35936059193562/35936059193562.xml
+#Seleccionando el tipo de taza: 
+Leyendo tazas mágicas
+XML: subidas//2024-02-23~20240223-18445/Tazas/Tazas_Magica/407-6757348-7135517_35936059193562/35936059193562.xml
+-----------------------  
+Taza Mágica 
+#F36EC9
+Imagen cliente Ancho 2850
+Imagen cliente Alto 2850
+Imagen escala x 0.0548006684325
+Imagen escala y 0.0548006684325
+Imagen posicion x 117.04195231099
+Imagen posicion y 122.27076820159
+Rotacion: 359.73521432997
+Primer escalado de Imagen
+156.18190503263
+156.18190503263
+Escalado de Imagen final
+538.82757236256
+538.82757236256
+posicion imagene escalado
+117.04195231099
+122.27076820159
+Posicion Escalada Imagen final
+403.79473547293
+421.83415029547
+La fuente es: Stencil
+Texto del cliente: Ontass?
+
+Te quiero siempre!
+
+Tamaño texto
+240.18112636271
+122.80656551925
+Ancho y alto del texto
+3960.3515625
+2024.96
+Escala del texto
+0.017578671157756
+0.017578671157756
+Felpudo creado correctamente subidas/2024-02-23~20240223-18445/Tazas/Tazas_Magica/407-6757348-7135517_35936059193562/_taza.png
+XML: subidas//2024-02-23~20240223-18445/Tazas/Tazas_equipos/407-8029131-6143546_35939365864562/35939365864562.xml
+#Seleccionando el tipo de taza: 
+Leyendo tazas equipos
+XML: subidas//2024-02-23~20240223-18445/Tazas/Tazas_equipos/407-8029131-6143546_35939365864562/35939365864562.xml
+-----------------------
+Blanco
+407-8029131-6143546
+Taza Sevilla fc
+Andrés 4/03 Sevilla
+Titan One
+#000000
+Blanco
+Fuente:  Titan One
+Texto:  Andrés 4/03 Sevilla
+Texto:  #000000
+Taza creada correctamente:  subidas/2024-02-23~20240223-18445/Tazas/Tazas_equipos/407-8029131-6143546_35939365864562/407-8029131-6143546_Blanco_taza.png

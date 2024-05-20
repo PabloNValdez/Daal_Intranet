@@ -1,0 +1,185 @@
+{
+  "orderId" : "405-7602800-9115538",
+  "orderItemId" : "33173392792202",
+  "merchantId" : "AJLHPVH4199KV",
+  "marketplaceId" : "A1RKKUPIHCS9HS",
+  "asin" : "B096MDMMFY",
+  "title" : "Getsingular Felpudo Personalizado Fotos y Texto | Felpudos de Fibra de Coco con Base Antideslizante | Felpudos Originales para la Entrada de casa | Mi Diseño - 40 x 70 cm",
+  "quantity" : 1,
+  "customizationData" : {
+    "type" : "PageContainerCustomization",
+    "children" : [ {
+      "type" : "PreviewContainerCustomization",
+      "name" : "Mi Diseño/40 x 70",
+      "label" : "Diseña tu felpudo",
+      "children" : [ {
+        "type" : "FlatContainerCustomization",
+        "children" : [ {
+          "type" : "OptionCustomization",
+          "name" : "Color del felpudo",
+          "label" : "Color",
+          "optionSelection" : {
+            "name" : "Beige",
+            "label" : "Beige",
+            "additionalCost" : {
+              "amount" : 0
+            },
+            "thumbnailImage" : {
+              "imageUrl" : "https://m.media-amazon.com/images/S/gestalt-seller-images-prod-eu-west-1/A1RKKUPIHCS9HS/AJLHPVH4199KV/2e737391-8224-47cb-91de-ad62aea28b24.jpg",
+              "dimension" : {
+                "width" : 1000,
+                "height" : 1000
+              }
+            }
+          },
+          "displayValue" : "Beige"
+        }, {
+          "type" : "PlacementContainerCustomization",
+          "name" : "Imagen",
+          "label" : "Imagen 1",
+          "children" : [ {
+            "type" : "ImageCustomization",
+            "label" : "Fotografía",
+            "image" : {
+              "imageName" : "c9d9f71f-8d2e-425a-9ec7-08f906f50254.jpg",
+              "buyerFilename" : "IMG-20231022-WA0021.jpg"
+            }
+          } ],
+          "dimension" : {
+            "width" : 400,
+            "height" : 399
+          },
+          "position" : {
+            "x" : 0,
+            "y" : 1
+          },
+          "buyerPlacement" : {
+            "position" : {
+              "x" : 28.893954488255076,
+              "y" : -86
+            },
+            "dimension" : {
+              "width" : 3072,
+              "height" : 4080
+            },
+            "scale" : {
+              "scaleX" : 0.11545106558972068,
+              "scaleY" : 0.11545106558972068
+            },
+            "angleOfRotation" : 0
+          }
+        }, {
+          "type" : "ContainerCustomization",
+          "name" : "Fuente",
+          "label" : "Texto 1",
+          "children" : [ {
+            "type" : "FontCustomization",
+            "label" : "Añade texto",
+            "fontSelection" : {
+              "family" : "Stencil"
+            }
+          }, {
+            "type" : "ColorCustomization",
+            "label" : "Colores disponibles",
+            "colorSelection" : {
+              "name" : "Gris claro",
+              "value" : "#ACABAB",
+              "colorModel" : "rgb"
+            }
+          }, {
+            "type" : "ContainerCustomization",
+            "children" : [ {
+              "type" : "PlacementContainerCustomization",
+              "name" : "Texto",
+              "label" : "Entrada de texto 1",
+              "children" : [ {
+                "type" : "TextCustomization",
+                "label" : "Texto",
+                "inputValue" : "Benvinguts!\n\nLaura\nKora\nGuillem"
+              } ],
+              "dimension" : {
+                "width" : 325,
+                "height" : 176
+              },
+              "position" : {
+                "x" : 38,
+                "y" : 108
+              },
+              "buyerPlacement" : {
+                "position" : {
+                  "x" : 290.9105590231632,
+                  "y" : 115.07906216041519
+                },
+                "dimension" : {
+                  "width" : 1016.2301874999998,
+                  "height" : 1014.0016127999997
+                },
+                "scale" : {
+                  "scaleX" : 0.07086839808669629,
+                  "scaleY" : 0.07086839808669629
+                },
+                "angleOfRotation" : 0.05473662367100682
+              }
+            } ]
+          } ]
+        } ]
+      } ],
+      "baseImage" : {
+        "imageUrl" : "https://m.media-amazon.com/images/S/gestalt-seller-images-prod-eu-west-1/A1RKKUPIHCS9HS/AJLHPVH4199KV/01ab48c3-99b5-49d3-9a05-f3f5d66d342f.png",
+        "dimension" : {
+          "width" : 400,
+          "height" : 400
+        }
+      },
+      "snapshot" : {
+        "imageName" : "91f7fa7d-7409-5aa1-c9ea-a9f07e75767e.jpg",
+        "dimension" : {
+          "width" : 400,
+          "height" : 400
+        }
+      },
+      "svg" : "1ba6aef7-620b-e0fb-6301-75bf2fec8bc9.svg"
+    } ]
+  },
+  "customizationInfo" : {
+    "version3.0" : {
+      "surfaces" : [ {
+        "name" : "Diseña tu felpudo",
+        "areas" : [ {
+          "customizationType" : "Options",
+          "name" : "Color del felpudo",
+          "label" : "Color",
+          "optionValue" : "Beige",
+          "priceDelta" : {
+            "value" : 0.0
+          },
+          "optionImage" : ""
+        }, {
+          "customizationType" : "ImagePrinting",
+          "Dimensions" : {
+            "width" : 400,
+            "height" : 399
+          },
+          "Position" : {
+            "x" : 0,
+            "y" : 1
+          },
+          "name" : "Imagen",
+          "svgImage" : "1ba6aef7-620b-e0fb-6301-75bf2fec8bc9.svg"
+        }, {
+          "customizationType" : "ImagePrinting",
+          "Dimensions" : {
+            "width" : 325,
+            "height" : 176
+          },
+          "Position" : {
+            "x" : 38,
+            "y" : 108
+          },
+          "name" : "Texto",
+          "svgImage" : "1ba6aef7-620b-e0fb-6301-75bf2fec8bc9.svg"
+        } ]
+      } ]
+    }
+  }
+}

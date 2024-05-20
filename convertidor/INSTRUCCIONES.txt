@@ -1,0 +1,9 @@
+El conversor requiere de conexion a la DB para funcionar. PHP/MYSQL
+
+**Permite convertir archivos de envios de Amazon a DPD, y codigos de seguimiendo de DPD a Amazon
+
+*BASE DE DATOS: El archivo conversor.sql.gz, se debe crear una base de datos, e importar el archivo.
+
+*DATOS DE DB: En include/funciones.php se deben agregar los datos de conexion a la DB.
+
+No existen otros parametros para que funcione el conversor.
