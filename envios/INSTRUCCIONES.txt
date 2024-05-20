@@ -1,6 +1,7 @@
 El conversor requiere de conexion a la DB para funcionar. PHP/MYSQL
 
-**Este sistema permite realizar cambios en el estado de los pedidos de magento, tambien descargar pedidos y la factura con vista previa, tambien genera los datos de envio de pedidos. Por lo tanto para funcionar se requiere la conexion a la DB de una instalacion de Magento.
+**Este sistema permite realizar cambios en el estado de los pedidos de magento, tambien descargar pedidos y la factura con vista previa, 
+tambien genera los datos de envio de pedidos. Por lo tanto para funcionar se requiere la conexion a la DB de una instalacion de Magento.
 
 *BASE DE DATOS: El archivo envios.sql.gz, se debe crear una base de datos, e importar el archivo.
 

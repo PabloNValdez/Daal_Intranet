@@ -12,10 +12,10 @@ CREATE TABLE `contador` (
   `id` int NOT NULL AUTO_INCREMENT,
   `producto` varchar(255) NOT NULL,
   `variante` varchar(255) NOT NULL,
-  `pedido` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `pedido` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `fecha` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `contador` (`id`, `producto`, `variante`, `pedido`, `fecha`) VALUES
 (78,	'Espinilleras',	'Sin Sujetaespinilleras',	'402-9644922-2291519_34507032104002',	'2023-12-29'),
@@ -813,9 +813,9 @@ CREATE TABLE `productos` (
   `variante` varchar(255) DEFAULT NULL,
   `pedido` varchar(255) DEFAULT NULL,
   `url_completa` varchar(255) DEFAULT NULL,
-  `procesado` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'No',
+  `procesado` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'No',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `productos` (`id`, `archivo`, `producto`, `variante`, `pedido`, `url_completa`, `procesado`) VALUES
 (20132,	'2023-12-27~27120-47110',	'Accesorios_Perro',	'Collar_Talla_M',	'402-8967414-0231548_34487527044522',	'/2023-12-27~27120-47110/Accesorios_Perro/Collar_Talla_M/402-8967414-0231548_34487527044522/34487527044522.json',	'No'),

@@ -1,4 +1,3 @@
--- Adminer 4.7.8 MySQL dump
 
 SET NAMES utf8;
 SET time_zone = '+00:00';
@@ -11,14 +10,14 @@ DROP TABLE IF EXISTS `envios`;
 CREATE TABLE `envios` (
   `id` int NOT NULL AUTO_INCREMENT,
   `order-item-id` varchar(50) NOT NULL,
-  `nombre` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `direccion` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `nombre` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL, 
+  `direccion` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `codigopostal` varchar(50) NOT NULL,
   `ciudad` varchar(50) NOT NULL,
   `telefono` varchar(50) NOT NULL,
   `ordenItem` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `envios` (`id`, `order-item-id`, `nombre`, `direccion`, `codigopostal`, `ciudad`, `telefono`, `ordenItem`) VALUES
 (1,	'29503823932562',	'Ángela Baeza leña',	'Calle Matador de Toros Antonio José Galán n11 Casa',	'14650',	'Bujalance',	'699080862',	'404-3467548-8251564'),
@@ -2546,7 +2545,7 @@ CREATE TABLE `usuarios` (
   `correo` varchar(100) NOT NULL,
   `contraseña` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `contraseña`) VALUES
 (1,	'Matias',	'info@getsingular.com',	'$2y$10$zVsaFATunTa3uKLqe259OuWjT/tbR7WtEPnJwcQAfVHL7K0oSAlIK');
