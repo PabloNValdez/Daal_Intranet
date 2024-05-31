@@ -327,6 +327,39 @@
                     <button>Detalles</button>
                 </td>
             </tr>
+            <tr>
+                <td>405-0171206-05</td>
+                <td>2024-05-30</td>
+                <td>Nombre del comprador: Javier. Pedido personalizado</td>
+                <td><img src="path/to/image1.jpg" alt="Product Image 1"></td>
+                <td>Placa Spotify personalizada. Luz LED y sin cables</td>
+                <td>Un texto o probablemente una URL</td>
+                <td class="actions">
+                    <button>Detalles</button>
+                </td>
+            </tr>
+            <tr>
+                <td>405-0171206-05</td>
+                <td>2024-05-29</td>
+                <td>Nombre del comprador: Javier. Pedido personalizado</td>
+                <td><img src="path/to/image2.jpg" alt="Product Image 2"></td>
+                <td>Placa Spotify personalizada. Luz LED y sin cables</td>
+                <td>Un texto o probablemente una URL</td>
+                <td class="actions">
+                    <button>Detalles</button>
+                </td>
+            </tr>
+            <tr>
+                <td>405-0171206-05</td>
+                <td>2024-05-28</td>
+                <td>Nombre del comprador: Javier. Pedido personalizado</td>
+                <td><img src="path/to/image3.jpg" alt="Product Image 3"></td>
+                <td>Placa Spotify personalizada. Luz LED y sin cables</td>
+                <td>Un texto o probablemente una URL</td>
+                <td class="actions">
+                    <button>Detalles</button>
+                </td>
+            </tr>
         </tbody>
     </table>
 </body>
