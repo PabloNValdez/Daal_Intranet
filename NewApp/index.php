@@ -290,6 +290,7 @@
                 <th>Image</th>
                 <th>ProductName</th>
                 <th>CustomizedDetail</th>
+                <th><input type="checkbox" id="select-all"> Select</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -301,6 +302,7 @@
                 <td><img src="path/to/image1.jpg" alt="Product Image 1"></td>
                 <td>Placa Spotify personalizada. Luz LED y sin cables</td>
                 <td>Un texto o probablemente una URL</td>
+                <td><input type="checkbox" class="select-item"></td>
                 <td class="actions">
                     <button>Detalles</button>
                 </td>
@@ -312,6 +314,7 @@
                 <td><img src="path/to/image2.jpg" alt="Product Image 2"></td>
                 <td>Placa Spotify personalizada. Luz LED y sin cables</td>
                 <td>Un texto o probablemente una URL</td>
+                <td><input type="checkbox" class="select-item"></td>
                 <td class="actions">
                     <button>Detalles</button>
                 </td>
@@ -323,6 +326,7 @@
                 <td><img src="path/to/image3.jpg" alt="Product Image 3"></td>
                 <td>Placa Spotify personalizada. Luz LED y sin cables</td>
                 <td>Un texto o probablemente una URL</td>
+                <td><input type="checkbox" class="select-item"></td>
                 <td class="actions">
                     <button>Detalles</button>
                 </td>
@@ -334,6 +338,7 @@
                 <td><img src="path/to/image1.jpg" alt="Product Image 1"></td>
                 <td>Placa Spotify personalizada. Luz LED y sin cables</td>
                 <td>Un texto o probablemente una URL</td>
+                <td><input type="checkbox" class="select-item"></td>
                 <td class="actions">
                     <button>Detalles</button>
                 </td>
@@ -345,6 +350,7 @@
                 <td><img src="path/to/image2.jpg" alt="Product Image 2"></td>
                 <td>Placa Spotify personalizada. Luz LED y sin cables</td>
                 <td>Un texto o probablemente una URL</td>
+                <td><input type="checkbox" class="select-item"></td>
                 <td class="actions">
                     <button>Detalles</button>
                 </td>
@@ -356,14 +362,37 @@
                 <td><img src="path/to/image3.jpg" alt="Product Image 3"></td>
                 <td>Placa Spotify personalizada. Luz LED y sin cables</td>
                 <td>Un texto o probablemente una URL</td>
+                <td><input type="checkbox" class="select-item"></td>
                 <td class="actions">
                     <button>Detalles</button>
                 </td>
             </tr>
         </tbody>
     </table>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const selectAllCheckbox = document.getElementById('select-all');
+            const itemCheckboxes = document.querySelectorAll('.select-item');
+
+            selectAllCheckbox.addEventListener('change', (event) => {
+                const isChecked = event.target.checked;
+                itemCheckboxes.forEach((checkbox) => {
+                    checkbox.checked = isChecked;
+                });
+            });
+
+            itemCheckboxes.forEach((checkbox) => {
+                checkbox.addEventListener('change', () => {
+                    if (!checkbox.checked) {
+                        selectAllCheckbox.checked = false;
+                    } else if (Array.from(itemCheckboxes).every((checkbox) => checkbox.checked)) {
+                        selectAllCheckbox.checked = true;
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
-
-   
 </html>
+
