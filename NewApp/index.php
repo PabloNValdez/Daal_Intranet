@@ -186,12 +186,12 @@
         #log-textarea:focus {
             box-shadow: 0 6px 10px 0 hsla(0, 0%, 0%, 0.3);
         }
-
+        /* --------------------------------------------------------------------------------------------- */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
         }
 
         table.order-table {
@@ -221,7 +221,7 @@
             border-bottom: 1px solid #dddddd;
         }
 
-        .order-table tbody tr:nth-of-type(even) {
+        $order-table tbody tr:nth-of-type(even) {
             background-color: #f3f3f3;
         }
 
@@ -254,6 +254,28 @@
         }
 
         .order-table .actions button:hover {
+            background-color: #007f63;
+        }
+
+        #select-all {
+            margin-right: 5px;
+        }
+
+        .button-container {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .button-container button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #009879;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .button-container button:hover {
             background-color: #007f63;
         }
 
@@ -369,6 +391,9 @@
             </tr>
         </tbody>
     </table>
+    <div class="button-container">
+        <button onclick="location.href='otherfile.php'">Generar Imágenes</button>
+    </div>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
             const selectAllCheckbox = document.getElementById('select-all');
