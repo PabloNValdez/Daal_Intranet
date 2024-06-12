@@ -1,5 +1,13 @@
 <?php
-session_start();
+session_start(); // Iniciar la sesión
+
+// Mensaje de error y éxito
+$mensaje_error = isset($_SESSION['mensaje_error']) ? $_SESSION['mensaje_error'] : '';
+$mensaje_exito = isset($_SESSION['mensaje_exito']) ? $_SESSION['mensaje_exito'] : '';
+
+// Limpiar los mensajes de sesión después de mostrarlos
+unset($_SESSION['mensaje_error']);
+unset($_SESSION['mensaje_exito']);
 ?>
 
 <!DOCTYPE html>
@@ -305,31 +313,29 @@ session_start();
             </section>
         </div>
 
-        <!-- Formulario de Inicio de Sesión -->  
-        <form action="login.php" method="post">
-            <label for="correo">E-Mail:</label>
-            <input type="email" name="correo" id="correo" required>
-            
-            <label for="contraseña">Contraseña:</label>
-            <input type="password" name="contraseña" id="contraseña" required>
-            
-            <button type="submit">Iniciar Sesión</button>
-        </form>
-        
         <?php if (isset($_SESSION['usuario_id'])): ?>
-            <p>Bienvenido, <?php echo htmlspecialchars($_SESSION['usuario_nombre']); ?>!</p>
+            <p>Bienvenido, <?php echo $_SESSION['usuario_nombre']; ?>!</p>
             <p>Los 3 apartados</p>
             <a href="logout.php">Cerrar Sesión</a>
-        <?php endif; ?>
+        <?php else: ?>
+            <!-- Formulario de Inicio de Sesión -->  
+            <form action="login.php" method="post">
+                <label for="correo">E-Mail:</label>
+                <input type="email" name="correo" id="correo" required>
+                
+                <label for="contraseña">Contraseña:</label>
+                <input type="password" name="contraseña" id="contraseña" required>
+                
+                <button type="submit">Iniciar Sesión</button>
+            </form>
 
-        <?php if (isset($_SESSION['mensaje_error'])): ?>
-            <p style="color:red;"><?php echo htmlspecialchars($_SESSION['mensaje_error']); ?></p>
-            <?php unset($_SESSION['mensaje_error']); // Limpiar el mensaje de error después de mostrarlo ?>
-        <?php endif; ?>
-
-        <?php if (isset($_SESSION['mensaje_exito'])): ?>
-            <p style="color:green;"><?php echo htmlspecialchars($_SESSION['mensaje_exito']); ?></p>
-            <?php unset($_SESSION['mensaje_exito']); // Limpiar el mensaje de éxito después de mostrarlo ?>
+            <?php if ($mensaje_error): ?>
+                <p style="color: red;"><?php echo $mensaje_error; ?></p>
+            <?php endif; ?>
+            
+            <?php if ($mensaje_exito): ?>
+                <p style="color: green;"><?php echo $mensaje_exito; ?></p>
+            <?php endif; ?>
         <?php endif; ?>
     </body>
 
