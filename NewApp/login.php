@@ -28,9 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (password_verify($contraseña, $hash_contraseña)) {
             $_SESSION['usuario_id'] = $id;
             $_SESSION['usuario_nombre'] = $nombre;
-            $_SESSION['mensaje_exito'] = 'Sesión iniciada correctamente. Redirigiendo...';
+            $_SESSION['mensaje_exito'] = 'Sesión iniciada correctamente. Ir al inicio';
             echo "<script>alert('" . $_SESSION['mensaje_exito'] . "');</script>";
-            header('Refresh: 3; URL=index.php'); // Redirigir después de 3 segundos
+            header('Refresh: 1; URL=index.php'); // Redirigir después de 3 segundos
         } else {
             $_SESSION['mensaje_error'] = 'Correo o contraseña incorrectos.';
             header('Location: index.php');
