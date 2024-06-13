@@ -298,8 +298,7 @@ unset($_SESSION['mensaje_exito']);
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Iniciar Sesión</title>
-        
+        <title>Empaquetado</title>
     </head>
 
     <body>
@@ -307,42 +306,13 @@ unset($_SESSION['mensaje_exito']);
             <section class="text-center container">
                 <div class="row py-lg-5">
                     <div class="col-lg-6 col-md-8 mx-auto">
-                        <h1 class="tituloweb">New App</h1>
+                        <h1 class="tituloweb">Empaquetado</h1>
                     </div>
                 </div>
             </section>
         </div>
-
-        <?php if (isset($_SESSION['usuario_id'])): ?>
-            <p>Bienvenido, <?php echo $_SESSION['usuario_nombre']; ?>!</p>
-            <button onclick="location.href='revision.php'">Revisión</button>
-            <button onclick="location.href='produccion.php'">Producción</button>
-            <button onclick="location.href='empaquetado.php'">Empaquetado</button><br><br>
-
-            
-            <button onclick="location.href='logout.php'">Cerrar Sesión</button><br>
-
-        <?php else: ?>
-            <!-- Formulario de Inicio de Sesión -->  
-            <form action="login.php" method="post">
-                <label for="correo">E-Mail:</label>
-                <input type="email" name="correo" id="correo" required>
-                
-                <label for="contraseña">Contraseña:</label>
-                <input type="password" name="contraseña" id="contraseña" required>
-                
-                <button type="submit">Iniciar Sesión</button>
-            </form>
-
-            <?php if ($mensaje_error): ?>
-                <p style="color: red;"><?php echo $mensaje_error; ?></p>
-            <?php endif; ?>
-            
-            <?php if ($mensaje_exito): ?>
-                <p style="color: green;"><?php echo $mensaje_exito; ?></p>
-            <?php endif; ?>
-        <?php endif; ?>
+        <button onclick="location.href='index.php'">Volver al inicio</button><br><br>
+        <button onclick="location.href='logout.php'">Cerrar Sesión</button><br>
     </body>
 
 </html>
-
