@@ -293,6 +293,9 @@
                 </div>
             </div>
         </section>
+        
+        <button onclick="location.href='index.php'">Volver al inicio</button><br><br>
+        <button onclick="location.href='logout.php'">Cerrar Sesión</button><br>
 
         <h2>Seleccionar archivo (.xlsx)</h2>
             <form action="" method="post" enctype="multipart/form-data">

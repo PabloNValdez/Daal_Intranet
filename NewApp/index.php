@@ -315,6 +315,7 @@ unset($_SESSION['mensaje_exito']);
 
         <?php if (isset($_SESSION['usuario_id'])): ?>
             <p>Bienvenido, <?php echo $_SESSION['usuario_nombre']; ?>!</p>
+            <button onclick="location.href='SublimetApp.php'">Generador de imágenes</button>
             <button onclick="location.href='revision.php'">Revisión</button>
             <button onclick="location.href='produccion.php'">Producción</button>
             <button onclick="location.href='empaquetado.php'">Empaquetado</button><br><br>
