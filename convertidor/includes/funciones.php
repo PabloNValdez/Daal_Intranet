@@ -1,5 +1,4 @@
 <?php 
-// Verifica que estas credenciales sean correctas
 $servername = "localhost";
 $username = "Getsingular";
 $password = "XdKFu67LyjtFQQvM";

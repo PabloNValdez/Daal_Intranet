@@ -1,3 +1,47 @@
+<?php
+    require 'includes/funciones.php';
+    require 'vendor/autoload.php';
+
+    use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if (isset($_FILES['excelFile']) && $_FILES['excelFile']['error'] == UPLOAD_ERR_OK) {
+            $fileName = $_FILES['excelFile']['name'];
+            $fileTmpPath = $_FILES['excelFile']['tmp_name'];
+            $fileSize = $_FILES['excelFile']['size'];
+            $fileType = $_FILES['excelFile']['type'];
+            $fileNameCmps = explode(".", $fileName);
+            $fileExtension = strtolower(end($fileNameCmps));
+    
+            if ($fileExtension == 'xlsx') {
+                echo '<h3>Formato válido.</h3>';
+                $reader = new Xlsx();
+                $spreadsheet = $reader->load($fileTmpPath);
+                $sheet = $spreadsheet->getActiveSheet();
+                $data = $sheet->toArray();
+    
+                echo '<h3>Archivo Subido Correctamente</h3>';
+                echo '<table border="1">';
+                echo '<tr><th>Order Item ID</th><th>SKU</th><th>Nombre del Producto</th><th>Customidez URL</th><th>Customidez Page</th></tr>';
+                foreach ($data as $row) {
+                    echo '<tr>';
+                    echo '<td>' . (isset($row[5]) ? $row[1] : '') . '</td>'; // ID
+                    echo '<td>' . (isset($row[6]) ? $row[10] : '') . '</td>'; // SKU
+                    echo '<td>' . (isset($row[7]) ? $row[11] : '') . '</td>'; // Nombre
+                    echo '<td>' . (isset($row[8]) ? $row[24] : '') . '</td>'; // URL
+                    echo '<td>' . (isset($row[9]) ? $row[25] : '') . '</td>'; // Page
+                    echo '</tr>';
+                }
+                echo '</table>';
+            } else {
+                echo '<h3>El archivo subido no es un .xlsx válido.</h3>';
+            }
+        } else {
+            echo '<h3>Error al subir el archivo.</h3>';
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -305,53 +349,6 @@
             </form>
 
     </div>
-    
-    <?php
-    include 'funciones/funciones.php';
-    require 'vendor/autoload.php';
-
-    use PhpOffice\PhpSpreadsheet\Spreadsheet;
-    use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
-
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if (isset($_FILES['excelFile']) && $_FILES['excelFile']['error'] == UPLOAD_ERR_OK) {
-            $fileName = $_FILES['excelFile']['name'];
-            $fileTmpPath = $_FILES['excelFile']['tmp_name'];
-            $fileSize = $_FILES['excelFile']['size'];
-            $fileType = $_FILES['excelFile']['type'];
-            $fileNameCmps = explode(".", $fileName);
-            $fileExtension = strtolower(end($fileNameCmps));
-
-            if ($fileExtension == 'xlsx') {
-                echo '<h3>Formato válido.</h3>';
-                //En este bloque manejamos qué hacer cuando sube el archivo. Lo ideal sería comenzar volcando todos estos datos en una tabla?
-
-                $reader = new Xlsx();
-                $spreadsheet = $reader->load($fileTmpPath);
-                $sheet = $spreadsheet->getActiveSheet();
-                $data = $sheet->toArray();
-
-                echo '<h3>Archivo Subido Correctamente</h3>';
-                echo '<table border="1">';
-                echo '<tr><th>Order ID</th><th>Purchase Date</th><th>Buyer Name</th><th>Buyer Email</th><th>Ship Country</th></tr>';
-                foreach ($data as $row) {
-                    echo '<tr>';
-                    echo '<td>' . $row[0] . '</td>'; // order-id
-                    echo '<td>' . $row[2] . '</td>'; // purchase-date
-                    echo '<td>' . $row[10] . '</td>'; // buyer-name
-                    echo '<td>' . $row[9] . '</td>'; // buyer-email
-                    echo '<td>' . $row[26] . '</td>'; // ship-country
-                    echo '</tr>';
-                }
-                echo '</table>';
-            } else {
-                echo '<h3>El archivo subido no es un .xlsx válido.</h3>';
-            }
-        } else {
-            echo '<h3>Error al subir el archivo.</h3>';
-        }
-    }
-    ?>
 
 </body>
 
