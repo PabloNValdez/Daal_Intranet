@@ -12,20 +12,24 @@ function getUrlsFromDatabase($host, $user, $pass, $dbname) {
         die("Conexión fallida: " . $mysqli->connect_error);
     }
 
-    $result = $mysqli->query("SELECT url FROM temp_urls");
+    $result = $mysqli->query("SELECT url, order_id, order_item_id FROM temp_urls");
 
     if (!$result) {
         die("Error en la consulta: " . $mysqli->error);
     }
 
-    $urls = array();
+    $data = array();
     while ($row = $result->fetch_assoc()) {
-        $urls[] = $row['url'];
+        $data[] = array(
+            'url' => $row['url'],
+            'order_id' => $row['order_id'],
+            'order_item_id' => $row['order_item_id']
+        );
     }
 
     $mysqli->close();
 
-    return $urls;
+    return $data;
 }
 
 // Verifica si es una solicitud AJAX para obtener URLs
@@ -35,10 +39,10 @@ if (isset($_GET['action']) && $_GET['action'] == 'get_urls') {
     $pass = "XdKFu67LyjtFQQvM";
     $dbname = "conversor";
 
-    $urls = getUrlsFromDatabase($host, $user, $pass, $dbname);
+    $data = getUrlsFromDatabase($host, $user, $pass, $dbname);
 
     header('Content-Type: application/json');
-    echo json_encode($urls);
+    echo json_encode($data);
     exit;
 }
 
@@ -101,12 +105,11 @@ if (isset($_GET['url'])) {
         document.getElementById('download-btn').addEventListener('click', downloadAndUnzipFiles);
 
         async function downloadAndUnzipFiles() {
-            const urls = await getUrlsFromServer();
+            const data = await getUrlsFromServer();
             const mainZip = new JSZip();
 
-            for (const url of urls) {
-                const filename = url.split('/').pop();
-                const foldername = filename.replace('.zip', '');
+            for (const {url, order_id, order_item_id} of data) {
+                const folderName = `${order_id}_${order_item_id}`;
                 console.log(`Downloading ${url} via ?url=${encodeURIComponent(url)}`);
 
                 try {
@@ -122,7 +125,7 @@ if (isset($_GET['url'])) {
                     const zipContent = await zip.loadAsync(arrayBuffer);
 
                     // Crear la estructura de carpetas requerida
-                    const baseFolder = mainZip.folder(`${Date.now()}/Placas_Spotify/Placa_Spotify_BASE/Originales/`);
+                    const baseFolder = mainZip.folder(`${Date.now()}/Placas_Spotify/Placa_Spotify_BASE/${folderName}`);
 
                     for (const [name, file] of Object.entries(zipContent.files)) {
                         if (!file.dir) {
@@ -136,7 +139,7 @@ if (isset($_GET['url'])) {
             }
 
             mainZip.generateAsync({ type: 'blob' }).then((content) => {
-                saveAs(content, 'Placas_Spotify.zip');
+                saveAs(content, 'Archivos_Procesados.zip');
             });
         }
 
@@ -152,6 +155,8 @@ if (isset($_GET['url'])) {
     </script>
 </body>
 </html>
+
+
 
 
 

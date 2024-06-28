@@ -6,7 +6,13 @@
     //use ZipArchive;
 
     //Los SKU asociados a las placas Spotify
-    $allowed_skus = ['Placa_Luz', 'PLACA-1LLAV', 'PLACA-2LLAV', 'XG-XTS3-4OW8', 'RY-SFSN-TEZ8', 'IG-3M8S-0B0S'];
+    $allowed_skus_spotify = ['Placa_Luz', 'PLACA-1LLAV', 'PLACA-2LLAV', 'XG-XTS3-4OW8', 'RY-SFSN-TEZ8', 'IG-3M8S-0B0S'];
+    // Los SKU asociados a las botellas
+    $allowed_skus_bottle = ['040560004-500-ef-celta', '040560004-500-ef-granada', '040560004-500-ef-espanyol', '040560004-500-ef-villarreal', '040560004-500-ef-girona', 
+                            '040560004-500-ef-cadiz', '4055-botnom-350verde', '4055-botnom-750verde', '4055-bl-750-nommedio', '040560004-500-pl-fut3-', '4055-botdis-500foto',
+                            '4055-botdis-350foto', '4055-botdis-750foto', '4055-botnominicial-500Plumas', '040560004-500-ef-rsociedad', '040560004-500-ef-athletic', '040560004-500-ef-valencia',
+                            '040560004-500-ef-valencia', '040560004-500-ef-atmadrid', '040560004-500-ef', '040560004-500-ef-betis', '040560004-500-ef-barca', '040560004-500-ef-sevilla', 
+                            '040560004-500-ef-madrid', '040560004-500-plat-fut4-', '040560004-500-bl-tenis1-', '040560004-500-verde-fut4'], ;
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($_FILES['excelFile']) && $_FILES['excelFile']['error'] == UPLOAD_ERR_OK) {
@@ -16,29 +22,34 @@
             $fileType = $_FILES['excelFile']['type'];
             $fileNameCmps = explode(".", $fileName);
             $fileExtension = strtolower(end($fileNameCmps));
-    
+
             if ($fileExtension == 'xlsx') {
-                //echo '<h3>Formato válido.</h3>';
                 $reader = new Xlsx();
                 $spreadsheet = $reader->load($fileTmpPath);
                 $sheet = $spreadsheet->getActiveSheet();
                 $data = $sheet->toArray();
-    
+
                 echo '<form action="" method="post">';
-                //echo '<h3>Archivo Subido Correctamente</h3>';
                 echo '<table border="1">';
                 echo '<tr><th>Seleccionar</th><th>Order ID</th><th>Item ID</th><th>SKU</th><th>Nombre del Producto</th></tr>';
-                foreach ($data as $row) {
+                foreach ($data as $index => $row) {
                     $sku = isset($row[10]) ? $row[10] : '';
-                    if (in_array($sku, $allowed_skus)) {
+                    $productType = '';
+
+                    if (in_array($sku, $allowed_skus_spotify)) {
+                        $productType = 'Spotify';
+                    } elseif (in_array($sku, $allowed_skus_bottle)) {
+                        $productType = 'Bottle';
+                    }
+
+                    if ($productType) {
                         echo '<tr>';
                         echo '<td><input type="checkbox" name="urls[]" value="' . htmlspecialchars($row[24]) . '"></td>';
-                        echo '<td>' . (isset($row[1]) ? $row[1] : '') . '</td>'; // Order ID
-                        echo '<td>' . (isset($row[1]) ? $row[1] : '') . '</td>'; // Item ID
+                        echo '<td><input type="hidden" name="order_ids[]" value="' . (isset($row[1]) ? htmlspecialchars($row[1]) : '') . '">' . (isset($row[1]) ? $row[1] : '') . '</td>'; // Order ID
+                        echo '<td><input type="hidden" name="item_ids[]" value="' . (isset($row[1]) ? htmlspecialchars($row[1]) : '') . '">' . (isset($row[1]) ? $row[1] : '') . '</td>'; // Item ID
                         echo '<td>' . $sku . '</td>'; // SKU
                         echo '<td>' . (isset($row[11]) ? $row[11] : '') . '</td>'; // Nombre
-                        //echo '<td>' . (isset($row[24]) ? $row[24] : '') . '</td>'; // URL
-                        //echo '<td>' . (isset($row[25]) ? $row[25] : '') . '</td>'; // Page
+                        echo '<td><input type="hidden" name="product_types[]" value="' . $productType . '">' . $productType . '</td>'; // Tipo de Producto
                         if (isset($row[24])) {
                             echo '<td><a href="' . htmlspecialchars($row[24]) . '" target="_blank">Descargar</a></td>';
                         } else {
@@ -55,14 +66,20 @@
             }
         } elseif (isset($_POST['saveUrls']) && !empty($_POST['urls'])) {
             $urls = $_POST['urls'];
+            $order_ids = $_POST['order_ids'];
+            $item_ids = $_POST['item_ids'];
+            $product_types = $_POST['product_types'];
 
             // Vaciar la tabla temporal
             $conn->query("TRUNCATE TABLE temp_urls");
 
             // Insertar URLs en la tabla temporal
-            foreach ($urls as $url) {
+            foreach ($urls as $index => $url) {
                 $url = $conn->real_escape_string($url);
-                $conn->query("INSERT INTO temp_urls (url) VALUES ('$url')");
+                $orderId = $conn->real_escape_string($order_ids[$index]);
+                $itemId = $conn->real_escape_string($item_ids[$index]);
+                $productType = $conn->real_escape_string($product_types[$index]);
+                $conn->query("INSERT INTO temp_urls (order_id, order_item_id, url, product_type) VALUES ('$orderId', '$itemId', '$url', '$productType')");
             }
 
             echo '<h3>URLs guardadas correctamente en la base de datos.</h3>';
@@ -74,14 +91,15 @@
             $zip = new ZipArchive();
             $zipFileName = 'descargas.zip';
             $zipFilePath = sys_get_temp_dir() . '/' . $zipFileName;
-    
+
             if ($zip->open($zipFilePath, ZipArchive::CREATE) !== TRUE) {
                 exit("No se puede abrir el archivo ZIP");
             }
-    
+
             $result = $conn->query("SELECT url FROM temp_urls");
             while ($row = $result->fetch_assoc()) {
                 $url = $row['url'];
+                $productType = $row['product_type'];
                 $fileContents = file_get_contents($url);
                 if ($fileContents !== FALSE) {
                     $pathInfo = pathinfo($url);
@@ -89,9 +107,9 @@
                     $zip->addFromString($fileName, $fileContents);
                 }
             }
-    
+
             $zip->close();
-    
+
             header('Content-Type: application/zip');
             header('Content-disposition: attachment; filename=' . $zipFileName);
             header('Content-Length: ' . filesize($zipFilePath));
