@@ -1,157 +1,159 @@
-<?php 
-    require 'includes/funciones.php';
-    require 'vendor/autoload.php';
+<?php
+// Error reporting
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-    use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
-    //use ZipArchive;
+// Obtener URLs desde la base de datos
+function getUrlsFromDatabase($host, $user, $pass, $dbname) {
+    $mysqli = new mysqli($host, $user, $pass, $dbname);
 
-    //Los SKU asociados a las placas Spotify
-    $allowed_skus_spotify = ['Placa_Luz', 'PLACA-1LLAV', 'PLACA-2LLAV', 'XG-XTS3-4OW8', 'RY-SFSN-TEZ8', 'IG-3M8S-0B0S'];
-    // Los SKU asociados a las botellas
-    $allowed_skus_bottle = ['BOTTLE-123', 'BOTTLE-456', 'BOTTLE-789']; // Actualiza con los SKUs reales
+    if ($mysqli->connect_error) {
+        die("Conexión fallida: " . $mysqli->connect_error);
+    }
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if (isset($_FILES['excelFile']) && $_FILES['excelFile']['error'] == UPLOAD_ERR_OK) {
-            $fileName = $_FILES['excelFile']['name'];
-            $fileTmpPath = $_FILES['excelFile']['tmp_name'];
-            $fileSize = $_FILES['excelFile']['size'];
-            $fileType = $_FILES['excelFile']['type'];
-            $fileNameCmps = explode(".", $fileName);
-            $fileExtension = strtolower(end($fileNameCmps));
+    $result = $mysqli->query("SELECT url, order_id, order_item_id, product_type FROM temp_urls");
 
-            if ($fileExtension == 'xlsx') {
-                $reader = new Xlsx();
-                $spreadsheet = $reader->load($fileTmpPath);
-                $sheet = $spreadsheet->getActiveSheet();
-                $data = $sheet->toArray();
+    if (!$result) {
+        die("Error en la consulta: " . $mysqli->error);
+    }
 
-                echo '<form action="" method="post">';
-                echo '<table border="1">';
-                echo '<tr><th>Seleccionar</th><th>Order ID</th><th>Item ID</th><th>SKU</th><th>Nombre del Producto</th><th>Tipo de Producto</th></tr>';
-                foreach ($data as $index => $row) {
-                    $sku = isset($row[10]) ? $row[10] : '';
-                    $productType = '';
+    $urls = array();
+    while ($row = $result->fetch_assoc()) {
+        $urls[] = $row;
+    }
 
-                    if (in_array($sku, $allowed_skus_spotify)) {
-                        $productType = 'Spotify';
-                    } elseif (in_array($sku, $allowed_skus_bottle)) {
-                        $productType = 'Bottle';
-                    }
+    $mysqli->close();
 
-                    if ($productType) {
-                        echo '<tr>';
-                        echo '<td><input type="checkbox" name="urls[]" value="' . htmlspecialchars($row[24]) . '"></td>';
-                        echo '<td><input type="hidden" name="order_ids[]" value="' . (isset($row[1]) ? htmlspecialchars($row[1]) : '') . '">' . (isset($row[1]) ? $row[1] : '') . '</td>'; // Order ID
-                        echo '<td><input type="hidden" name="item_ids[]" value="' . (isset($row[1]) ? htmlspecialchars($row[1]) : '') . '">' . (isset($row[1]) ? $row[1] : '') . '</td>'; // Item ID
-                        echo '<td>' . $sku . '</td>'; // SKU
-                        echo '<td>' . (isset($row[11]) ? $row[11] : '') . '</td>'; // Nombre
-                        echo '<td><input type="hidden" name="product_types[]" value="' . $productType . '">' . $productType . '</td>'; // Tipo de Producto
-                        if (isset($row[24])) {
-                            echo '<td><a href="' . htmlspecialchars($row[24]) . '" target="_blank">Descargar</a></td>';
-                        } else {
-                            echo '<td>URL no disponible</td>';
-                        }
-                        echo '</tr>';
-                    }
-                }
-                echo '</table>';
-                echo '<input type="submit" name="saveUrls" value="Guardar Seleccionados">';
-                echo '</form>';
-            } else {
-                echo '<h3>El archivo subido no es un .xlsx válido.</h3>';
-            }
-        } elseif (isset($_POST['saveUrls']) && !empty($_POST['urls'])) {
-            $urls = $_POST['urls'];
-            $order_ids = $_POST['order_ids'];
-            $item_ids = $_POST['item_ids'];
-            $product_types = $_POST['product_types'];
+    return $urls;
+}
 
-            // Vaciar la tabla temporal
-            $conn->query("TRUNCATE TABLE temp_urls");
+// Verifica si es una solicitud AJAX para obtener URLs
+if (isset($_GET['action']) && $_GET['action'] == 'get_urls') {
+    $host = "localhost";
+    $user = "Getsingular";
+    $pass = "XdKFu67LyjtFQQvM";
+    $dbname = "conversor";
 
-            // Insertar URLs en la tabla temporal
-            foreach ($urls as $index => $url) {
-                $url = $conn->real_escape_string($url);
-                $orderId = $conn->real_escape_string($order_ids[$index]);
-                $itemId = $conn->real_escape_string($item_ids[$index]);
-                $productType = $conn->real_escape_string($product_types[$index]);
-                $conn->query("INSERT INTO temp_urls (order_id, order_item_id, url, product_type) VALUES ('$orderId', '$itemId', '$url', '$productType')");
-            }
+    $urls = getUrlsFromDatabase($host, $user, $pass, $dbname);
 
-            echo '<h3>URLs guardadas correctamente en la base de datos.</h3>';
-            echo '<form action="" method="post">';
-            echo '<input type="submit" name="downloadUrls" value="Descargar Todos">';
-            echo '</form>';
+    header('Content-Type: application/json');
+    echo json_encode($urls);
+    exit;
+}
 
-        } elseif (isset($_POST['downloadUrls'])) {
-            $zip = new ZipArchive();
-            $zipFileName = 'descargas.zip';
-            $zipFilePath = sys_get_temp_dir() . '/' . $zipFileName;
+// Verifica si es una solicitud al proxy
+if (isset($_GET['url'])) {
+    $url = $_GET['url'];
 
-            if ($zip->open($zipFilePath, ZipArchive::CREATE) !== TRUE) {
-                exit("No se puede abrir el archivo ZIP");
-            }
+    // Validar la URL
+    if (filter_var($url, FILTER_VALIDATE_URL) === FALSE) {
+        die('URL inválida.');
+    }
 
-            $result = $conn->query("SELECT url, product_type FROM temp_urls");
-            while ($row = $result->fetch_assoc()) {
-                $url = $row['url'];
-                $productType = $row['product_type'];
-                $fileContents = file_get_contents($url);
-                if ($fileContents !== FALSE) {
-                    $pathInfo = pathinfo($url);
-                    $fileName = $productType . '/' . $pathInfo['basename'];
-                    $zip->addFromString($fileName, $fileContents);
-                }
-            }
+    // Inicializar CURL
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+    curl_setopt($ch, CURLOPT_HEADER, true);
 
-            $zip->close();
+    // Obtener el contenido
+    $response = curl_exec($ch);
+    $error = curl_error($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $headerSize = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+    $headers = substr($response, 0, $headerSize);
+    $body = substr($response, $headerSize);
 
-            header('Content-Type: application/zip');
-            header('Content-disposition: attachment; filename=' . $zipFileName);
-            header('Content-Length: ' . filesize($zipFilePath));
-            readfile($zipFilePath);
-            unlink($zipFilePath);
-            exit();
-        } else {
-            echo '<h3>Error al subir el archivo.</h3>';
+    curl_close($ch); // Se cierra CURL
+
+    if ($httpCode != 200) {
+        http_response_code($httpCode);
+        die("Error al descargar el archivo: Código HTTP $httpCode. $error");
+    }
+
+    // Separar y reenviar los encabezados HTTP
+    foreach (explode("\r\n", $headers) as $header) {
+        if (!empty($header)) {
+            header($header);
         }
     }
+
+    echo $body;
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="utf-8">
-    <title>Sublimet APP</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargar y Descomprimir Archivos</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 </head>
-
 <body>
+    <button id="download-btn">Descargar y Descomprimir Archivos</button>
 
-    <div class="container">
-        <section class=" text-center container">
-            <div class="row py-lg-5">
-                <div class="col-lg-6 col-md-8 mx-auto">
-                    <h1 class="tituloweb">Sublimet App</h1>
-                </div>
-            </div>
-        </section>
+    <script>
+        document.getElementById('download-btn').addEventListener('click', downloadAndUnzipFiles);
 
-        <button onclick="location.href='index.php'">Volver al inicio</button><br><br>
-        <button onclick="location.href='logout.php'">Cerrar Sesión</button><br>
+        async function downloadAndUnzipFiles() {
+            const data = await getUrlsFromServer();
+            const mainZip = new JSZip();
+            const currentDate = new Date().toISOString().split('T')[0]; // Formato yyyy-mm-dd
+            const mainFolderName = `${currentDate}~AmazonSublimetApp`;
+            const mainFolder = mainZip.folder(mainFolderName);
 
-        <h2>Seleccionar archivo (.xlsx)</h2>
-        <form action="" method="post" enctype="multipart/form-data">
-            <input type="file" name="excelFile" accept=".xlsx">
-            <br><br>
-            <input type="submit" value="Subir">
-        </form>
+            for (const {url, order_id, order_item_id, product_type} of data) {
+                console.log(`Downloading ${url} via ?url=${encodeURIComponent(url)}`);
 
-    </div>
+                try {
+                    const proxyUrl = `?url=${encodeURIComponent(url)}`;
+                    const response = await fetch(proxyUrl);
+                    if (!response.ok) {
+                        throw new Error(`Error al descargar ${url}: ${response.statusText}`);
+                    }
+                    const blob = await response.blob();
+                    const arrayBuffer = await blob.arrayBuffer();
 
+                    const zip = new JSZip();
+                    const zipContent = await zip.loadAsync(arrayBuffer);
+
+                    // Crear la estructura de carpetas requerida
+                    let productFolder = mainFolder.folder(product_type);
+                    if (product_type === 'Placas_Spotify') {
+                        productFolder = productFolder.folder('Placa_Spotify_BASE');
+                    }
+                    const orderFolder = productFolder.folder(`${order_id}_${order_item_id}`);
+
+                    for (const [name, file] of Object.entries(zipContent.files)) {
+                        if (!file.dir) {
+                            const fileBlob = await file.async("blob");
+                            orderFolder.file(name, fileBlob);
+                        }
+                    }
+                } catch (error) {
+                    console.error(error);
+                }
+            }
+
+            mainZip.generateAsync({ type: 'blob' }).then((content) => {
+                saveAs(content, `${currentDate}.zip`);
+            });
+        }
+
+        async function getUrlsFromServer() {
+            const response = await fetch('?action=get_urls');
+            if (!response.ok) {
+                throw new Error('Error al obtener las URLs');
+            }
+            const urls = await response.json();
+            console.log('URLs obtenidas:', urls);
+            return urls;
+        }
+    </script>
 </body>
-
 </html>
+

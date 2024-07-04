@@ -12,7 +12,7 @@ function getUrlsFromDatabase($host, $user, $pass, $dbname) {
         die("Conexión fallida: " . $mysqli->connect_error);
     }
 
-    $result = $mysqli->query("SELECT url, order_id, order_item_id FROM temp_urls");
+    $result = $mysqli->query("SELECT url, order_id, order_item_id, product_type FROM temp_urls");
 
     if (!$result) {
         die("Error en la consulta: " . $mysqli->error);
@@ -23,7 +23,8 @@ function getUrlsFromDatabase($host, $user, $pass, $dbname) {
         $data[] = array(
             'url' => $row['url'],
             'order_id' => $row['order_id'],
-            'order_item_id' => $row['order_item_id']
+            'order_item_id' => $row['order_item_id'],
+            'product_type' => $row['product_type']
         );
     }
 
@@ -99,7 +100,7 @@ if (isset($_GET['url'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 </head>
 <body>
-    <button id="download-btn">Descargar y Descomprimir Archivos</button>
+    <button id="download-btn">Descargar Archivos</button>
 
     <script>
         document.getElementById('download-btn').addEventListener('click', downloadAndUnzipFiles);
@@ -107,9 +108,11 @@ if (isset($_GET['url'])) {
         async function downloadAndUnzipFiles() {
             const data = await getUrlsFromServer();
             const mainZip = new JSZip();
+            const currentDate = new Date().toISOString().split('T')[0]; // Formato yyyy-mm-dd
+            const mainFolderName = `${currentDate}~AmazonSublimetApp`;
+            const mainFolder = mainZip.folder(mainFolderName);
 
-            for (const {url, order_id, order_item_id} of data) {
-                const folderName = `${order_id}_${order_item_id}`;
+            for (const {url, order_id, order_item_id, product_type} of data) {
                 console.log(`Downloading ${url} via ?url=${encodeURIComponent(url)}`);
 
                 try {
@@ -125,12 +128,19 @@ if (isset($_GET['url'])) {
                     const zipContent = await zip.loadAsync(arrayBuffer);
 
                     // Crear la estructura de carpetas requerida
-                    const baseFolder = mainZip.folder(`${Date.now()}/Placas_Spotify/Placa_Spotify_BASE/${folderName}`);
+                    let productFolder = mainFolder.folder(product_type);
+                    if (product_type === 'Placas_Spotify') {
+                        productFolder = productFolder.folder('Placa_Spotify_BASE');
+                    }else if (product_type === 'Botellas') {
+                        productFolder = productFolder.folder('Botellas');
+                    }
+
+                    const orderFolder = productFolder.folder(`${order_id}_${order_item_id}`);
 
                     for (const [name, file] of Object.entries(zipContent.files)) {
                         if (!file.dir) {
                             const fileBlob = await file.async("blob");
-                            baseFolder.file(name, fileBlob);
+                            orderFolder.file(name, fileBlob);
                         }
                     }
                 } catch (error) {
@@ -139,7 +149,7 @@ if (isset($_GET['url'])) {
             }
 
             mainZip.generateAsync({ type: 'blob' }).then((content) => {
-                saveAs(content, 'Archivos_Procesados.zip');
+                saveAs(content, `${currentDate}.zip`);
             });
         }
 
@@ -155,6 +165,7 @@ if (isset($_GET['url'])) {
     </script>
 </body>
 </html>
+
 
 
 

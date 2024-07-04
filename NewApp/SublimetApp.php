@@ -73,15 +73,15 @@
                     $productType = '';
 
                     if (in_array($sku, $allowed_skus_spotify)) {
-                        $productType = 'Spotify';
+                        $productType = 'Placas_Spotify';
                     } elseif (in_array($sku, $allowed_skus_bottle)) {
-                        $productType = 'Bottle';
+                        $productType = 'Botellas';
                     }
 
                     if ($productType) {
                         echo '<tr>';
                         echo '<td><input type="checkbox" name="urls[]" value="' . htmlspecialchars($row[24]) . '"></td>';
-                        echo '<td><input type="hidden" name="order_ids[]" value="' . (isset($row[1]) ? htmlspecialchars($row[1]) : '') . '">' . (isset($row[1]) ? $row[1] : '') . '</td>'; // Order ID
+                        echo '<td><input type="hidden" name="order_ids[]" value="' . (isset($row[0]) ? htmlspecialchars($row[0]) : '') . '">' . (isset($row[0]) ? $row[0] : '') . '</td>'; // Order ID
                         echo '<td><input type="hidden" name="item_ids[]" value="' . (isset($row[1]) ? htmlspecialchars($row[1]) : '') . '">' . (isset($row[1]) ? $row[1] : '') . '</td>'; // Item ID
                         echo '<td>' . $sku . '</td>'; // SKU
                         echo '<td>' . (isset($row[11]) ? $row[11] : '') . '</td>'; // Nombre
