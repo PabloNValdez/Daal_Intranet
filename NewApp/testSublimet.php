@@ -12,7 +12,7 @@ function getUrlsFromDatabase($host, $user, $pass, $dbname) {
         die("Conexión fallida: " . $mysqli->connect_error);
     }
 
-    $result = $mysqli->query("SELECT url, order_id, order_item_id, product_type FROM temp_urls");
+    $result = $mysqli->query("SELECT url, order_id, order_item_id, product_type, sub_product_type FROM temp_urls");
 
     if (!$result) {
         die("Error en la consulta: " . $mysqli->error);
@@ -24,7 +24,8 @@ function getUrlsFromDatabase($host, $user, $pass, $dbname) {
             'url' => $row['url'],
             'order_id' => $row['order_id'],
             'order_item_id' => $row['order_item_id'],
-            'product_type' => $row['product_type']
+            'product_type' => $row['product_type'],
+            'sub_product_type' => $row['sub_product_type']
         );
     }
 
@@ -112,39 +113,49 @@ if (isset($_GET['url'])) {
             const mainFolderName = `${currentDate}~AmazonSublimetApp`;
             const mainFolder = mainZip.folder(mainFolderName);
 
-            for (const {url, order_id, order_item_id, product_type} of data) {
-                console.log(`Downloading ${url} via ?url=${encodeURIComponent(url)}`);
+            // Crear un objeto para agrupar las URLs por product_type y sub_product_type
+            const groupedData = data.reduce((acc, { url, order_id, order_item_id, product_type, sub_product_type }) => {
+                if (!acc[product_type]) acc[product_type] = {};
+                if (!acc[product_type][sub_product_type]) acc[product_type][sub_product_type] = [];
+                acc[product_type][sub_product_type].push({ url, order_id, order_item_id });
+                return acc;
+            }, {});
 
-                try {
-                    const proxyUrl = `?url=${encodeURIComponent(url)}`;
-                    const response = await fetch(proxyUrl);
-                    if (!response.ok) {
-                        throw new Error(`Error al descargar ${url}: ${response.statusText}`);
-                    }
-                    const blob = await response.blob();
-                    const arrayBuffer = await blob.arrayBuffer();
+            // Recorrer cada grupo y descargar/descomprimir archivos
+            for (const [productType, subProductTypes] of Object.entries(groupedData)) {
+                const productFolder = mainFolder.folder(productType);
 
-                    const zip = new JSZip();
-                    const zipContent = await zip.loadAsync(arrayBuffer);
+                for (const [subProductType, items] of Object.entries(subProductTypes)) {
+                    const subProductFolder = productFolder.folder(subProductType);
 
-                    // Crear la estructura de carpetas requerida
-                    let productFolder = mainFolder.folder(product_type);
-                    if (product_type === 'Placas_Spotify') {
-                        productFolder = productFolder.folder('Placa_Spotify_BASE');
-                    }else if (product_type === 'Botellas') {
-                        productFolder = productFolder.folder('Botellas');
-                    }
+                    for (const { url, order_id, order_item_id } of items) {
+                        console.log(`Downloading ${url} via ?url=${encodeURIComponent(url)}`);
 
-                    const orderFolder = productFolder.folder(`${order_id}_${order_item_id}`);
+                        try {
+                            const proxyUrl = `?url=${encodeURIComponent(url)}`;
+                            const response = await fetch(proxyUrl);
+                            if (!response.ok) {
+                                throw new Error(`Error al descargar ${url}: ${response.statusText}`);
+                            }
+                            const blob = await response.blob();
+                            const arrayBuffer = await blob.arrayBuffer();
 
-                    for (const [name, file] of Object.entries(zipContent.files)) {
-                        if (!file.dir) {
-                            const fileBlob = await file.async("blob");
-                            orderFolder.file(name, fileBlob);
+                            const zip = new JSZip();
+                            const zipContent = await zip.loadAsync(arrayBuffer);
+
+                            // Crear la carpeta para cada order_id y order_item_id
+                            const orderFolder = subProductFolder.folder(`${order_id}_${order_item_id}`);
+
+                            for (const [name, file] of Object.entries(zipContent.files)) {
+                                if (!file.dir) {
+                                    const fileBlob = await file.async("blob");
+                                    orderFolder.file(name, fileBlob);
+                                }
+                            }
+                        } catch (error) {
+                            console.error(error);
                         }
                     }
-                } catch (error) {
-                    console.error(error);
                 }
             }
 
@@ -165,6 +176,8 @@ if (isset($_GET['url'])) {
     </script>
 </body>
 </html>
+
+
 
 
 
