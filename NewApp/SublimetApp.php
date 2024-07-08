@@ -9,165 +9,304 @@
     $allowed_skus_spotify_base = ['PLACA-1LLAV', 'PLACA-2LLAV', 'XG-XTS3-4OW8', 'RY-SFSN-TEZ8', 'IG-3M8S-0B0S'];
     //Los SKU asociados a las placas Spotify Luz
     $allowed_skus_spotify_luz = ['Placa_Luz'];
-    // Los SKU asociados a las botellas
-    $allowed_skus_bottle = ['040560004-500-ef-celta', '040560004-500-ef-granada', '040560004-500-ef-espanyol', '040560004-500-ef-villarreal', '040560004-500-ef-girona', 
-                            '040560004-500-ef-cadiz', '4055-botnom-350verde', '4055-botnom-750verde', '4055-bl-750-nommedio', '040560004-500-pl-fut3-', '4055-botdis-500foto',
-                            '4055-botdis-350foto', '4055-botdis-750foto', '4055-botnominicial-500Plumas', '040560004-500-ef-rsociedad', '040560004-500-ef-athletic', '040560004-500-ef-valencia',
-                            '040560004-500-ef-valencia', '040560004-500-ef-atmadrid', '040560004-500-ef', '040560004-500-ef-betis', '040560004-500-ef-barca', '040560004-500-ef-sevilla',
-                            '040560004-500-ef-madrid' , '040560004-500-plat-fut4-', '040560004-500-bl-tenis1-', '040560004-500-verde-fut4', '040560004-500-plat-futbol1', '040560004-500-bl-fut2',
-                            '040560004-500-bl-basq2', '040560004-500-ver-basq1', '040560004-500-bl-padel1', '040560004-500-pl-padel2', '040560004-500-am-fut4', '040560004-500-bl',
-                            '040560004-500-am-padel2', '040560004-500-pl-tenis1', '040560004-500-ver-tenis1', '040560004-500-am-basq1', '040560004-500-am-fut1', '040560004-500-am-padel1', 
-                            '040560004-500-pl-basq1', '040560004-500-ver-fut1', '040560004-500-ver-fut2', '040560004-500-bl-tenis2', '040560004-500-ver-fut3', '040560004-500-am-tenis1', 
-                            '040560004-500-am-fut3', '040560004-500-bl-padel2', '040560004-500-pl-basq2', '040560004-500-bl-fut3', '040560004-500-ver-padel2', '040560004-500-bl-fut1', 
-                            '040560004-500-am-basq2', '040560004-500-ver-basq2', '040560004-500-ver-padel1', '040560004-500-am-fut2', '040560004-500-bl-basq1', '040560004-500-pl-tenis2', 
-                            '040560004-500-bl-fut4', '040560004-500-am-tenis2', '040560004-500-pl-fut2', '040560004-500-ver-tenis2', '040560004-500-pl-padel1', '4055-bi-350nommedio', 
-                            '4055-bi-750nomdebajo', '4055-bi-350nomdebajo', '4055-bi-500nommedio', '4055-bi-500nomdebajo', '4055-botcumple-500Mentalida', '4055-botcumple-750Cantinú', 
-                            '4055-botcumple-350Maravill', '4055-botcumple-350Losabe', '4055-botcumple-500Losabe', '4055-botcumple-750Maravill', '4055-botcumple-500Carr', '040560009-NomInic-EmojisRosa', 
-                            '040560009-NomInic-DinoRosa', '040560009-NomInic-UnicorRosa', '040560009-NomInic-DinoAzul', '040560009-NomInic', '040560009-NomInic-AnimRosa', '040560009-NomInic-GeomeAzul', 
-                            '040560009-NomInic-EmojisAzul', '040560009-NomInic-UnicorAzul', '040560009-NomInic-GeomeRosa', '040560009-NomInic-AnimAzul', '040560009-Nom', '040560009-Nom-SolLunaRosa', 
-                            '040560009-Nom-IndioRosa', '040560009-Nom-ZebraRosa', '040560009-Nom-ZebraAzul', '040560009-Nom-ConejitoAzul', '040560009-Nom-IndioAzul', '040560009-Nom-ArcoirisAzul', 
-                            '040560009-Nom-SolLunaAzul', '040560009-Nom-ConejitoRosa', '040560009-Nom-ArcoirisRosa', '040560009-Nom-ZorroAzul', '040560009-Nom-ZorroRosa', '4055-botcumple-350Granaño', 
-                            '4055-botcumple-750Losabes', '4055-botcumple-500Montón', '4055-botcumple-750Carro', '4055-botcumple-500Cantinúa', '4055-botcumple-500Maravilla', '4055-botcumple-350Cantinúa', 
-                            '4055-botcumple-750Montón', '4055-botcumple-500Granaño', '4055-botcumple-750Mentalidad', '4055-botcumple-350Mentalidad', '4055-botcumple-350Carro', '4055-botcumple', 
-                            '4055-botcumple-750Granaño', '4055-botcumple-350Cumple', '4055-botcumple-350Masuno', '4055-botcumple-350Montón', '4055-botcumple-750Cumplea', '4055-botcumple-500Masuno', 
-                            '4055-botcumple-750Masuno', '4055-botcumple-500Cumplea', '4055-botnominicial-350Cactus', '4055-botnominicial-500Laurel', '4055-botnominicial-500Floral', '4055-botnominicial-750Laurel', 
-                            '4055-botnominicial-500Script', '4055-botnominicial-350Script', '4055-botnominicial-350Plumas', '4055-botnominicial-750Script', '4055-botnominicial-750Cactus', '4055-botnominicial-750Plumas', 
-                            'botnominicial-500-Cactus', '4055-botnominicial-350Laurel', '4055-botnominicial-750Floral', '4055-botnominicial-350Floral', '4055-botnominicial', '4055-botnomfrases-350Siempre', 
-                            '4055-botnomfrases-500-Siempre', '4055-botnomfrases-750Lugarfavorito', '4055-botnomfrases-750Atulado', '4055-botnomfrases-750Favorita', '4055-botnomfrases-350Atulado', '4055-botnomfrases-500Atulado', 
-                            '4055-botnomfrases-350Vida', '4055-botnomfrases-350Favorita', '4055-botnomfrases-500Mejor', 'botnomfrases-350Mejor', 'botnomfrases-750Especial', 'botnomfrases-500Especial', 
-                            'botnomfrases-500Lugarfavorito', '4055-botnomfrases-350Especial', '4055-botnomfrases-500-Vida', '4055-botnomfrases-350Lugarfavorito', '4055-botnomfrases-750Vida', '4055-botnomfrases-500Favorita', 
-                            '4055-botnomfrases-750Siempre', '4055-botnomfrases-750Mejor', '4055-botnomfrases', '4055-botnombre-500plateado-purpurina', '4055-botnombre-500cobre-purpurina', '4055-botnombre-500rosa-purpurina', 
-                            '040560009-azul', '040560009-rosa', '040560009', '4055-botpadre750-mogollon', '4055-botpadre500-felicidades', '4055-botpadre350-mejorabuelo', '4055-botpadre750-gracias', '4055-botpadre750-papi',
-                            '4055-botpadre350-mogollon', '4055-botpadre350-escudo', '4055-botpadre500-todoymas', '4055-botpadre750-100', '4055-botpadre750-escrito', '4055-botpadre500-mogollon', 
-                            '4055-botpadre750-felicidades', '4055-botpadre500-100', '4055-botpadre500-encasa', '4055-botpadre350-chupetepapa', '4055-botpadre500-mejorabuelo', '4055-botpadre500-escudo', 
-                            '4055-botpadre350-encasa', '4055-botpadre350-gracias', '4055-botpadre750-todoymas', '4055-botpadre350-casapapa', '4055-botpadre350-mejorapapa', '4055-botpadre750-encasa', 
-                            '4055-botpadre500-escrito', '4055-botpadre350-rayas', '4055-botpadre', '4055-botpadre500-mejorpapa', '4055-botpadre500-chupetepapa', '4055-botpadre350-papi', '4055-botpadre750-mejorabuelo',
-                            '4055-botpadre750-chupetepapa', '4055-botpadre500-rayas', '4055-botpadre350-escrito', '4055-botpadre750-rayas', '4055-botpadre350-todoymas', '4055-botpadre750-escudo', 
-                            '4055-botpadre500-casapapa', '4055-botpadre750-casapapa', '4055-botpadre500-gracias', '4055-botpadre350-felicidades', '4055-botpadre750-mejorpapa', '4055-botpadre500-papi', 
-                            '4055-botpadre350-100', '4055-botdis-750dust', '4055-botdis-500geometric', '4055-botbdis-350geometric', '4055-botdis-750stripes', '4055-botdis-750love', '4055-botdis-750arrows',
-                            '4055-botdis-500dust', '4055-botdis-750geometric', '4055-botdis-500love', '4055-botdis-500stripes', '4055-botdis-350stripes', '4055-botdis-350love', '4055-botdis', '4055-botbl-350plateado',
-                            '4055-botnombre', '4055-botnombre-500blanco', '4055-botbl-500plateado', '4055-botnombre-500lila', '4055-botbl-500verde', '4055-botnombre-350amarillo', '4055-botnombre-750blanco',
-                            '4055-botnombre-350blanco', '4055-botnombre-500amarillo', '4055-botbl-750plateado', '4055-botnombre-750lila', '4055-botnombre-750amarillo', '4055-botnombre-350lila', 
-                            '4055-botella500verde', '4055-botella500blanca', '4055-botella750blanca', '4055-botella500lila', '4055-botella500amarillo', '4055-botella500plateado', '4055-botella750plateado',
-                            '4055-botella350verde', '4055-botella350lila', '4055-botella350amarillo', '4055-botella750verde', '4055-botella750lila', '4055-botella750amarillo', '4055-botella350plateado',
-                            '4055-botella350blanca', '4055-botella', '1303-botellaaluminio', '1303-botellaaluminio-blanca', '1303-botellaaluminio-plata'];
 
-                            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                                if (isset($_FILES['excelFile']) && $_FILES['excelFile']['error'] == UPLOAD_ERR_OK) {
-                                    $fileName = $_FILES['excelFile']['name'];
-                                    $fileTmpPath = $_FILES['excelFile']['tmp_name'];
-                                    $fileSize = $_FILES['excelFile']['size'];
-                                    $fileType = $_FILES['excelFile']['type'];
-                                    $fileNameCmps = explode(".", $fileName);
-                                    $fileExtension = strtolower(end($fileNameCmps));
+    //Los SKU asociados a las Botellas 500_Blanco
+    $allowed_skus_500_Blanco = ['4055-botella500blanca'];
+    //Los SKU asociados a las Botellas 500_Blanco_Diseno
+    $allowed_skus_500_Blanco_Diseno = ['4055-botdis-500foto', '4055-botdis-500geometric', '4055-botdis-500dust', '4055-botdis-500love','4055-botdis-500stripes',
+                                       '4055-botnominicial-500Plumas','4055-botnominicial-500Laurel','4055-botnominicial-500Floral','4055-botnominicial-500Script',
+                                       '040560009-NomInic','040560009-Nom'];
+                                       //Según se pudo averiguar, las que solo tienen nombre entran en la categoría de blancas con diseño
+
+    //Los SKU asociados a las Botellas 500_Plata_Diseno
+    $allowed_skus_500_Plata_Diseno = ['040560004-500-pl-fut3-','040560004-500-pl-fut2','040560004-500-pl-tenis1','040560004-500-pl-padel2','040560004-500-pl-basq1',
+                                       '040560004-500-pl-basq2','040560004-500-pl-tenis2','040560004-500-pl-padel1'];
+
+    //Los SKU asociados a las Botellas 500_Verde
+    $allowed_skus_500_Verde = ['4055-botella500verde'];
+    //Los SKU asociados a las Botellas 500_Verde_Diseno
+    $allowed_skus_500_Verde_Diseno = ['040560004-500-verde-fut4','040560004-500-ver-basq1','040560004-500-ver-fut1','040560004-500-ver-fut2','040560004-500-ver-fut3',
+                                      '040560004-500-ver-basq2','040560004-500-ver-padel2','040560004-500-ver-padel1','040560004-500-ver-tenis1','040560004-500-ver-tenis2'];
+
+    //Los SKU asociados a las Botellas 750_Blanco
+    $allowed_skus_750_Blanco = ['4055-botella750blanca'];
+    //Los SKU asociados a las Botellas 750_Blanco_Diseno
+    $allowed_skus_750_Blanco_Diseno = ['4055-botdis-750foto','4055-botdis-750geometric','4055-botdis-750dust','4055-botdis-750stripes','4055-botdis-750love','4055-botdis-750arrows'];
+
+    //Los SKU asociados a las Botellas 350_Blanco
+    $allowed_skus_350_Blanco = ['4055-botella350blanca'];
+    //Los SKU asociados a las Botellas 350_Blanco_Diseno
+    $allowed_skus_350_Blanco_Diseno = ['4055-botnominicial-350Cactus','4055-botnominicial-350Script','4055-botnominicial-350Plumas',
+                                       '4055-botnominicial-350Laurel','4055-botnominicial-350Floral'];
+                                       //Según se pudo averiguar, las que solo tienen nombre entran en la categoría de blancas con diseño
+
+    //Los SKU asociados a las Botellas 500_Lila
+    $allowed_skus_500_Lila = ['4055-botella500lila'];
+
+    //Los SKU asociados a las Botellas 750_Plata
+    $allowed_skus_750_Plata = ['4055-botella750plateado'];
+
+    //Los SKU asociados a las Botellas 350_Amarillo
+    $allowed_skus_350_Amarillo = ['4055-botella350amarillo'];
+
+    //Los SKU asociados a las Botellas 350_Lila
+    $allowed_skus_350_Lila = ['4055-botella350lila'];
+
+    //Los SKU asociados a las Botellas 350_Verde
+    $allowed_skus_350_Verde = ['4055-botella350verde'];
+
+    //Los SKU asociados a las Botellas 500_Amarillo
+    $allowed_skus_500_Amarillo = ['4055-botella500amarillo'];
+    //Los SKU asociados a las Botellas 500_Amarillo_Diseno
+    $allowed_skus_500_Amarillo_Diseno = ['040560004-500-am-fut4','040560004-500-am-padel2','040560004-500-am-basq1','040560004-500-am-fut1','040560004-500-am-padel1','040560004-500-am-tenis1',
+                                         '040560004-500-am-fut3','040560004-500-am-basq2','040560004-500-am-fut2','040560004-500-am-tenis2'];
+
+    //Los SKU asociados a las Botellas 500_Rosa_Purpurina
+    $allowed_skus_500_Rosa_Purpurina = ['4055-botnombre-500rosa-purpurina'];
+
+    //Los SKU asociados a las Botellas 350_Blanco_Diseno
+    $allowed_skus_350_Blanco_Diseno = ['4055-botdis-350foto','4055-botdis-350geometric','4055-botdis-350stripes','4055-botdis-350love'];
+
+    //Los SKU asociados a las Botellas 500_Plateado
+    $allowed_skus_500_Plateado = ['4055-botella500plateado'];
+
+    //Los SKU asociados a las Botellas 500_Cobre_Purpurina
+    $allowed_skus_500_Cobre_Purpurina = ['4055-botnombre-500cobre-purpurina'];
+
+    //Los SKU asociados a las Botellas 750_Lila
+    $allowed_skus_750_Lila = ['4055-botella750lila'];
+
+    //Los SKU asociados a las Botellas 750_Amarillo
+    $allowed_skus_750_Amarillo = ['4055-botella750amarillo'];
+
+    //Los SKU asociados a las Botellas 750_Verde
+    $allowed_skus_750_Verde = ['4055-botella750verde'];
+
+    //Los SKU asociados a las Botella_infantil_Rosa
+    $allowed_skus_infantil_Rosa = ['040560009-NomInic-EmojisRosa','040560009-NomInic-DinoRosa','040560009-NomInic-UnicorRosa','040560009-NomInic-AnimRosa','040560009-NomInic-GeomeRosa',
+                                   '040560009-Nom-SolLunaRosa','040560009-Nom-IndioRosa','040560009-Nom-ZebraRosa','040560009-Nom-ConejitoRosa','040560009-Nom-ArcoirisRosa','040560009-Nom-ZorroRosa'];
+
+    //Los SKU asociados a las Botella_infantil_Azul
+    $allowed_skus_infantil_Azul = ['040560009-NomInic-DinoAzul','040560009-NomInic-EmojisAzul','040560009-NomInic-UnicorAzul','040560009-NomInic-GeomeAzul','040560009-NomInic-AnimAzul',
+                                   '040560009-Nom-SolLunaAzul','040560009-Nom-IndioAzul','040560009-Nom-ZebraAzul','040560009-Nom-ConejitoAzul','040560009-Nom-ArcoirisAzul','040560009-Nom-ZorroAzul'];
+
+    //Los SKU asociados a las Botellas 500_Plata_Purpurina
+    $allowed_skus_500_Plata_Purpurina = ['4055-botnombre-500plateado-purpurina'];
+
+    //Los SKU asociados a las Botellas 350_Plata
+    $allowed_skus_350_Plata = ['4055-botella350plateado'];
+
+    //Los SKU asociados a las Botellas Agua_RCD_Espan
+    $allowed_skus_Agua_RCD_Espan = ['040560004-500-ef-espanyol'];
+
+    //Los SKU asociados a las Botellas Celta_de_Vigo._Bo
+    $allowed_skus_Celta_de_Vigo_Bo = ['040560004-500-ef-celta'];
+
+
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if (isset($_FILES['excelFile']) && $_FILES['excelFile']['error'] == UPLOAD_ERR_OK) {
+            $fileName = $_FILES['excelFile']['name'];
+            $fileTmpPath = $_FILES['excelFile']['tmp_name'];
+            $fileSize = $_FILES['excelFile']['size'];
+            $fileType = $_FILES['excelFile']['type'];
+            $fileNameCmps = explode(".", $fileName);
+            $fileExtension = strtolower(end($fileNameCmps));
                         
-                                    if ($fileExtension == 'xlsx') {
-                                        $reader = new Xlsx();
-                                        $spreadsheet = $reader->load($fileTmpPath);
-                                        $sheet = $spreadsheet->getActiveSheet();
-                                        $data = $sheet->toArray();
+            if ($fileExtension == 'xlsx') {
+                $reader = new Xlsx();
+                $spreadsheet = $reader->load($fileTmpPath);
+                $sheet = $spreadsheet->getActiveSheet();
+                $data = $sheet->toArray();
                         
-                                        echo '<form action="" method="post">';
-                                        echo '<table border="1">';
-                                        echo '<tr><th>Seleccionar</th><th>Order ID</th><th>Item ID</th><th>SKU</th><th>Nombre del Producto</th><th>Tipo de Producto</th><th>Sub Tipo de Producto</th></tr>';
-                                        foreach ($data as $index => $row) {
-                                            $sku = isset($row[10]) ? $row[10] : '';
-                                            $productType = '';
-                                            $subProductType = '';
+                echo '<form action="" method="post">';
+                echo '<table border="1">';
+                echo '<tr><th>Seleccionar</th><th>Order ID</th><th>Item ID</th><th>SKU</th><th>Nombre del Producto</th><th>Tipo de Producto</th><th>Sub Tipo de Producto</th></tr>';
+                foreach ($data as $index => $row) {
+                    $sku = isset($row[10]) ? $row[10] : '';
+                    $productType = '';
+                    $subProductType = '';
                         
-                                            if (in_array($sku, $allowed_skus_spotify_base)) {
-                                                $productType = 'Placas Spotify';
-                                                $subProductType = 'Placa_Spotify_BASE';
-                                            } elseif (in_array($sku, $allowed_skus_spotify_luz)) {
-                                                $productType = 'Placas Spotify';
-                                                $subProductType = 'Placa_Spotify_Luz';
-                                            } elseif (in_array($sku, $allowed_skus_bottle)) {
-                                                $productType = 'Bottle';
-                                            }
+                    //Se utiliza Else IF porque PHP no reconoce in_array en Switch Case
+                    if (in_array($sku, $allowed_skus_spotify_base)) {
+                        $productType = 'Placas Spotify';
+                        $subProductType = 'Placa_Spotify_BASE';
+                    } elseif (in_array($sku, $allowed_skus_spotify_luz)) {
+                        $productType = 'Placas Spotify';
+                        $subProductType = 'Placa_Spotify_Luz';
+                    } elseif (in_array($sku, $allowed_skus_500_Blanco)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_500_Blanco';
+                    } elseif (in_array($sku, $allowed_skus_500_Blanco_Diseno)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_500_Blanco_Diseno';
+                    } elseif (in_array($sku, $allowed_skus_500_Plata_Diseno)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_500_Plata_Diseno';
+                    } elseif (in_array($sku, $allowed_skus_500_Verde)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_500_Verde';
+                    } elseif (in_array($sku, $allowed_skus_500_Verde_Diseno)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_500_Verde_Diseno';
+                    } elseif (in_array($sku, $allowed_skus_750_Blanco)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_750_Blanco';
+                    } elseif (in_array($sku, $allowed_skus_750_Blanco_Diseno)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_750_Blanco_Diseno';
+                    } elseif (in_array($sku, $allowed_skus_350_Blanco)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_350_Blanco';
+                    } elseif (in_array($sku, $allowed_skus_350_Blanco_Diseno)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_350_Blanco_Diseno';
+                    } elseif (in_array($sku, $allowed_skus_500_Lila)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_500_Lila';
+                    } elseif (in_array($sku, $allowed_skus_750_Plata)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_750_Plata';
+                    } elseif (in_array($sku, $allowed_skus_350_Amarillo)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_350_Amarillo';
+                    } elseif (in_array($sku, $allowed_skus_350_Lila)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_350_Lila';
+                    } elseif (in_array($sku, $allowed_skus_350_Verde)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_350_Verde';
+                    } elseif (in_array($sku, $allowed_skus_500_Amarillo)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_500_Amarillo';
+                    } elseif (in_array($sku, $allowed_skus_500_Amarillo_Diseno)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_500_Amarillo_Diseno';
+                    } elseif (in_array($sku, $allowed_skus_500_Rosa_Purpurina)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_500_Rosa_Purpurina';
+                    } elseif (in_array($sku, $allowed_skus_350_Blanco_Diseno)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_350_Blanco_Diseno';
+                    } elseif (in_array($sku, $allowed_skus_500_Plateado)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_500_Plateado';
+                    } elseif (in_array($sku, $allowed_skus_500_Cobre_Purpurina)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_500_Cobre_Purpurina';
+                    } elseif (in_array($sku, $allowed_skus_750_Lila)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_750_Lila';
+                    } elseif (in_array($sku, $allowed_skus_750_Amarillo)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_750_Amarillo';
+                    } elseif (in_array($sku, $allowed_skus_750_Verde)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_750_Verde';
+                    } elseif (in_array($sku, $allowed_skus_infantil_Rosa)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_infantil_Rosa';
+                    } elseif (in_array($sku, $allowed_skus_infantil_Azul)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_infantil_Azul';
+                    } elseif (in_array($sku, $allowed_skus_500_Plata_Purpurina)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_500_Plata_Purpurina';
+                    } elseif (in_array($sku, $allowed_skus_350_Plata)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_350_Plata';
+                    } elseif (in_array($sku, $allowed_skus_Agua_RCD_Espan)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_RCD_Espan';
+                    } elseif (in_array($sku, $allowed_skus_Celta_de_Vigo_Bo)) {
+                        $productType = 'Botellas';
+                        $subProductType = 'Botellas_Agua_Celta_de_Vigo_Bo';
+                    }
                         
-                                            if ($productType) {
-                                                echo '<tr>';
-                                                echo '<td><input type="checkbox" name="urls[]" value="' . htmlspecialchars($row[24]) . '"></td>';
-                                                echo '<td><input type="hidden" name="order_ids[]" value="' . (isset($row[1]) ? htmlspecialchars($row[1]) : '') . '">' . (isset($row[1]) ? $row[1] : '') . '</td>'; // Order ID
-                                                echo '<td><input type="hidden" name="item_ids[]" value="' . (isset($row[1]) ? htmlspecialchars($row[1]) : '') . '">' . (isset($row[1]) ? $row[1] : '') . '</td>'; // Item ID
-                                                echo '<td>' . $sku . '</td>'; // SKU
-                                                echo '<td>' . (isset($row[11]) ? $row[11] : '') . '</td>'; // Nombre
-                                                echo '<td><input type="hidden" name="product_types[]" value="' . $productType . '">' . $productType . '</td>'; // Tipo de Producto
-                                                echo '<td><input type="hidden" name="sub_product_types[]" value="' . $subProductType . '">' . $subProductType . '</td>'; // Sub Tipo de Producto
-                                                if (isset($row[24])) {
-                                                    echo '<td><a href="' . htmlspecialchars($row[24]) . '" target="_blank">Descargar</a></td>';
-                                                } else {
-                                                    echo '<td>URL no disponible</td>';
-                                                }
-                                                echo '</tr>';
-                                            }
-                                        }
-                                        echo '</table>';
-                                        echo '<input type="submit" name="saveUrls" value="Guardar Seleccionados">';
-                                        echo '</form>';
-                                    } else {
-                                        echo '<h3>El archivo subido no es un .xlsx válido.</h3>';
+                    if ($productType) {
+                        echo '<tr>';
+                        echo '<td><input type="checkbox" name="urls[]" value="' . htmlspecialchars($row[24]) . '"></td>';
+                        echo '<td><input type="hidden" name="order_ids[]" value="' . (isset($row[1]) ? htmlspecialchars($row[1]) : '') . '">' . (isset($row[1]) ? $row[1] : '') . '</td>'; // Order ID
+                        echo '<td><input type="hidden" name="item_ids[]" value="' . (isset($row[1]) ? htmlspecialchars($row[1]) : '') . '">' . (isset($row[1]) ? $row[1] : '') . '</td>'; // Item ID
+                        echo '<td>' . $sku . '</td>'; // SKU
+                        echo '<td>' . (isset($row[11]) ? $row[11] : '') . '</td>'; // Nombre
+                        echo '<td><input type="hidden" name="product_types[]" value="' . $productType . '">' . $productType . '</td>'; // Tipo de Producto
+                        echo '<td><input type="hidden" name="sub_product_types[]" value="' . $subProductType . '">' . $subProductType . '</td>'; // Sub Tipo de Producto
+                        if (isset($row[24])) {
+                            echo '<td><a href="' . htmlspecialchars($row[24]) . '" target="_blank">Descargar</a></td>';
+                        } else {
+                            echo '<td>URL no disponible</td>';
+                        }
+                        echo '</tr>';
+                    }
+                }
+                echo '</table>';
+                echo '<input type="submit" name="saveUrls" value="Guardar Seleccionados">';
+                echo '</form>';
+            } else {
+                echo '<h3>El archivo subido no es un .xlsx válido.</h3>';
+            }
+
+        } elseif (isset($_POST['saveUrls']) && !empty($_POST['urls'])) {
+            $urls = $_POST['urls'];
+            $order_ids = $_POST['order_ids'];
+            $item_ids = $_POST['item_ids'];
+            $product_types = $_POST['product_types'];
+            $sub_product_types = $_POST['sub_product_types'];
+                        
+            // Vaciar la tabla temporal
+            $conn->query("TRUNCATE TABLE temp_urls");
+                        
+            // Insertar URLs en la tabla temporal
+            foreach ($urls as $index => $url) {
+                $url = $conn->real_escape_string($url);
+                $orderId = $conn->real_escape_string($order_ids[$index]);
+                $itemId = $conn->real_escape_string($item_ids[$index]);
+                $productType = $conn->real_escape_string($product_types[$index]);
+                $subProductType = $conn->real_escape_string($sub_product_types[$index]);
+                $conn->query("INSERT INTO temp_urls (order_id, order_item_id, url, product_type, sub_product_type) VALUES ('$orderId', '$itemId', '$url', '$productType', '$subProductType')");
                                     }
-                                } elseif (isset($_POST['saveUrls']) && !empty($_POST['urls'])) {
-                                    $urls = $_POST['urls'];
-                                    $order_ids = $_POST['order_ids'];
-                                    $item_ids = $_POST['item_ids'];
-                                    $product_types = $_POST['product_types'];
-                                    $sub_product_types = $_POST['sub_product_types'];
                         
-                                    // Vaciar la tabla temporal
-                                    $conn->query("TRUNCATE TABLE temp_urls");
+                echo '<h3>URLs guardadas correctamente en la base de datos.</h3>';
+                echo '<form action="" method="post">';
+                echo '<input type="submit" name="downloadUrls" value="Descargar Todos">';
+                echo '</form>';
                         
-                                    // Insertar URLs en la tabla temporal
-                                    foreach ($urls as $index => $url) {
-                                        $url = $conn->real_escape_string($url);
-                                        $orderId = $conn->real_escape_string($order_ids[$index]);
-                                        $itemId = $conn->real_escape_string($item_ids[$index]);
-                                        $productType = $conn->real_escape_string($product_types[$index]);
-                                        $subProductType = $conn->real_escape_string($sub_product_types[$index]);
-                                        $conn->query("INSERT INTO temp_urls (order_id, order_item_id, url, product_type, sub_product_type) VALUES ('$orderId', '$itemId', '$url', '$productType', '$subProductType')");
-                                    }
+        } elseif (isset($_POST['downloadUrls'])) {
+            $zip = new ZipArchive();
+            $zipFileName = 'descargas.zip';
+            $zipFilePath = sys_get_temp_dir() . '/' . $zipFileName;
                         
-                                    echo '<h3>URLs guardadas correctamente en la base de datos.</h3>';
-                                    echo '<form action="" method="post">';
-                                    echo '<input type="submit" name="downloadUrls" value="Descargar Todos">';
-                                    echo '</form>';
+            if ($zip->open($zipFilePath, ZipArchive::CREATE) !== TRUE) {
+                exit("No se puede abrir el archivo ZIP");
+            }
                         
-                                } elseif (isset($_POST['downloadUrls'])) {
-                                    $zip = new ZipArchive();
-                                    $zipFileName = 'descargas.zip';
-                                    $zipFilePath = sys_get_temp_dir() . '/' . $zipFileName;
+            $result = $conn->query("SELECT url, product_type, sub_product_type FROM temp_urls");
+            while ($row = $result->fetch_assoc()) {
+                $url = $row['url'];
+                $productType = $row['product_type'];
+                $subProductType = $row['sub_product_type'];
+                $fileContents = file_get_contents($url);
+                if ($fileContents !== FALSE) {
+                    $pathInfo = pathinfo($url);
+                    $fileName = $productType . '/' . $subProductType . '/' . $pathInfo['basename'];
+                    $zip->addFromString($fileName, $fileContents);
+                }
+            }
                         
-                                    if ($zip->open($zipFilePath, ZipArchive::CREATE) !== TRUE) {
-                                        exit("No se puede abrir el archivo ZIP");
-                                    }
+            $zip->close();
                         
-                                    $result = $conn->query("SELECT url, product_type, sub_product_type FROM temp_urls");
-                                    while ($row = $result->fetch_assoc()) {
-                                        $url = $row['url'];
-                                        $productType = $row['product_type'];
-                                        $subProductType = $row['sub_product_type'];
-                                        $fileContents = file_get_contents($url);
-                                        if ($fileContents !== FALSE) {
-                                            $pathInfo = pathinfo($url);
-                                            $fileName = $productType . '/' . $subProductType . '/' . $pathInfo['basename'];
-                                            $zip->addFromString($fileName, $fileContents);
-                                        }
-                                    }
-                        
-                                    $zip->close();
-                        
-                                    header('Content-Type: application/zip');
-                                    header('Content-disposition: attachment; filename=' . $zipFileName);
-                                    header('Content-Length: ' . filesize($zipFilePath));
-                                    readfile($zipFilePath);
-                                    unlink($zipFilePath);
-                                    exit();
-                                } else {
-                                    echo '<h3>Error al subir el archivo.</h3>';
-                                }
-                            }
-                        ?>
+            header('Content-Type: application/zip');
+            header('Content-disposition: attachment; filename=' . $zipFileName);
+            header('Content-Length: ' . filesize($zipFilePath));
+            readfile($zipFilePath);
+            unlink($zipFilePath);
+            exit();
+        } else {
+            echo '<h3>Error al subir el archivo.</h3>';
+        }
+    }
+?>
 
 
 <!DOCTYPE html>
