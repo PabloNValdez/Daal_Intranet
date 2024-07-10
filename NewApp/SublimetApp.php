@@ -124,7 +124,7 @@
                                    'fel-flia3-mascota-33x60','flpd-fliapareja-perrogat-33x60','flpd-flia5-33x60','flpd-flia3-33x60','flpd-flia3-perrogato-33x60','flpd-flia4-33x60',
                                    'flpd-flia4-perrogato-33x60','flpd-nombre-midiseno-33x60','flpd-nombre-love-33x60','flpd-nombre-fuerza-33x60','flpd-nombre-hogar-33x60'];
     //Los SKU asociados a los Felpudo_40x70
-    $allowed_skus_Felpudo_40x70 = ['Felp_Pedro40x70','flpd-nombre-bienv-40x70','fel-flia3-2mascota-40x70-','fel-flia6-40x70','fel-soltero-hijo-40x70',
+    $allowed_skus_Felpudo_40x70 = ['Felp_Pedro40x70','flpd-nombre-bienv-40x70','fel-flia3-2mascota-40x70-','fel-flia6-40x70','fel-soltero-hijo-40x70','fel-pareja-mascota-40x70-',
                                    'fel-soltero-mascota-40x70','fel-flia5-mascota-40x70','fel-flia3-mascota-40x70','fel-flia4-mascota-40x70','fel-fliapareja-40x70',
                                    'fel-pareja-2mascota-40x70','fel-flia3-40x70','fel-pareja-3mascota-40x70','fel-flia4-2mascota-40x70','fel-flia4-40x70','fel-flia5-40x70',
                                    'flpd-fliapareja-perrogat-40x70','flpd-flia5-40x70','flpd-flia3-40x70','flpd-fliapareja-40x70','flpd-flia4-40x70','flpd-flia4-perrogato-40x70',
@@ -139,7 +139,7 @@
     //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-    $allowed_skus_Otros_Productos = ['fel-pareja-mascota-40x70-'];
+    $allowed_skus_Otros_Productos = [];
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($_FILES['excelFile']) && $_FILES['excelFile']['error'] == UPLOAD_ERR_OK) {
@@ -267,7 +267,7 @@
                         $subProductType = 'Felpudo_60x100';
                     } elseif (in_array($sku, $allowed_skus_Otros_Productos)) {
                         $productType = 'Otros_Productos';
-                        $subProductType = 'Getsingular_Felpudos_Pers';
+                        $subProductType = 'Otros_Productos';
                     }
 
                     
