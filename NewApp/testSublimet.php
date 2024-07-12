@@ -146,10 +146,14 @@ if (isset($_GET['url'])) {
                             // Crear la carpeta para cada order_id y order_item_id
                             const orderFolder = subProductFolder.folder(`${order_id}_${order_item_id}`);
 
+                            let imageCounter = 0;
+
                             for (const [name, file] of Object.entries(zipContent.files)) {
                                 if (!file.dir) {
                                     const fileBlob = await file.async("blob");
-                                    orderFolder.file(name, fileBlob);
+                                    const renamedFileName = await renameFileBasedOnResolution(fileBlob, name, order_id, imageCounter);
+                                    orderFolder.file(renamedFileName, fileBlob);
+                                    if (renamedFileName.includes('-vp')) imageCounter++;
                                 }
                             }
                         } catch (error) {
@@ -173,9 +177,35 @@ if (isset($_GET['url'])) {
             console.log('URLs obtenidas:', urls);
             return urls;
         }
+
+        async function renameFileBasedOnResolution(blob, filename, order_id, counter) {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.onload = () => {
+                    if (img.width === 400 && img.height === 400) {
+                        resolve(renameFile(order_id, counter));
+                    } else {
+                        resolve(filename);
+                    }
+                };
+                img.onerror = () => {
+                    console.warn(`Error al cargar la imagen ${filename}, se usará el nombre original`);
+                    resolve(filename); // Mantener el nombre original si hay un error
+                };
+                img.src = URL.createObjectURL(blob);
+            });
+        }
+
+        function renameFile(order_id, counter) {
+            return `${order_id}-vp${counter}.jpg`;
+        }
     </script>
 </body>
 </html>
+
+
+
+
 
 
 
