@@ -45,17 +45,17 @@
                                        '040560004-500-ef-betis','040560004-500-ef-sevilla','040560004-500-ef-madrid','040560004-500-bl-tenis1-','040560004-500-bl-fut2',
                                        '040560004-500-bl-basq2','040560004-500-bl-padel1','040560004-500-bl-padel2','040560004-500-bl-fut4'];                                
     //Los SKU asociados a las Botellas 750_Blanco
-    $allowed_skus_750_Blanco = ['4055-botella750blanca', '4055-bl-750-nommedio','4055-botdis-750foto','4055-bi-750nomdebajo','4055-botnominicial-750-Cactus','4055-botnominicial-750Laurel',
-                                '4055-botnominicial-750Script','4055-botnominicial-750Cactus','4055-botnominicial-750Plumas','4055-botnominicial-750Floral','4055-botnombre-750blanco',
+    $allowed_skus_750_Blanco = ['4055-botella750blanca', '4055-bl-750-nommedio','4055-botdis-750foto','4055-bi-750nomdebajo','4055-botnombre-750blanco',
                                 '4055-botnomfrases-750Mejor','4055-botnomfrases-750Siempre','4055-botnomfrases-750Vida','botnomfrases-750Especial','4055-botnomfrases-750Lugarfavorito',
                                 '4055-botnomfrases-750Atulado','4055-botnomfrases-750Favorita'];
     //Los SKU asociados a las Botellas 750_Blanco_Diseno
-    $allowed_skus_750_Blanco_Diseno = ['4055-botdis-750geometric','4055-botdis-750dust','4055-botdis-750stripes','4055-botdis-750love','4055-botdis-750arrows'];
+    $allowed_skus_750_Blanco_Diseno = ['4055-botdis-750geometric','4055-botdis-750dust','4055-botdis-750stripes','4055-botdis-750love','4055-botdis-750arrows','4055-botnominicial-750-Cactus','4055-botnominicial-750Laurel',
+                                '4055-botnominicial-750Script','4055-botnominicial-750Cactus','4055-botnominicial-750Plumas','4055-botnominicial-750Floral'];
     
 
 
     //Los SKU asociados a las Botellas 350_Plata
-    $allowed_skus_350_Plata = ['4055-botella350plateado'];                   
+    $allowed_skus_350_Plata = ['4055-botella350plateado', '4055-botbl-350plateado'];                   
     //Los SKU asociados a las Botellas 500_Plateado
     $allowed_skus_500_Plata = ['4055-botella500plateado', '4055-botbl-500plateado','4055-botnombre-500plateado'];
     //Los SKU asociados a las Botellas 500_Plata_Diseno
