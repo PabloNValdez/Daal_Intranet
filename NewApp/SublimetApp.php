@@ -137,7 +137,149 @@
                                     'flpd-nombre-hogar-60x100','flpd-nombre-love-60x100','flpd-nombre-iniciales-60x100','flpd-nombre-fuerza-60x100','flpd-nombre-bienvenidos-60x100'];
 
     //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    $allowed_skus_Tazas_Magica = ['2153','2153-papa','2153-papa-todo','2153-padre-encasa','2153-papa-mejor','2153-padre-chupetepapa','2153-papa-mundo','2153-papa-gracias',
+                                  '2153-padre-mejorpapa','2153-padre-felicidades','2153-padre-100%','2153-padre-casapapa','2153-padre-escrito','2153-padre-mejorabuelo',
+                                  '2153-padre-mogollon','2153-dia-madre-escrito','2153-dia-madre-flores','2153-dia-madre-mandona','2153-dia-madre-orfanato','2153-dia-madre-mama-caña',
+                                  '2153-dia-madre-gracias','2153-dia-madre-felicidades','2153-dia-madre-mejormama','2153-dia-madre-casamama','2153-dia-madre-encasa','2153-dia-madre-chupetemama',
+                                  '2153-dia-madre-mami','2153-dia-madre-mama-mejor','2153-dia-madre-coñazo-foto','2153-dia-madre-mejorabuela','2153-dia-madre','2153-dia-madre-100%',
+                                  '2153-dia-madre-siempre-juntas','2153-dia-madre-mejormadre','2153-dia-madre-escudo','2153-dia-madre-coñazo-diseño','2153-dia-madre-mama-increible',
+                                  '2153-tq-fotorosa','2153-poll', '2153-tq-sisi', '2153-polaroid-vida', '2153-infinito', '2153-love', '2153-marco-cor', '2153-tq-fotorojo', 
+                                  '2153-mejor-negro', '2153-amorgana', '2153-lgtbi-cor', '2153-lgtbi-band', '2153-tq-fotoazul', '2153-likesinst', '2153-mejor-blanco', 
+                                  '2153-tq-fotogris', '2153-cupidos', '2153-mejor-azul', '2153-tq-nombres', '2153-amorfam', '2153-mejor-rosa', '2153-lgtbi-love-air', 
+                                  '2153-infinito-rosa'];
+    $allowed_skus_Jarra_Cerveza = ['044500001-midis-'];
+    
+    
+    
+    /* '679-azul-claro','936-nombre-nomdebajo','936-nombre-nommedio','936-nombre','679tazags-azul-claro','936-madre-mejormadre2','936-madre-orfanato',
+,'Taza_Diadelamadre_PC2'
+    'Taza_Diadelamadre_PC','Taza_Diadelamadre_PC1','1293-blanco','049040012-rosa','049040012-amarillo','049040012-negro','049040012-azul'
+    '049040012','679-pride-agender','679-pride-banderapride-foto'
+    '679-pride-pansexual-foto'
+    '679-pride-nobinario'
+    '679-pride-nobinario-foto'
+    '679-pride-bearflag'
+    '679-pride-bisexual'
+    '679-pride-lesbiana'
+    '679-pride-transgenero-foto'
+    '679-pride-bandera-foto'
+    '679-pride-lesbiana-foto'
+    '679-pride-bearflag-foto'
+    '679-pride-bisexual-foto'
+    '679-pride-transgenero'
+    '679-pride-asexual-foto'
+    '679-pride-asexual'
+    '679-pride-intersexual'
+    '679-pride-agender-foto'
+    '679-pride-nuevabanderapride'
+    '679-pride-intersexual-foto'
+    '679-pride-pansexual'
+    '2146-lgtbq-arcoiris'
+    '2146-lgtbq-cor'
+    '2146-lgtbq-tequiero'
+    '2146-lgtbq-amorbueno'
+    '2146-lgtbq-love'
+    '2146-lgtbq-amorgana'
+    '2146-lgtbq-corbandera'
+    '2146-lgtbq-milcorazones'
+    '2146-lgtbq-disenos'
+    '2146-lgtbq-nombrebandera'
+    '2146-lgtbq-lovesair'
+    '679-pride-verde'
+    '679-pride-bandera'
+    '679-pride'
+    '679-pride-amarillo'
+    '679-pride-lila'
+    '679-pride-naranja'
+    '679-pride-azul'
+    '679-pride-rojo'
+    '936-getmama-increible'
+    '936-getsiempre-juntas'
+    '936-getmama-caña'
+    '936-getmama-mejor'
+    '936-madre-flores'
+    '936-madre-mejorabuela'
+    '936-madre-casamama'
+    '936-madre-100%'
+    '936-madre-mejormadre'
+    '936-madre-chupete'
+    '936-madre-escrito'
+    '936-madre-felicidades'
+    '936-madre-mandona'
+    '936-allmama'
 
+    '679-blanco'
+    '75-LUQS-8DWY'
+    '36-2UO2-N6XT'
+    '679-49040004-plata'
+     '565tazaplastico', '565tazaplastico-solluna'
+    '565tazaplastico-indio'
+    '565tazaplastico-clasezorro'
+    '565tazaplastico-arcoiris'
+    '565tazaplastico-conejito'
+    '565tazaplastico-clasezebra'
+    '936-abuela-scrapbook'
+    '936-abuelos-escudo'
+    '936-abuela-escudo'
+    '936-abuelo-marco'
+    '936-abuelo-scrapbook'
+    '936-abuelo'
+    '936-abuelo-mejorabuelo'
+    '936-abuela-aro'
+    '936-abuelo-mejorabuela'
+    '936-abuelo-aro'
+    '936-padre-mogollon'
+    '936-padre-todomas'
+    '936-padre-encasa'
+    '936-padre-chupetepapa'
+    '936-padre-mejorabuelo'
+    '936-padre-mejorpapa'
+    '936-padre-casapapa'
+    '936-padre-gracias'
+    '936-padre-rayas'
+    '936-padre-papi'
+    '936-padre-felicidades'
+    '936-padre-escudo'
+    '936-padre-escrito'
+    '936-padre-100%'
+    '679tazaasacorazon', '936-mejor-rosa', '936-tq-nombres', '936-poll', '936-marco-cor', 
+    '936-infinitoro-rosa', '936-tq-fotorojo', '936-lgtbi-cor', '936-love-love', '936-amorfam', 
+    '936-mejorazul', '936-mejor-blanco', '936-tq-sisi', '936-mejor-negro', '936-likesinst', 
+    '936-amorsiempre', '936-infinito'
+    '936-cupido', '936-sanval', '936-lgtb-band', '936-tq-fotorosa', '936-lgtbi-love-air', '936-polaroid-vida', 
+    '936-tq-fotogris', '936-tq-fotoazul', '679tazacolget-verdeoscuro', '679tazacolget-azuloscuro', '679tazacolget-rojo', 
+    '679tazacolget-granate', '679tazacolget-verde', '679tazacolget-azul', '679tazacolget-negro', '679tazacolget', '679tazacolget-naranja', 
+    '679tazacolget-rosa', '679tazacolget-amarillo', '2146get', '656-multicolor-3', '656-old school-3', '656-foxies-3', 
+    '656-tropical-lover-3', '656-cactus-3'
+    '656-abejas-3'
+    '656-cat-lover-3'
+    '936-foto-coñazo'
+    '936-mama-escudo'
+    '936-diseño-coñazo'
+    '679-amarillo'
+    '679-azuloscuro'
+    '679-verdeoscuro'
+    '679-rosa'
+    '656-bipolar'
+    '656-bipolar blanco'
+    '656-color-verte'
+    '656-trucho'
+    '656-princesas-cuento'
+    '656-miau-miau'
+    '656-sonrie-confunde'
+    '656-tiempo'
+    '656-shh-youtube'
+    '656-shh-netflix'
+    '656-eheh'
+    '656-maldia'
+    '656-dia-importe'
+    'tazas-frases (variante)'
+    '679-verde-1'
+    '679-azul-1'
+    '679-rojo-1'
+    '679-$P-1 (variante)'
+    '2146'
+*/
 
     $allowed_skus_Otros_Productos = [];
 
