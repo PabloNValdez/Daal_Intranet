@@ -139,9 +139,7 @@
     //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     $allowed_skus_Tazas_Magica = ['2153','2156-foto', '2153-dia-madre-mejorabuela',
     
-                                '2153-papa','2153-papa-todo','2153-padre-encasa','2153-papa-mejor','2153-padre-chupetepapa','2153-papa-mundo','2153-papa-gracias',
-                                '2153-padre-mejorpapa','2153-padre-felicidades','2153-padre-100%','2153-padre-casapapa','2153-padre-escrito','2153-padre-mejorabuelo',
-                                '2153-padre-mogollon','2153-dia-madre-escrito','2153-dia-madre-flores','2153-dia-madre-mandona','2153-dia-madre-orfanato','2153-dia-madre-mama-caña',
+                                '2153-dia-madre-escrito','2153-dia-madre-flores','2153-dia-madre-mandona','2153-dia-madre-orfanato','2153-dia-madre-mama-caña',
                                 
                                 
                                 
@@ -156,11 +154,14 @@
                                         '2153-dia-madre-mami','2153-dia-madre-mama-mejor','2153-dia-madre-coñazo-foto','2153-dia-madre','2153-dia-madre-100%',
                                         '2153-dia-madre-siempre-juntas','2153-dia-madre-mejormadre','2153-dia-madre-escudo','2153-dia-madre-coñazo-diseño','2153-dia-madre-mama-increible',];
 
-    $allowed_skus_Tazas_Magica_Padre = ['044500001-midis-'];
+    $allowed_skus_Tazas_Magica_Padre = ['044500001-midis-','2153-papa','2153-papa-todo','2153-padre-encasa','2153-papa-mejor','2153-padre-chupetepapa','2153-papa-mundo','2153-papa-gracias',
+                                        '2153-padre-mejorpapa','2153-padre-felicidades','2153-padre-100%','2153-padre-casapapa','2153-padre-escrito','2153-padre-mejorabuelo',
+                                        '2153-padre-mogollon'];
 
     $allowed_skus_Jarra_Cerveza = ['044500001-midis-'];
 
-    $allowed_skus_Tazas_equipos = ['679-equipos-athletic', '679-equipos-madrid', '679-equip-girona', '679-equipos-atmadrid', ''];
+    $allowed_skus_Tazas_equipos = ['679-equipos-athletic', '679-equipos-madrid', '679-equip-girona', '679-equipos-atmadrid', '679-equipos-rsociedad', '679-equipos-barca', '679-equipos-betis',
+                                   '679-equipos-sevilla', '679-equip-valencia', '679-equip-celta', '679-equip-granada', '679-equip-villareal', '679-equip-cadiz', '679-equip-espanyol','679-equipos'];
 
     $allowed_skus_Taza_Mosqueton_Rojo = ['1511-rojo-1'];
     $allowed_skus_Taza_Mosqueton_Negro = [''];
