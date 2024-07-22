@@ -137,7 +137,7 @@
                                     'flpd-nombre-hogar-60x100','flpd-nombre-love-60x100','flpd-nombre-iniciales-60x100','flpd-nombre-fuerza-60x100','flpd-nombre-bienvenidos-60x100'];
 
     //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    $allowed_skus_Tazas_Magica = ['2153','2156-foto', '2153-dia-madre-mejorabuela'
+    $allowed_skus_Tazas_Magica = ['2153','2156-foto', '2153-dia-madre-mejorabuela',
     
                                 '2153-papa','2153-papa-todo','2153-padre-encasa','2153-papa-mejor','2153-padre-chupetepapa','2153-papa-mundo','2153-papa-gracias',
                                 '2153-padre-mejorpapa','2153-padre-felicidades','2153-padre-100%','2153-padre-casapapa','2153-padre-escrito','2153-padre-mejorabuelo',
