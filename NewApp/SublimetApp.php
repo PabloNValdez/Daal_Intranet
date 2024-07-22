@@ -137,17 +137,62 @@
                                     'flpd-nombre-hogar-60x100','flpd-nombre-love-60x100','flpd-nombre-iniciales-60x100','flpd-nombre-fuerza-60x100','flpd-nombre-bienvenidos-60x100'];
 
     //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    $allowed_skus_Tazas_Magica = ['2153','2153-papa','2153-papa-todo','2153-padre-encasa','2153-papa-mejor','2153-padre-chupetepapa','2153-papa-mundo','2153-papa-gracias',
-                                  '2153-padre-mejorpapa','2153-padre-felicidades','2153-padre-100%','2153-padre-casapapa','2153-padre-escrito','2153-padre-mejorabuelo',
-                                  '2153-padre-mogollon','2153-dia-madre-escrito','2153-dia-madre-flores','2153-dia-madre-mandona','2153-dia-madre-orfanato','2153-dia-madre-mama-caña',
-                                  '2153-dia-madre-gracias','2153-dia-madre-felicidades','2153-dia-madre-mejormama','2153-dia-madre-casamama','2153-dia-madre-encasa','2153-dia-madre-chupetemama',
-                                  '2153-dia-madre-mami','2153-dia-madre-mama-mejor','2153-dia-madre-coñazo-foto','2153-dia-madre-mejorabuela','2153-dia-madre','2153-dia-madre-100%',
-                                  '2153-dia-madre-siempre-juntas','2153-dia-madre-mejormadre','2153-dia-madre-escudo','2153-dia-madre-coñazo-diseño','2153-dia-madre-mama-increible',
-                                  '2153-tq-fotorosa','2153-poll', '2153-tq-sisi', '2153-polaroid-vida', '2153-infinito', '2153-love', '2153-marco-cor', '2153-tq-fotorojo', 
-                                  '2153-mejor-negro', '2153-amorgana', '2153-lgtbi-cor', '2153-lgtbi-band', '2153-tq-fotoazul', '2153-likesinst', '2153-mejor-blanco', 
-                                  '2153-tq-fotogris', '2153-cupidos', '2153-mejor-azul', '2153-tq-nombres', '2153-amorfam', '2153-mejor-rosa', '2153-lgtbi-love-air', 
-                                  '2153-infinito-rosa'];
+    $allowed_skus_Tazas_Magica = ['2153','2156-foto', '2153-dia-madre-mejorabuela'
+    
+                                '2153-papa','2153-papa-todo','2153-padre-encasa','2153-papa-mejor','2153-padre-chupetepapa','2153-papa-mundo','2153-papa-gracias',
+                                '2153-padre-mejorpapa','2153-padre-felicidades','2153-padre-100%','2153-padre-casapapa','2153-padre-escrito','2153-padre-mejorabuelo',
+                                '2153-padre-mogollon','2153-dia-madre-escrito','2153-dia-madre-flores','2153-dia-madre-mandona','2153-dia-madre-orfanato','2153-dia-madre-mama-caña',
+                                
+                                
+                                
+                                '2153-tq-fotorosa','2153-poll', '2153-tq-sisi', '2153-polaroid-vida', '2153-infinito', '2153-love', '2153-marco-cor', '2153-tq-fotorojo', 
+                                '2153-mejor-negro', '2153-amorgana', '2153-lgtbi-cor', '2153-lgtbi-band', '2153-tq-fotoazul', '2153-likesinst', '2153-mejor-blanco', 
+                                '2153-tq-fotogris', '2153-cupidos', '2153-mejor-azul', '2153-tq-nombres', '2153-amorfam', '2153-mejor-rosa', '2153-lgtbi-love-air', 
+                                '2153-infinito-rosa'];
+
+    $allowed_skus_Tazas_Magica_Madre = ['2153-dia-madre-gracias','2153-dia-madre-felicidades','2153-dia-madre-mejormama','2153-dia-madre-casamama','2153-dia-madre-encasa','2153-dia-madre-chupetemama',
+            '2153-dia-madre-mami','2153-dia-madre-mama-mejor','2153-dia-madre-coñazo-foto','2153-dia-madre','2153-dia-madre-100%',
+            '2153-dia-madre-siempre-juntas','2153-dia-madre-mejormadre','2153-dia-madre-escudo','2153-dia-madre-coñazo-diseño','2153-dia-madre-mama-increible',];
+
+
     $allowed_skus_Jarra_Cerveza = ['044500001-midis-'];
+
+    $allowed_skus_Tazas_equipos = ['679-equipos-athletic', '679-equipos-madrid', '679-equip-girona', '679-equipos-atmadrid', ''];
+
+    $allowed_skus_Taza_Mosqueton_Rojo = ['1511-rojo-1'];
+    $allowed_skus_Taza_Mosqueton_Negro = [''];
+
+    $allowed_skus_Taza_Tazas_Blancas = [''];
+    $allowed_skus_Taza_Tazas_Blanco = [''];
+    $allowed_skus_Tazas_Blanca_Pride = ['']; 
+    $allowed_skus_Tazas_Blanco_Madre = [''];
+
+    $allowed_skus_Taza_Tazas_Granate = [''];
+
+    $allowed_skus_Taza_Taza_Verde_Claro = [''];
+    $allowed_skus_Taza_Tazas_Verde_Oscuro = [''];
+
+    $allowed_skus_Taza_Tazas_Negro = ['679-negro-1'];
+
+    $allowed_skus_Tazas_Azul_Celeste = ['']; 
+    $allowed_skus_Getsingular_Taza_Azul_Oscuro = [''];  
+
+    $allowed_skus_Getsingular_Taza_Granada_ = [''];
+    $allowed_skus_Getsingular_Taza_Girona_F = [''];
+
+    $allowed_skus_Taza_Rosa = ['']; 
+
+    $allowed_skus_Taza_Naranja = [''];
+
+    $allowed_skus_Taza_Amarillo = [''];
+
+    $allowed_skus_Taza_Iniciales_Middle = ['']; 
+
+    $allowed_skus_Tazas_Pendiente_Clasificar = [''];
+
+    $allowed_skus_Tazas_Plastico_Infantil = [''];
+
+
     
     
     
