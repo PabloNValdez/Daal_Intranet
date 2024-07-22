@@ -150,10 +150,13 @@
                                 '2153-tq-fotogris', '2153-cupidos', '2153-mejor-azul', '2153-tq-nombres', '2153-amorfam', '2153-mejor-rosa', '2153-lgtbi-love-air', 
                                 '2153-infinito-rosa'];
 
-    $allowed_skus_Tazas_Magica_Madre = ['2153-dia-madre-gracias','2153-dia-madre-felicidades','2153-dia-madre-mejormama','2153-dia-madre-casamama','2153-dia-madre-encasa','2153-dia-madre-chupetemama',
-            '2153-dia-madre-mami','2153-dia-madre-mama-mejor','2153-dia-madre-coñazo-foto','2153-dia-madre','2153-dia-madre-100%',
-            '2153-dia-madre-siempre-juntas','2153-dia-madre-mejormadre','2153-dia-madre-escudo','2153-dia-madre-coñazo-diseño','2153-dia-madre-mama-increible',];
+    $allowed_skus_Tazas_Magica_San_Valentin = [''];
 
+    $allowed_skus_Tazas_Magica_Madre = ['2153-dia-madre-gracias','2153-dia-madre-felicidades','2153-dia-madre-mejormama','2153-dia-madre-casamama','2153-dia-madre-encasa','2153-dia-madre-chupetemama',
+                                        '2153-dia-madre-mami','2153-dia-madre-mama-mejor','2153-dia-madre-coñazo-foto','2153-dia-madre','2153-dia-madre-100%',
+                                        '2153-dia-madre-siempre-juntas','2153-dia-madre-mejormadre','2153-dia-madre-escudo','2153-dia-madre-coñazo-diseño','2153-dia-madre-mama-increible',];
+
+    $allowed_skus_Tazas_Magica_Padre = ['044500001-midis-'];
 
     $allowed_skus_Jarra_Cerveza = ['044500001-midis-'];
 
@@ -162,37 +165,44 @@
     $allowed_skus_Taza_Mosqueton_Rojo = ['1511-rojo-1'];
     $allowed_skus_Taza_Mosqueton_Negro = [''];
 
-    $allowed_skus_Taza_Tazas_Blancas = [''];
-    $allowed_skus_Taza_Tazas_Blanco = [''];
-    $allowed_skus_Tazas_Blanca_Pride = ['']; 
-    $allowed_skus_Tazas_Blanco_Madre = [''];
+    $allowed_skus_Tazas_Blanco = [''];
+    $allowed_skus_Tazas_Blanco_Pride = ['']; 
+    $allowed_skus_Tazas_Blanco_Madre = ['']; 
+    $allowed_skus_Tazas_Blanco_Padre = [''];
+    $allowed_skus_Tazas_Blanco_con_Tapa = [''];
+    $allowed_skus_Tazas_Blanco_San_Valentin = [''];
+    
+    $allowed_skus_Tazas_Granate = [''];
 
-    $allowed_skus_Taza_Tazas_Granate = [''];
+    $allowed_skus_Tazas_Verde_Claro = [''];
+    $allowed_skus_Tazas_Verde_Oscuro = [''];
 
-    $allowed_skus_Taza_Taza_Verde_Claro = [''];
-    $allowed_skus_Taza_Tazas_Verde_Oscuro = [''];
-
-    $allowed_skus_Taza_Tazas_Negro = ['679-negro-1'];
+    $allowed_skus_Tazas_Negro = ['679-negro-1'];
 
     $allowed_skus_Tazas_Azul_Celeste = ['']; 
-    $allowed_skus_Getsingular_Taza_Azul_Oscuro = [''];  
+    $allowed_skus_Tazas_Azul_Oscuro = [''];  
 
-    $allowed_skus_Getsingular_Taza_Granada_ = [''];
+    
     $allowed_skus_Getsingular_Taza_Girona_F = [''];
 
-    $allowed_skus_Taza_Rosa = ['']; 
+    $allowed_skus_Tazas_Rojo = [''];
 
-    $allowed_skus_Taza_Naranja = [''];
+    $allowed_skus_Tazas_Rosa = ['']; 
 
-    $allowed_skus_Taza_Amarillo = [''];
+    $allowed_skus_Tazas_Naranja = [''];
+    
+    $allowed_skus_Tazas_Amarillo = [''];
 
     $allowed_skus_Taza_Iniciales_Middle = ['']; 
 
     $allowed_skus_Tazas_Pendiente_Clasificar = [''];
 
-    $allowed_skus_Tazas_Plastico_Infantil = [''];
+    $allowed_skus_Tazas_Plastico_Infantil = ['']; 
 
-
+    
+    /* Estas dos tazas fueron previamente categorizadas como Otros_Productos */
+    $allowed_skus_Getsingular_Taza_Granada_ = [''];
+    $allowed_skus_Getsingular_Taza_RCD_Espa = ['']; 
     
     
     
