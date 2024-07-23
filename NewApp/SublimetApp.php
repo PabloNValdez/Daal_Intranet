@@ -157,73 +157,64 @@
     $allowed_skus_Taza_Mosqueton_Negro = [''];
 
     $allowed_skus_Tazas_Blanco = ['679-blanco'];
-    $allowed_skus_Tazas_Blanco_Pride = ['']; 
-    $allowed_skus_Tazas_Blanco_Madre = ['']; 
-    $allowed_skus_Tazas_Blanco_Padre = [''];
+    $allowed_skus_Tazas_Blanco_Pride = ['679-pride-pansexual-foto','679-pride-nobinario','679-pride-nobinario-foto','679-pride-bearflag','679-pride-bisexual','679-pride-lesbiana',
+                                        '679-pride-transgenero-foto','679-pride-bandera-foto','679-pride-lesbiana-foto','679-pride-bearflag-foto','679-pride-bisexual-foto',
+                                        '679-pride-transgenero','679-pride-asexual-foto','679-pride-asexual','679-pride-intersexual','679-pride-agender-foto','679-pride-nuevabanderapride',
+                                        '679-pride-intersexual-foto','679-pride-pansexual']; 
+    $allowed_skus_Tazas_Blanco_Madre = ['936-getmama-increible','936-getsiempre-juntas','936-getmama-caña','936-getmama-mejor','936-madre-flores','936-madre-mejorabuela',
+                                        '936-madre-casamama','936-madre-100%','936-madre-mejormadre','936-madre-chupete','936-madre-escrito','936-madre-felicidades',
+                                        '936-madre-mandona','936-allmama', '936-madre-orfanato','936-madre-mejormadre2','Taza_Diadelamadre_PC2','Taza_Diadelamadre_PC','Taza_Diadelamadre_PC1']; 
+    $allowed_skus_Tazas_Blanco_Padre = ['936-padre-mogollon','936-padre-todomas','936-padre-encasa','936-padre-chupetepapa','936-padre-mejorabuelo','936-padre-mejorpapa',
+                                        '936-padre-casapapa','936-padre-gracias','936-padre-rayas','936-padre-papi','936-padre-felicidades','936-padre-escudo',
+                                        '936-padre-escrito','936-padre-100%'];
     $allowed_skus_Tazas_Blanco_con_Tapa = [''];
     $allowed_skus_Tazas_Blanco_San_Valentin = [''];
     
     $allowed_skus_Tazas_Granate = ['679tazacolget-granate'];
 
-    $allowed_skus_Tazas_Verde_Claro = [];
-    $allowed_skus_Tazas_Verde_Oscuro = ['679tazacolget-verdeoscuro'];
+    $allowed_skus_Tazas_Verde_Claro = ['679-verde-1','679tazacolget-verde'];
+    $allowed_skus_Tazas_Verde_Oscuro = ['679tazacolget-verdeoscuro','679-verdeoscuro'];
 
-    $allowed_skus_Tazas_Negro = ['679-negro-1', '679tazacolget-negro'];
+    $allowed_skus_Tazas_Negro = ['679-negro-1', '679tazacolget-negro','049040012-negro'];
 
-    $allowed_skus_Tazas_Azul_Celeste = ['679-azul-claro','679tazags-azul-claro']; 
-    $allowed_skus_Tazas_Azul_Oscuro = ['679tazacolget-azuloscuro'];  
-
+    $allowed_skus_Tazas_Azul = ['679-azul-1','049040012-azul',];  //Esta categoría es inventada, pendiente de verifiar.
+    $allowed_skus_Tazas_Azul_Celeste = ['679-azul-claro','679tazags-azul-claro','679tazacolget-azul']; 
+    $allowed_skus_Tazas_Azul_Oscuro = ['679tazacolget-azuloscuro','679-azuloscuro'];  
     
-    $allowed_skus_Getsingular_Taza_Girona_F = [''];
+    $allowed_skus_Tazas_Rojo = ['679tazacolget-rojo','679-rojo-1'];
 
-    $allowed_skus_Tazas_Rojo = ['679tazacolget-rojo'];
-
-    $allowed_skus_Tazas_Rosa = ['679-rosa', '679tazacolget-rosa']; 
+    $allowed_skus_Tazas_Rosa = ['679-rosa', '679tazacolget-rosa','049040012-rosa']; 
 
     $allowed_skus_Tazas_Naranja = ['679tazacolget-naranja'];
     
-    $allowed_skus_Tazas_Amarillo = ['679tazacolget-amarillo'];
+    $allowed_skus_Tazas_Amarillo = ['679tazacolget-amarillo','679-amarillo','049040012-amarillo'];
 
     $allowed_skus_Taza_Iniciales_Middle = ['']; 
 
-    $allowed_skus_Tazas_Pendiente_Clasificar = ['936-nombre-nommedio'];
+    $allowed_skus_Tazas_Pendiente_Clasificar = ['936-nombre','936-nombre-nommedio','936-nombre-nomdebajo'];
 
-    $allowed_skus_Tazas_Plastico_Infantil = ['']; 
+    $allowed_skus_Tazas_Plastico_Infantil = ['565tazaplastico','565tazaplastico-solluna','565tazaplastico-indio','565tazaplastico-clasezorro','565tazaplastico-arcoiris',
+                                             '565tazaplastico-conejito','565tazaplastico-clasezebra']; 
 
     
+
+
+    $allowed_skus_Getsingular_Taza_Girona_F = [''];
     /* Estas dos tazas fueron previamente categorizadas como Otros_Productos -> Buscar sus SKUs */
     $allowed_skus_Getsingular_Taza_Granada_ = [''];
     $allowed_skus_Getsingular_Taza_RCD_Espa = ['']; 
     
     
     
-    /* '936-nombre-nomdebajo','936-nombre-nommedio','936-nombre',,'936-madre-mejormadre2','936-madre-orfanato',
-,'Taza_Diadelamadre_PC2'
+    /* ,,,,
+,
 '2153-tq-fotorosa','2153-poll', '2153-tq-sisi', '2153-polaroid-vida', '2153-infinito', '2153-love', '2153-marco-cor', '2153-tq-fotorojo', 
                                 '2153-mejor-negro', '2153-amorgana', '2153-lgtbi-cor', '2153-lgtbi-band', '2153-tq-fotoazul', '2153-likesinst', '2153-mejor-blanco', 
                                 '2153-tq-fotogris', '2153-cupidos', '2153-mejor-azul', '2153-tq-nombres', '2153-amorfam', '2153-mejor-rosa', '2153-lgtbi-love-air', 
                                 '2153-infinito-rosa'
-    'Taza_Diadelamadre_PC','Taza_Diadelamadre_PC1','1293-blanco','049040012-rosa','049040012-amarillo','049040012-negro','049040012-azul'
+    '1293-blanco',,,,
     '049040012','679-pride-agender','679-pride-banderapride-foto'
-    '679-pride-pansexual-foto'
-    '679-pride-nobinario'
-    '679-pride-nobinario-foto'
-    '679-pride-bearflag'
-    '679-pride-bisexual'
-    '679-pride-lesbiana'
-    '679-pride-transgenero-foto'
-    '679-pride-bandera-foto'
-    '679-pride-lesbiana-foto'
-    '679-pride-bearflag-foto'
-    '679-pride-bisexual-foto'
-    '679-pride-transgenero'
-    '679-pride-asexual-foto'
-    '679-pride-asexual'
-    '679-pride-intersexual'
-    '679-pride-agender-foto'
-    '679-pride-nuevabanderapride'
-    '679-pride-intersexual-foto'
-    '679-pride-pansexual'
+
     '2146-lgtbq-arcoiris'
     '2146-lgtbq-cor'
     '2146-lgtbq-tequiero'
@@ -243,31 +234,13 @@
     '679-pride-naranja'
     '679-pride-azul'
     '679-pride-rojo'
-    '936-getmama-increible'
-    '936-getsiempre-juntas'
-    '936-getmama-caña'
-    '936-getmama-mejor'
-    '936-madre-flores'
-    '936-madre-mejorabuela'
-    '936-madre-casamama'
-    '936-madre-100%'
-    '936-madre-mejormadre'
-    '936-madre-chupete'
-    '936-madre-escrito'
-    '936-madre-felicidades'
-    '936-madre-mandona'
-    '936-allmama'
-    '679tazacolget-verde', '679tazacolget-azul', , '679tazacolget',
-    
+
+    , , , '679tazacolget',
+    '679-$P-1 (variante)'
     '75-LUQS-8DWY'
     '36-2UO2-N6XT'
     '679-49040004-plata'
-     '565tazaplastico', '565tazaplastico-solluna'
-    '565tazaplastico-indio'
-    '565tazaplastico-clasezorro'
-    '565tazaplastico-arcoiris'
-    '565tazaplastico-conejito'
-    '565tazaplastico-clasezebra'
+
     '936-abuela-scrapbook'
     '936-abuelos-escudo'
     '936-abuela-escudo'
@@ -278,20 +251,7 @@
     '936-abuela-aro'
     '936-abuelo-mejorabuela'
     '936-abuelo-aro'
-    '936-padre-mogollon'
-    '936-padre-todomas'
-    '936-padre-encasa'
-    '936-padre-chupetepapa'
-    '936-padre-mejorabuelo'
-    '936-padre-mejorpapa'
-    '936-padre-casapapa'
-    '936-padre-gracias'
-    '936-padre-rayas'
-    '936-padre-papi'
-    '936-padre-felicidades'
-    '936-padre-escudo'
-    '936-padre-escrito'
-    '936-padre-100%'
+
     '679tazaasacorazon', '936-mejor-rosa', '936-tq-nombres', '936-poll', '936-marco-cor', 
     '936-infinitoro-rosa', '936-tq-fotorojo', '936-lgtbi-cor', '936-love-love', '936-amorfam', 
     '936-mejorazul', '936-mejor-blanco', '936-tq-sisi', '936-mejor-negro', '936-likesinst', 
@@ -304,10 +264,9 @@
     '936-foto-coñazo'
     '936-mama-escudo'
     '936-diseño-coñazo'
-    '679-amarillo'
-    '679-azuloscuro'
-    '679-verdeoscuro'
-    '679-rosa'
+
+
+
     '656-bipolar'
     '656-bipolar blanco'
     '656-color-verte'
@@ -322,10 +281,7 @@
     '656-maldia'
     '656-dia-importe'
     'tazas-frases (variante)'
-    '679-verde-1'
-    '679-azul-1'
-    '679-rojo-1'
-    '679-$P-1 (variante)'
+
     '2146'
 */
 
