@@ -390,13 +390,98 @@
                     } elseif (in_array($sku, $allowed_skus_Felpudo_60x100)) {
                         $productType = 'Felpudos';
                         $subProductType = 'Felpudo_60x100';
-                    } elseif (in_array($sku, $allowed_skus_Otros_Productos)) {
-                        $productType = 'Otros_Productos';
-                        $subProductType = 'Otros_Productos';
+                    } elseif (in_array($sku, $allowed_skus_Tazas_Magica)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Tazas_Magica';
+                    } elseif (in_array($sku, $allowed_skus_Tazas_Magica_San_Valentin)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Tazas_Magica_San_Valentin';
+                    } elseif (in_array($sku, $allowed_skus_Tazas_Magica_Madre)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Tazas_Magica_Madre';
+                    } elseif (in_array($sku, $allowed_skus_Tazas_Magica_Padre)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Tazas_Magica_Padre';
+                    } elseif (in_array($sku, $allowed_skus_Jarra_Cerveza)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Jarra_Cerveza';
+                    } elseif (in_array($sku, $allowed_skus_Taza_Mosqueton_Rojo)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Taza_Mosqueton_Rojo';
+                    } elseif (in_array($sku, $allowed_skus_Taza_Mosqueton_Negro)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Taza_Mosqueton_Negro';
+                    } elseif (in_array($sku, $allowed_skus_Tazas_Blanco)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Tazas_Blanco';
+                    } elseif (in_array($sku, $allowed_skus_Tazas_Blanco_Pride)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Tazas_Blanco_Pride';
+                    } elseif (in_array($sku, $allowed_skus_Tazas_Blanco_Madre)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Tazas_Blanco_Madre';
+                    } elseif (in_array($sku, $allowed_skus_Tazas_Blanco_Padre)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Tazas_Blanco_Padre';
+                    } elseif (in_array($sku, $allowed_skus_Tazas_Blanco_con_Tapa)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Tazas_Blanco_con_Tapa';
+                    } elseif (in_array($sku, $allowed_skus_Tazas_Blanco_San_Valentin)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Tazas_Blanco_San_Valentin';
+                    } elseif (in_array($sku, $allowed_skus_Tazas_Granate)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Tazas_Granate';
+                    } elseif (in_array($sku, $allowed_skus_Tazas_Verde_Claro)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Tazas_Verde_Claro';
+                    } elseif (in_array($sku, $allowed_skus_Tazas_Verde_Oscuro)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Tazas_Verde_Oscuro';
+                    } elseif (in_array($sku, $allowed_skus_Tazas_Negro)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Tazas_Negro';
+                    } elseif (in_array($sku, $allowed_skus_Tazas_Azul)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Tazas_Azul';
+                    } elseif (in_array($sku, $allowed_skus_Tazas_Azul_Celeste)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Tazas_Azul_Celeste';
+                    } elseif (in_array($sku, $allowed_skus_Tazas_Azul_Oscuro)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Tazas_Azul_Oscuro';
+                    } elseif (in_array($sku, $allowed_skus_Tazas_Rojo)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Tazas_Rojo';
+                    } elseif (in_array($sku, $allowed_skus_Tazas_Rosa)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Tazas_Rosa';
+                    } elseif (in_array($sku, $allowed_skus_Tazas_Naranja)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Tazas_Naranja';
+                    } elseif (in_array($sku, $allowed_skus_Tazas_Amarillo)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Tazas_Amarillo';
+                    } elseif (in_array($sku, $allowed_skus_Taza_Iniciales_Middle)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Taza_Iniciales_Middle';
+                    } elseif (in_array($sku, $allowed_skus_Tazas_Pendiente_Clasificar)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Tazas_Pendiente_Clasificar';
+                    } elseif (in_array($sku, $allowed_skus_Tazas_Plastico_Infantil)) {
+                        $productType = 'Tazas';
+                        $subProductType = 'Tazas_Plastico_Infantil';
                     }
 
                     
                         
+
+                    elseif (in_array($sku, $allowed_skus_Otros_Productos)) {
+                        $productType = 'Otros_Productos';
+                        $subProductType = 'Otros_Productos';
+                    }
+
+
                     if ($productType) {
                         echo '<tr>';
                         echo '<td><input type="checkbox" name="urls[]" value="' . htmlspecialchars($row[24]) . '"></td>';
