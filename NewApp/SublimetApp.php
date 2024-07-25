@@ -231,26 +231,23 @@
                                              '565tazaplastico-conejito','565tazaplastico-clasezebra']; 
 
     
-
-
-    $allowed_skus_Getsingular_Taza_Girona_F = [''];
-    /* Estas dos tazas fueron previamente categorizadas como Otros_Productos -> Buscar sus SKUs */
-    $allowed_skus_Getsingular_Taza_Granada_ = [''];
-    $allowed_skus_Getsingular_Taza_RCD_Espa = ['']; 
-    
     /* '679-pride-verde','679-pride-bandera','679-pride','679-pride-amarillo','679-pride-lila','679-pride-naranja','679-pride-azul','679-pride-rojo'
     '936-abuela-scrapbook','936-abuelos-escudo','936-abuela-escudo','936-abuelo-marco','936-abuelo-scrapbook','936-abuelo','936-abuelo-mejorabuelo'
     '936-abuela-aro','936-abuelo-mejorabuela','936-abuelo-aro','2146get', '656-multicolor-3', '656-old school-3', '656-foxies-3', 
     '656-tropical-lover-3', '656-cactus-3','656-abejas-3','656-cat-lover-3','936-foto-coñazo','936-mama-escudo','936-diseño-coñazo','2146'
     */
 
-    $allowed_skus_Otros_Productos = [];
+    $allowed_skus_Otros_Productos = ['Getsingular_Taza_Girona_F', 'Getsingular_Taza_Granada_', 'Getsingular_Taza_RCD_Espa'];
 
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------
     
+    $allowed_skus_Espinilleras_Talla_L = ['240000004-d4l','240000004-d2l','240000004-d3l','240000004-d1l'];
+    $allowed_skus_Espinilleras_Talla_M = ['240000004-d4l','240000004-d2l','240000004-d3l','240000004-d1l'];
+    $allowed_skus_Espinilleras_Talla_S = ['240000004-d4l','240000004-d2l','240000004-d3l','240000004-d1l'];
+    $allowed_skus_Espinilleras_Talla_XL = ['240000004-d4l','240000004-d2l','240000004-d3l','240000004-d1l'];
+    $allowed_skus_Espinilleras_Talla_L = ['240000004-d4l','240000004-d2l','240000004-d3l','240000004-d1l'];
     /*'240000004-d1m'
-'240000004-d4l'
-'240000004-d2l'
+
 '240000004-d3xl'
 '240000004-d1s'
 '240000004-d3m'
@@ -258,7 +255,6 @@
 '240000004-d2xl'
 '240000004-d3l'
 '240000004-d4xl'
-'240000004-d1l'
 '240000004-d2m'
 '240000004-d2s'
 '240000004-d4s'
@@ -471,12 +467,7 @@
                     } elseif (in_array($sku, $allowed_skus_Tazas_Plastico_Infantil)) {
                         $productType = 'Tazas';
                         $subProductType = 'Tazas_Plastico_Infantil';
-                    }
-
-                    
-                        
-
-                    elseif (in_array($sku, $allowed_skus_Otros_Productos)) {
+                    } elseif (in_array($sku, $allowed_skus_Otros_Productos)) {
                         $productType = 'Otros_Productos';
                         $subProductType = 'Otros_Productos';
                     }
