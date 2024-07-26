@@ -240,27 +240,16 @@
     $allowed_skus_Otros_Productos = ['Getsingular_Taza_Girona_F', 'Getsingular_Taza_Granada_', 'Getsingular_Taza_RCD_Espa'];
 
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-    
+    //Los SKU asociados a las Espinilleras_Talla_S
+    $allowed_skus_Espinilleras_Talla_S = ['240000004-d1s','240000004-d2s','240000004-d4s','240000004-d3s'];
+    //Los SKU asociados a las Espinilleras_Talla_M
+    $allowed_skus_Espinilleras_Talla_M = ['240000004-d1m','240000004-d3m','240000004-d2m','240000004-d4m'];
+    //Los SKU asociados a las Espinilleras_Talla_L
     $allowed_skus_Espinilleras_Talla_L = ['240000004-d4l','240000004-d2l','240000004-d3l','240000004-d1l'];
-    $allowed_skus_Espinilleras_Talla_M = ['240000004-d4l','240000004-d2l','240000004-d3l','240000004-d1l'];
-    $allowed_skus_Espinilleras_Talla_S = ['240000004-d4l','240000004-d2l','240000004-d3l','240000004-d1l'];
-    $allowed_skus_Espinilleras_Talla_XL = ['240000004-d4l','240000004-d2l','240000004-d3l','240000004-d1l'];
-    $allowed_skus_Espinilleras_Talla_L = ['240000004-d4l','240000004-d2l','240000004-d3l','240000004-d1l'];
-    /*'240000004-d1m'
+    //Los SKU asociados a las Espinilleras_Talla_XL
+    $allowed_skus_Espinilleras_Talla_XL = ['240000004-d3xl','240000004-d1xl','240000004-d2xl','240000004-d4xl'];
 
-'240000004-d3xl'
-'240000004-d1s'
-'240000004-d3m'
-'240000004-d1xl'
-'240000004-d2xl'
-'240000004-d3l'
-'240000004-d4xl'
-'240000004-d2m'
-'240000004-d2s'
-'240000004-d4s'
-'240000004-d3s'
-'240000004-d4m'
-'240000004-esp'*/
+
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($_FILES['excelFile']) && $_FILES['excelFile']['error'] == UPLOAD_ERR_OK) {
