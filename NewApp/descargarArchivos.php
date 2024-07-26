@@ -96,7 +96,7 @@ if (isset($_GET['url'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descargar y Descomprimir Archivos</title>
+    <title>Descargar Archivos</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 </head>
@@ -110,7 +110,8 @@ if (isset($_GET['url'])) {
             const data = await getUrlsFromServer();
             const mainZip = new JSZip();
             const currentDate = new Date().toISOString().split('T')[0]; // Formato yyyy-mm-dd
-            const mainFolderName = `${currentDate}~AmazonSublimetApp`;
+            const numeroAleatorio = Math.floor(1000 + Math.random() * 9000);
+            const mainFolderName = `${currentDate}~${numeroAleatorio}`;
             const mainFolder = mainZip.folder(mainFolderName);
 
             // Crear un objeto para agrupar las URLs por product_type y sub_product_type
@@ -164,7 +165,8 @@ if (isset($_GET['url'])) {
             }
 
             mainZip.generateAsync({ type: 'blob' }).then((content) => {
-                saveAs(content, `${currentDate}.zip`);
+                saveAs(content, `${currentDate}~${numeroAleatorio}.zip`);
+                const mainFolderName = `${currentDate}`;
             });
         }
 
@@ -189,7 +191,7 @@ if (isset($_GET['url'])) {
                     }
                 };
                 img.onerror = () => {
-                    console.warn(`Error al cargar la imagen ${filename}, se usará el nombre original`);
+                    //console.warn(`Error al cargar la imagen ${filename}, se usará el nombre original`);
                     resolve(filename); // Mantener el nombre original si hay un error
                 };
                 img.src = URL.createObjectURL(blob);

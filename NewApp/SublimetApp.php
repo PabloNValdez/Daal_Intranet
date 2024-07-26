@@ -237,8 +237,6 @@
     '656-tropical-lover-3', '656-cactus-3','656-abejas-3','656-cat-lover-3','936-foto-coñazo','936-mama-escudo','936-diseño-coñazo','2146'
     */
 
-    $allowed_skus_Otros_Productos = ['Getsingular_Taza_Girona_F', 'Getsingular_Taza_Granada_', 'Getsingular_Taza_RCD_Espa'];
-
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------
     //Los SKU asociados a las Espinilleras_Talla_S
     $allowed_skus_Espinilleras_Talla_S = ['240000004-d1s','240000004-d2s','240000004-d4s','240000004-d3s'];
@@ -249,6 +247,8 @@
     //Los SKU asociados a las Espinilleras_Talla_XL
     $allowed_skus_Espinilleras_Talla_XL = ['240000004-d3xl','240000004-d1xl','240000004-d2xl','240000004-d4xl'];
 
+    //--------------------------------------------------------------------------------------------------------------------------------------------------------------
+    $allowed_skus_Otros_Productos = ['Getsingular_Taza_Girona_F', 'Getsingular_Taza_Granada_', 'Getsingular_Taza_RCD_Espa'];
 
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -456,6 +456,18 @@
                     } elseif (in_array($sku, $allowed_skus_Tazas_Plastico_Infantil)) {
                         $productType = 'Tazas';
                         $subProductType = 'Tazas_Plastico_Infantil';
+                    } elseif (in_array($sku, $allowed_skus_Espinilleras_Talla_S)) {
+                        $productType = 'Espinilleras';
+                        $subProductType = 'Espinilleras_Talla_S';
+                    } elseif (in_array($sku, $allowed_skus_Espinilleras_Talla_M)) {
+                        $productType = 'Espinilleras';
+                        $subProductType = 'Espinilleras_Talla_M';
+                    } elseif (in_array($sku, $allowed_skus_Espinilleras_Talla_L)) {
+                        $productType = 'Espinilleras';
+                        $subProductType = 'Espinilleras_Talla_L';
+                    } elseif (in_array($sku, $allowed_skus_Espinilleras_Talla_XL)) {
+                        $productType = 'Espinilleras';
+                        $subProductType = 'Espinilleras_Talla_XL';
                     } elseif (in_array($sku, $allowed_skus_Otros_Productos)) {
                         $productType = 'Otros_Productos';
                         $subProductType = 'Otros_Productos';
@@ -505,9 +517,9 @@
                 $subProductType = $conn->real_escape_string($sub_product_types[$index]);
                 $conn->query("INSERT INTO temp_urls (order_id, order_item_id, url, product_type, sub_product_type) VALUES ('$orderId', '$itemId', '$url', '$productType', '$subProductType')");
                                     }
-                        
+
                 echo '<h3>URLs guardadas correctamente en la base de datos.</h3>';
-                echo '<form action="" method="post">';
+                echo '<form action="descargarArchivos.php" method="post">';
                 echo '<input type="submit" name="downloadUrls" value="Descargar Todos">';
                 echo '</form>';
                         
@@ -849,7 +861,6 @@
 
         <h2>Seleccionar archivo (.xlsx)</h2>
             <form action="" method="post" enctype="multipart/form-data">
-                <!-- <input type="file" name="excelFile" accept=".xlsx"> -->
                 <input type="file" name="excelFile" accept=".xlsx">
                 <br><br>
                 <input type="submit" value="Subir">
