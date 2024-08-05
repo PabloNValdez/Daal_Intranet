@@ -268,11 +268,28 @@
                         
                 echo '<form action="" method="post">';
                 echo '<table border="1">';
-                echo '<tr><th>Seleccionar</th><th>Order ID</th><th>Item ID</th><th>SKU</th><th>Nombre del Producto</th><th>Tipo de Producto</th><th>Sub Tipo de Producto</th></tr>';
+                echo '<tr>
+                        <th>Order ID</th>
+                        <th>Nombre del Producto</th>
+                      </tr>';
+
                 foreach ($data as $index => $row) {
-                    $sku = isset($row[10]) ? $row[10] : '';
                     $productType = '';
                     $subProductType = '';
+
+                    $orderId = isset($row[0]) ? $row[0] : '';
+                    $itemId = isset($row[1]) ? $row[1] : '';
+                    $sku = isset($row[10]) ? $row[10] : '';
+                    $productName = isset($row[11]) ? $row[11] : '';
+                    $quantityPurchased = isset($row[12]) ? $row[12] : '';
+                    $recipientName = isset($row[16]) ? $row[16] : '';
+                    $shipAddress1 = isset($row[17]) ? $row[17] : '';
+                    $shipAddress2 = isset($row[18]) ? $row[18] : '';
+                    $shipCity = isset($row[20]) ? $row[20] : '';
+                    $shipState = isset($row[21]) ? $row[21] : '';
+                    $purchaseDate = isset($row[2]) ? $row[2] : '';
+                    $url = isset($row[24]) ? $row[24] : '';
+                    $imageUrl = ''; // Si tienes la URL de la imagen, asigna aquí
 
 
                     //Se utiliza Else IF porque PHP no reconoce in_array en Switch Case
@@ -476,18 +493,32 @@
 
                     if ($productType) {
                         echo '<tr>';
-                        echo '<td><input type="checkbox" name="urls[]" value="' . htmlspecialchars($row[24]) . '"></td>';
-                        echo '<td><input type="hidden" name="order_ids[]" value="' . (isset($row[0]) ? htmlspecialchars($row[0]) : '') . '">' . (isset($row[0]) ? $row[1] : '') . '</td>'; // Order ID
-                        echo '<td><input type="hidden" name="item_ids[]" value="' . (isset($row[1]) ? htmlspecialchars($row[1]) : '') . '">' . (isset($row[1]) ? $row[1] : '') . '</td>'; // Item ID
-                        echo '<td>' . $sku . '</td>'; // SKU
-                        echo '<td>' . (isset($row[11]) ? $row[11] : '') . '</td>'; // Nombre
-                        echo '<td><input type="hidden" name="product_types[]" value="' . $productType . '">' . $productType . '</td>'; // Tipo de Producto
-                        echo '<td><input type="hidden" name="sub_product_types[]" value="' . $subProductType . '">' . $subProductType . '</td>'; // Sub Tipo de Producto
-                        if (isset($row[24])) {
-                            echo '<td><a href="' . htmlspecialchars($row[24]) . '" target="_blank">Descargar</a></td>';
-                        } else {
-                            echo '<td>URL no disponible</td>';
-                        }
+                        echo '<td>' . $orderId . '</td>';
+                        echo '<td>' . $productName . '</td>';
+                        echo '</tr>';
+
+                        // Campos ocultos para guardar en la base de datos
+                       
+                         // Campos ocultos para guardar en la base de datos
+                        echo '<input type="hidden" name="order_ids[]" value="' . $orderId . '">';
+                        echo '<input type="hidden" name="item_ids[]" value="' . $itemId . '">';
+                        echo '<input type="hidden" name="skus[]" value="' . $sku . '">';
+                        echo '<input type="hidden" name="product_names[]" value="' . $productName . '">';
+                        echo '<input type="hidden" name="quantities[]" value="' . $quantityPurchased . '">';
+                        echo '<input type="hidden" name="recipient_names[]" value="' . $recipientName . '">';
+                        echo '<input type="hidden" name="ship_addresses1[]" value="' . $shipAddress1 . '">';
+                        echo '<input type="hidden" name="ship_addresses2[]" value="' . $shipAddress2 . '">';
+                        echo '<input type="hidden" name="ship_cities[]" value="' . $shipCity . '">';
+                        echo '<input type="hidden" name="ship_states[]" value="' . $shipState . '">';
+                        echo '<input type="hidden" name="purchase_dates[]" value="' . $purchaseDate . '">';
+                        echo '<input type="hidden" name="urls[]" value="' . $url . '">';
+                        echo '<input type="hidden" name="image_urls[]" value="' . $imageUrl . '">';
+                        echo '<input type="hidden" name="sub_product_types[]" value="' . $subProductType . '">';
+                        echo '<input type="hidden" name="product_types[]" value="' . $productType . '">';
+
+                        /*if (isset($row[24])) {
+                            echo '<input type="hidden" name="url[]" value="' . htmlspecialchars($row[24]) . '">';
+                        }*/            
                         echo '</tr>';
                     }
                 }
@@ -502,9 +533,19 @@
             $urls = $_POST['urls'];
             $order_ids = $_POST['order_ids'];
             $item_ids = $_POST['item_ids'];
-            $product_types = $_POST['product_types'];
             $sub_product_types = $_POST['sub_product_types'];
-                        
+            $product_types = $_POST['product_types'];
+            $skus = $_POST['skus'];
+            $productNames = $_POST['product_names'];
+            $quantities = $_POST['quantities'];
+            $recipientNames = $_POST['recipient_names'];
+            $shipAddresses1 = $_POST['ship_addresses1'];
+            $shipAddresses2 = $_POST['ship_addresses2'];
+            $shipCities = $_POST['ship_cities'];
+            $shipStates = $_POST['ship_states'];
+            $purchaseDates = $_POST['purchase_dates'];
+            $imageUrls = $_POST['image_urls'];
+
             // Vaciar la tabla temporal
             $conn->query("TRUNCATE TABLE temp_urls");
                         
@@ -515,14 +556,27 @@
                 $itemId = $conn->real_escape_string($item_ids[$index]);
                 $productType = $conn->real_escape_string($product_types[$index]);
                 $subProductType = $conn->real_escape_string($sub_product_types[$index]);
-                $conn->query("INSERT INTO temp_urls (order_id, order_item_id, url, product_type, sub_product_type) VALUES ('$orderId', '$itemId', '$url', '$productType', '$subProductType')");
-                                    }
+                $skuEsc = $conn->real_escape_string($skus[$index]);
+                $quantityEsc = $conn->real_escape_string($quantities[$index]);
+                $recipientNameEsc = $conn->real_escape_string($recipientNames[$index]);
+                $shipAddress1Esc = $conn->real_escape_string($shipAddresses1[$index]);
+                $shipAddress2Esc = $conn->real_escape_string($shipAddresses2[$index]);
+                $shipCityEsc = $conn->real_escape_string($shipCities[$index]);
+                $shipStateEsc = $conn->real_escape_string($shipStates[$index]);
+                $purchaseDateEsc = $conn->real_escape_string($purchaseDates[$index]);
+                $imageUrlEsc = $conn->real_escape_string($imageUrls[$index]);
+                $productNameEsc = $conn->real_escape_string($productNames[$index]);
 
+                $conn->query("INSERT INTO temp_urls (order_id, order_item_id, url, product_type, sub_product_type, recipient_name, ship_address1, ship_address2, ship_city, ship_state, purchase_date, sku, quantity_purchased, image_url, product_name)
+                VALUES ('$orderId', '$itemId', '$url', '$productType', '$subProductType', '$recipientNameEsc', '$shipAddress1Esc', '$shipAddress2Esc', '$shipCityEsc', '$shipStateEsc', '$purchaseDateEsc', '$skuEsc', '$quantityEsc', '$imageUrlEsc', '$productNameEsc')");
+            }
+                
                 echo '<h3>URLs guardadas correctamente en la base de datos.</h3>';
                 echo '<form action="descargarArchivos.php" method="post">';
                 echo '<input type="submit" name="downloadUrls" value="Descargar Todos">';
                 echo '</form>';
-                        
+
+                 
         } elseif (isset($_POST['downloadUrls'])) {
             $zip = new ZipArchive();
             $zipFileName = 'descargas.zip';
@@ -844,7 +898,14 @@
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
 </head>
-
+<script type="text/javascript">
+    function toggleSelectAll(checkbox) {
+        var checkboxes = document.getElementsByName('urls[]');
+        for (var i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = checkbox.checked;
+        }
+    }
+</script>
 <body>
 
     <div class="container">
