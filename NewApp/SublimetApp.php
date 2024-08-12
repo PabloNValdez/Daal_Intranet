@@ -164,7 +164,7 @@
 
     //Los SKU asociados a las Tazas_Blanco
     $allowed_skus_Tazas_Blanco = ['679-blanco','1293-blanco','656-bipolar','656-bipolar blanco','656-color-verte','656-trucho','656-princesas-cuento','656-miau-miau','656-sonrie-confunde',
-                                  '656-tiempo','656-shh-youtube','656-shh-netflix','656-eheh','656-maldia','656-dia-importe'];
+                                  '656-tiempo','656-shh-youtube','656-shh-netflix','656-eheh','656-maldia','656-dia-importe','2146get'];
     //Los SKU asociados a las Tazas_Blanco_Pride
     $allowed_skus_Tazas_Blanco_Pride = ['679-pride-pansexual-foto','679-pride-nobinario','679-pride-nobinario-foto','679-pride-bearflag','679-pride-bisexual','679-pride-lesbiana',
                                         '679-pride-transgenero-foto','679-pride-bandera-foto','679-pride-lesbiana-foto','679-pride-bearflag-foto','679-pride-bisexual-foto',
@@ -233,7 +233,7 @@
     
     /* '679-pride-verde','679-pride-bandera','679-pride','679-pride-amarillo','679-pride-lila','679-pride-naranja','679-pride-azul','679-pride-rojo'
     '936-abuela-scrapbook','936-abuelos-escudo','936-abuela-escudo','936-abuelo-marco','936-abuelo-scrapbook','936-abuelo','936-abuelo-mejorabuelo'
-    '936-abuela-aro','936-abuelo-mejorabuela','936-abuelo-aro','2146get', '656-multicolor-3', '656-old school-3', '656-foxies-3', 
+    '936-abuela-aro','936-abuelo-mejorabuela','936-abuelo-aro',, '656-multicolor-3', '656-old school-3', '656-foxies-3', 
     '656-tropical-lover-3', '656-cactus-3','656-abejas-3','656-cat-lover-3','936-foto-coñazo','936-mama-escudo','936-diseño-coñazo','2146'
     */
 
