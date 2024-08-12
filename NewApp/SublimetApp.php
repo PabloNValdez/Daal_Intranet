@@ -16,13 +16,7 @@
 
     //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    /* '4055-botcumple-500Mentalida''4055-botcumple-750Cantinú''4055-botcumple-350Maravill''4055-botcumple-350Losabe''4055-botcumple-500Losabe''4055-botcumple-750Maravill'
-    '4055-botcumple-500Carr''4055-botcumple-350Granaño''4055-botcumple-750Losabes''4055-botcumple-500Montón''4055-botcumple-750Carro''4055-botcumple-500Cantinúa'
-    '4055-botcumple-500Maravilla''4055-botcumple-350Cantinúa''4055-botcumple-750Montón''4055-botcumple-500Granaño''4055-botcumple-750Mentalidad''4055-botcumple-350Mentalidad'
-    '4055-botcumple-350Carro''4055-botcumple''4055-botcumple-750Granaño''4055-botcumple-350Cumple''4055-botcumple-350Masuno''4055-botcumple-350Montón''4055-botcumple-750Cumplea'
-    '4055-botcumple-500Masuno''4055-botcumple-750Masuno''4055-botcumple-500Cumplea''4055-botcumple-500Laurel''4055-botcumple-750Laurel''4055-botcumple-350Laurel'
-    '4055-botcumple-500Plumas''4055-botcumple-750Plumas''4055-botcumple-350Plumas''4055-botcumple-500Floral''4055-botcumple-750Floral''4055-botcumple-350Floral''4055-botcumple-750Script'
-    '4055-botcumple-500Script''4055-botcumple-350Script''4055-botcumple-750Cactus''4055-botcumple-500Cactus''4055-botcumple-350Cactus'  */
+    /**/
 
     //Los SKU asociados a las Botellas 350_Blanco
     $allowed_skus_350_Blanco = ['4055-botella350blanca','4055-botdis-350foto','4055-bi-350nommedio','4055-bi-350nomdebajo','4055-botnomfrases-350Atulado',
@@ -231,10 +225,7 @@
                                              '565tazaplastico-conejito','565tazaplastico-clasezebra']; 
 
     
-    /* '679-pride-verde','679-pride-bandera','679-pride','679-pride-amarillo','679-pride-lila','679-pride-naranja','679-pride-azul','679-pride-rojo'
-    '936-abuela-scrapbook','936-abuelos-escudo','936-abuela-escudo','936-abuelo-marco','936-abuelo-scrapbook','936-abuelo','936-abuelo-mejorabuelo'
-    '936-abuela-aro','936-abuelo-mejorabuela','936-abuelo-aro',, '656-multicolor-3', '656-old school-3', '656-foxies-3', 
-    '656-tropical-lover-3', '656-cactus-3','656-abejas-3','656-cat-lover-3','936-foto-coñazo','936-mama-escudo','936-diseño-coñazo','2146'
+    /*
     */
 
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -248,7 +239,18 @@
     $allowed_skus_Espinilleras_Talla_XL = ['240000004-d3xl','240000004-d1xl','240000004-d2xl','240000004-d4xl'];
 
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-    $allowed_skus_Otros_Productos = ['Getsingular_Taza_Girona_F', 'Getsingular_Taza_Granada_', 'Getsingular_Taza_RCD_Espa'];
+    $allowed_skus_Otros_Productos = ['Getsingular_Taza_Girona_F', 'Getsingular_Taza_Granada_', 'Getsingular_Taza_RCD_Espa', 'hasta aca esta verificado',
+    '679-pride-verde','679-pride-bandera','679-pride','679-pride-amarillo','679-pride-lila','679-pride-naranja','679-pride-azul','679-pride-rojo',
+    '936-abuela-scrapbook','936-abuelos-escudo','936-abuela-escudo','936-abuelo-marco','936-abuelo-scrapbook','936-abuelo','936-abuelo-mejorabuelo',
+    '936-abuela-aro','936-abuelo-mejorabuela','936-abuelo-aro','656-multicolor-3', '656-old school-3', '656-foxies-3', 
+    '656-tropical-lover-3', '656-cactus-3','656-abejas-3','656-cat-lover-3','936-foto-coñazo','936-mama-escudo','936-diseño-coñazo','2146',
+    '4055-botcumple-500Mentalida','4055-botcumple-750Cantinú','4055-botcumple-350Maravill','4055-botcumple-350Losabe','4055-botcumple-500Losabe','4055-botcumple-750Maravill',
+    '4055-botcumple-500Carr','4055-botcumple-350Granaño','4055-botcumple-750Losabes','4055-botcumple-500Montón','4055-botcumple-750Carro','4055-botcumple-500Cantinúa',
+    '4055-botcumple-500Maravilla','4055-botcumple-350Cantinúa','4055-botcumple-750Montón','4055-botcumple-500Granaño','4055-botcumple-750Mentalidad','4055-botcumple-350Mentalidad',
+    '4055-botcumple-350Carro','4055-botcumple','4055-botcumple-750Granaño','4055-botcumple-350Cumple','4055-botcumple-350Masuno','4055-botcumple-350Montón','4055-botcumple-750Cumplea',
+    '4055-botcumple-500Masuno','4055-botcumple-750Masuno','4055-botcumple-500Cumplea','4055-botcumple-500Laurel','4055-botcumple-750Laurel','4055-botcumple-350Laurel',
+    '4055-botcumple-500Plumas','4055-botcumple-750Plumas','4055-botcumple-350Plumas','4055-botcumple-500Floral','4055-botcumple-750Floral','4055-botcumple-350Floral','4055-botcumple-750Script',
+    '4055-botcumple-500Script','4055-botcumple-350Script','4055-botcumple-750Cactus','4055-botcumple-500Cactus','4055-botcumple-350Cactus'];
 
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
