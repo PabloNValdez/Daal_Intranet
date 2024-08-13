@@ -99,15 +99,29 @@ if (isset($_GET['url'])) {
     <title>Descargar Archivos</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <style>
+        #progress {
+            margin-top: 20px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
     <button id="download-btn">Descargar Archivos</button>
+    <div id="progress"></div> <!-- Div para mostrar el progreso -->
 
     <script>
         document.getElementById('download-btn').addEventListener('click', downloadAndUnzipFiles);
 
         async function downloadAndUnzipFiles() {
+            const progressElement = document.getElementById('progress');
+            progressElement.innerHTML = 'Obteniendo URLs...'; 
+
             const data = await getUrlsFromServer();
+            const totalFiles = data.length;
+            progressElement.innerHTML = `Archivos encontrados: ${totalFiles}<br>`;
+
             const mainZip = new JSZip();
             const currentDate = new Date().toISOString().split('T')[0]; // Formato yyyy-mm-dd
             const numeroAleatorio = Math.floor(1000 + Math.random() * 9000);
@@ -122,6 +136,8 @@ if (isset($_GET['url'])) {
                 return acc;
             }, {});
 
+            let downloadedFiles = 0;
+
             // Recorrer cada grupo y descargar/descomprimir archivos
             for (const [productType, subProductTypes] of Object.entries(groupedData)) {
                 const productFolder = mainFolder.folder(productType);
@@ -130,10 +146,15 @@ if (isset($_GET['url'])) {
                     const subProductFolder = productFolder.folder(subProductType);
 
                     for (const { url, order_id, order_item_id } of items) {
-                        console.log(`Downloading ${url} via ?url=${encodeURIComponent(url)}`);
+                        //console.log(`Downloading ${url} via ?url=${encodeURIComponent(url)}`);
 
                         try {
                             const proxyUrl = `?url=${encodeURIComponent(url)}`;
+
+                            downloadedFiles++;
+                            // Actualiza el progreso de la descarga
+                            progressElement.innerHTML = `Archivos encontrados: ${totalFiles}<br>Descargando archivo ${downloadedFiles} de ${totalFiles}...`;
+
                             const response = await fetch(proxyUrl);
                             if (!response.ok) {
                                 throw new Error(`Error al descargar ${url}: ${response.statusText}`);
@@ -159,11 +180,13 @@ if (isset($_GET['url'])) {
                             }
                         } catch (error) {
                             console.error(error);
+                            progressElement.innerHTML += `<br>Error al descargar archivo ${downloadedFiles}: ${error.message}`;
+                        
                         }
                     }
                 }
             }
-
+            progressElement.innerHTML = `Archivos encontrados: ${totalFiles}<br>Generando archivo ZIP...`;    
             mainZip.generateAsync({ type: 'blob' }).then((content) => {
                 saveAs(content, `${currentDate}~${numeroAleatorio}.zip`);
                 const mainFolderName = `${currentDate}`;
