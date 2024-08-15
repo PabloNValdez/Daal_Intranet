@@ -1,94 +1,67 @@
 <?php
-// Error reporting
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+require 'vendor/autoload.php';
+use Fpdf\Fpdf;
 
-// Obtener URLs desde la base de datos
-function getUrlsFromDatabase($host, $user, $pass, $dbname) {
-    $mysqli = new mysqli($host, $user, $pass, $dbname);
+// Configuración de la base de datos
+$host = "localhost";
+$user = "Getsingular";
+$pass = "XdKFu67LyjtFQQvM";
+$dbname = "conversor";
 
-    if ($mysqli->connect_error) {
-        die("Conexión fallida: " . $mysqli->connect_error);
-    }
-
-    $result = $mysqli->query("SELECT url, order_id, order_item_id, product_type, sub_product_type FROM temp_urls");
-
-    if (!$result) {
-        die("Error en la consulta: " . $mysqli->error);
-    }
-
-    $data = array();
-    while ($row = $result->fetch_assoc()) {
-        $data[] = array(
-            'url' => $row['url'],
-            'order_id' => $row['order_id'],
-            'order_item_id' => $row['order_item_id'],
-            'product_type' => $row['product_type'],
-            'sub_product_type' => $row['sub_product_type']
-        );
-    }
-
-    $mysqli->close();
-
-    return $data;
+// Conexión a la base de datos
+$mysqli = new mysqli($host, $user, $pass, $dbname);
+if ($mysqli->connect_error) {
+    die("Conexión fallida: " . $mysqli->connect_error);
 }
 
-// Verifica si es una solicitud AJAX para obtener URLs
-if (isset($_GET['action']) && $_GET['action'] == 'get_urls') {
-    $host = "localhost";
-    $user = "Getsingular";
-    $pass = "XdKFu67LyjtFQQvM";
-    $dbname = "conversor";
+if (isset($_GET['action'])) {
+    if ($_GET['action'] === 'get_pdf') {
+        $order_id = $_GET['order_id'];
+        $result = $mysqli->query("SELECT * FROM temp_urls WHERE order_id = '$order_id'");
+        $data = $result->fetch_assoc();
 
-    $data = getUrlsFromDatabase($host, $user, $pass, $dbname);
-
-    header('Content-Type: application/json');
-    echo json_encode($data);
-    exit;
-}
-
-// Verifica si es una solicitud al proxy
-if (isset($_GET['url'])) {
-    $url = $_GET['url'];
-
-    // Validar la URL
-    if (filter_var($url, FILTER_VALIDATE_URL) === FALSE) {
-        die('URL inválida.');
-    }
-
-    // Inicializar CURL
-    $ch = curl_init($url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-    curl_setopt($ch, CURLOPT_HEADER, true);
-
-    // Obtener el contenido
-    $response = curl_exec($ch);
-    $error = curl_error($ch);
-    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    $headerSize = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
-    $headers = substr($response, 0, $headerSize);
-    $body = substr($response, $headerSize);
-
-    curl_close($ch); //Se cierra CURL
-
-    if ($httpCode != 200) {
-        http_response_code($httpCode);
-        die("Error al descargar el archivo: Código HTTP $httpCode. $error");
-    }
-
-    // Separar y reenviar los encabezados HTTP
-    foreach (explode("\r\n", $headers) as $header) {
-        if (!empty($header)) {
-            header($header);
+        if ($data) {
+            header('Content-Type: application/pdf');
+            header('Content-Disposition: inline; filename="' . $order_id . '.pdf"');
+            echo generatePDF($data);
         }
+        exit;
+    } elseif ($_GET['action'] === 'get_urls') {
+        $result = $mysqli->query("SELECT * FROM temp_urls");
+        $data = $result->fetch_all(MYSQLI_ASSOC);
+        echo json_encode($data);
+        exit;
     }
-
-    echo $body;
-    exit;
 }
+
+function generatePDF($data) {
+    $pdf = new FPDF();
+    $pdf->AddPage();
+    $pdf->SetFont('Arial', 'B', 12);
+    $pdf->Cell(0, 10, "Recipient Name: " . $data['recipient_name'], 0, 1);
+    $pdf->Cell(0, 10, "Address 1: " . $data['ship_address1'], 0, 1);
+    if (!empty($data['ship_address2'])) {
+        $pdf->Cell(0, 10, "Address 2: " . $data['ship_address2'], 0, 1);
+    }
+    $pdf->Cell(0, 10, "City: " . $data['ship_city'], 0, 1);
+    $pdf->Cell(0, 10, "State: " . $data['ship_state'], 0, 1);
+    $pdf->Cell(0, 10, "Purchase Date: " . $data['purchase_date'], 0, 1);
+    $pdf->Cell(0, 10, "Company: GetSingular", 0, 1);
+    $pdf->Cell(0, 10, "Order ID: " . $data['order_id'], 0, 1);
+    $pdf->Cell(0, 10, "Detalles del pedido", 0, 1);
+    $pdf->Cell(0, 10, "Product Name: " . $data['product_name'], 0, 1);
+    $pdf->Cell(0, 10, "SKU: " . $data['sku'], 0, 1);
+    $pdf->Cell(0, 10, "Order Item ID: " . $data['order_item_id'], 0, 1);
+    $pdf->Cell(0, 10, "Quantity Purchased: " . $data['quantity_purchased'], 0, 1);
+    $pdf->Cell(0, 10, "Image URL: " . $data['image_url'], 0, 1);
+
+    return $pdf->Output('S');
+}
+
+$mysqli->close();
 ?>
+
+
 
 
 <!DOCTYPE html>
@@ -112,121 +85,109 @@ if (isset($_GET['url'])) {
     <div id="progress"></div> <!-- Div para mostrar el progreso -->
 
     <script>
-        document.getElementById('download-btn').addEventListener('click', downloadAndUnzipFiles);
+    document.getElementById('download-btn').addEventListener('click', downloadAndUnzipFiles);
 
-        async function downloadAndUnzipFiles() {
-            const progressElement = document.getElementById('progress');
-            progressElement.innerHTML = 'Obteniendo URLs...'; 
+    async function downloadAndUnzipFiles() {
+        const progressElement = document.getElementById('progress');
+        progressElement.innerHTML = 'Obteniendo URLs...';
 
-            const data = await getUrlsFromServer();
-            const totalFiles = data.length;
-            progressElement.innerHTML = `Archivos encontrados: ${totalFiles}<br>`;
+        const data = await getUrlsFromServer();
+        const totalFiles = data.length;
+        progressElement.innerHTML = `Archivos encontrados: ${totalFiles}<br>`;
 
-            const mainZip = new JSZip();
-            const currentDate = new Date().toISOString().split('T')[0]; // Formato yyyy-mm-dd
-            const numeroAleatorio = Math.floor(1000 + Math.random() * 9000);
-            const mainFolderName = `${currentDate}~${numeroAleatorio}`;
-            const mainFolder = mainZip.folder(mainFolderName);
+        const mainZip = new JSZip();
+        const currentDate = new Date().toISOString().split('T')[0];
+        const numeroAleatorio = Math.floor(1000 + Math.random() * 9000);
+        const mainFolderName = `${currentDate}~${numeroAleatorio}`;
+        const mainFolder = mainZip.folder(mainFolderName);
 
-            // Crear un objeto para agrupar las URLs por product_type y sub_product_type
-            const groupedData = data.reduce((acc, { url, order_id, order_item_id, product_type, sub_product_type }) => {
-                if (!acc[product_type]) acc[product_type] = {};
-                if (!acc[product_type][sub_product_type]) acc[product_type][sub_product_type] = [];
-                acc[product_type][sub_product_type].push({ url, order_id, order_item_id });
-                return acc;
-            }, {});
+        let downloadedFiles = 0;
 
-            let downloadedFiles = 0;
+        for (const item of data) {
+            const productFolder = mainFolder.folder(item.product_type);
+            const subProductFolder = productFolder.folder(item.sub_product_type);
+            const orderFolder = subProductFolder.folder(`${item.order_id}_${item.order_item_id}`);
 
-            // Recorrer cada grupo y descargar/descomprimir archivos
-            for (const [productType, subProductTypes] of Object.entries(groupedData)) {
-                const productFolder = mainFolder.folder(productType);
+            try {
+                // Obtener y añadir el PDF al ZIP
+                const pdfResponse = await fetch(`?action=get_pdf&order_id=${item.order_id}`);
+                const pdfBlob = await pdfResponse.blob();
+                orderFolder.file(`${item.order_id}.pdf`, pdfBlob);
 
-                for (const [subProductType, items] of Object.entries(subProductTypes)) {
-                    const subProductFolder = productFolder.folder(subProductType);
+                const proxyUrl = `?url=${encodeURIComponent(item.url)}`;
+                downloadedFiles++;
+                progressElement.innerHTML = `Archivos encontrados: ${totalFiles}<br>Descargando archivo ${downloadedFiles} de ${totalFiles}...`;
 
-                    for (const { url, order_id, order_item_id } of items) {
-                        //console.log(`Downloading ${url} via ?url=${encodeURIComponent(url)}`);
+                const response = await fetch(proxyUrl);
+                if (!response.ok) {
+                    throw new Error(`Error al descargar ${item.url}: ${response.statusText}`);
+                }
+                const blob = await response.blob();
+                const arrayBuffer = await blob.arrayBuffer();
 
-                        try {
-                            const proxyUrl = `?url=${encodeURIComponent(url)}`;
+                const zip = new JSZip();
+                const zipContent = await zip.loadAsync(arrayBuffer);
 
-                            downloadedFiles++;
-                            // Actualiza el progreso de la descarga
-                            progressElement.innerHTML = `Archivos encontrados: ${totalFiles}<br>Descargando archivo ${downloadedFiles} de ${totalFiles}...`;
-
-                            const response = await fetch(proxyUrl);
-                            if (!response.ok) {
-                                throw new Error(`Error al descargar ${url}: ${response.statusText}`);
-                            }
-                            const blob = await response.blob();
-                            const arrayBuffer = await blob.arrayBuffer();
-
-                            const zip = new JSZip();
-                            const zipContent = await zip.loadAsync(arrayBuffer);
-
-                            // Crear la carpeta para cada order_id y order_item_id
-                            const orderFolder = subProductFolder.folder(`${order_id}_${order_item_id}`);
-
-                            let imageCounter = 0;
-
-                            for (const [name, file] of Object.entries(zipContent.files)) {
-                                if (!file.dir) {
-                                    const fileBlob = await file.async("blob");
-                                    const renamedFileName = await renameFileBasedOnResolution(fileBlob, name, order_id, imageCounter);
-                                    orderFolder.file(renamedFileName, fileBlob);
-                                    if (renamedFileName.includes('-vp')) imageCounter++;
-                                }
-                            }
-                        } catch (error) {
-                            console.error(error);
-                            progressElement.innerHTML += `<br>Error al descargar archivo ${downloadedFiles}: ${error.message}`;
-                        
-                        }
+                let imageCounter = 0;
+                for (const [name, file] of Object.entries(zipContent.files)) {
+                    if (!file.dir) {
+                        const fileBlob = await file.async("blob");
+                        const renamedFileName = await renameFileBasedOnResolution(fileBlob, name, item.order_id, imageCounter);
+                        orderFolder.file(renamedFileName, fileBlob);
+                        if (renamedFileName.includes('-vp')) imageCounter++;
                     }
                 }
+            } catch (error) {
+                console.error(error);
+                progressElement.innerHTML += `<br>Error al descargar archivo ${downloadedFiles}: ${error.message}`;
             }
-            progressElement.innerHTML = `Archivos encontrados: ${totalFiles}<br>Generando archivo ZIP...`;    
-            mainZip.generateAsync({ type: 'blob' }).then((content) => {
-                saveAs(content, `${currentDate}~${numeroAleatorio}.zip`);
-                const mainFolderName = `${currentDate}`;
-            });
         }
 
-        async function getUrlsFromServer() {
-            const response = await fetch('?action=get_urls');
-            if (!response.ok) {
-                throw new Error('Error al obtener las URLs');
-            }
-            const urls = await response.json();
-            console.log('URLs obtenidas:', urls);
-            return urls;
-        }
+        progressElement.innerHTML = `Archivos encontrados: ${totalFiles}<br>Generando archivo ZIP...`;
 
-        async function renameFileBasedOnResolution(blob, filename, order_id, counter) {
-            return new Promise((resolve, reject) => {
-                const img = new Image();
-                img.onload = () => {
-                    if (img.width === 400 && img.height === 400) {
-                        resolve(renameFile(order_id, counter));
-                    } else {
-                        resolve(filename);
-                    }
-                };
-                img.onerror = () => {
-                    //console.warn(`Error al cargar la imagen ${filename}, se usará el nombre original`);
-                    resolve(filename); // Mantener el nombre original si hay un error
-                };
-                img.src = URL.createObjectURL(blob);
-            });
-        }
+        mainZip.generateAsync({ type: 'blob' }).then((content) => {
+            saveAs(content, `${currentDate}~${numeroAleatorio}.zip`);
+        });
+    }
 
-        function renameFile(order_id, counter) {
-            return `${order_id}-vp${counter}.jpg`;
+    async function getUrlsFromServer() {
+        const response = await fetch('?action=get_urls');
+        if (!response.ok) {
+            throw new Error('Error al obtener las URLs');
         }
-    </script>
+        const urls = await response.json();
+        console.log('URLs obtenidas:', urls);
+        return urls;
+    }
+
+    async function renameFileBasedOnResolution(blob, filename, order_id, counter) {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.onload = () => {
+                if (img.width === 400 && img.height === 400) {
+                    resolve(renameFile(order_id, counter));
+                } else {
+                    resolve(filename);
+                }
+            };
+            img.onerror = () => {
+                resolve(filename);
+            };
+            img.src = URL.createObjectURL(blob);
+        });
+    }
+
+    function renameFile(order_id, counter) {
+        const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const randomLetter = letters.charAt(Math.floor(Math.random() * letters.length));
+        return `${order_id}-vp${randomLetter}${counter + 1}.jpg`;
+    }
+</script>
 </body>
 </html>
+
+
+
 
 
 
