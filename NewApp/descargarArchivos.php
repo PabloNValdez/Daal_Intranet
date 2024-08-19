@@ -1,6 +1,7 @@
 <?php
 require 'vendor/autoload.php';
 use Fpdf\Fpdf;
+use Picqer\Barcode\BarcodeGeneratorPNG;
 
 // Configuración de la base de datos
 $host = "localhost";
@@ -55,6 +56,21 @@ function generatePDF($data) {
     $pdf->Cell(0, 10, "Quantity Purchased: " . $data['quantity_purchased'], 0, 1);
     $pdf->Cell(0, 10, "Image URL: " . $data['image_url'], 0, 1);
 
+    // Generar código de barras para el Order ID
+    $barcodeGenerator = new BarcodeGeneratorPNG();
+    $barcode = $barcodeGenerator->getBarcode($data['order_id'], $barcodeGenerator::TYPE_CODE_128);
+
+    // Guardar el código de barras como imagen temporal
+    $barcodePath = tempnam(sys_get_temp_dir(), 'barcode') . '.png';
+    file_put_contents($barcodePath, $barcode);
+
+    // Añadir código de barras al PDF
+    $pdf->Image($barcodePath, 10, $pdf->GetY() + 10, 100, 20); // Ajustar posición y tamaño según sea necesario
+
+    // Eliminar imagen temporal
+    unlink($barcodePath);
+
+    // Guardar PDF en memoria
     return $pdf->Output('S');
 }
 
