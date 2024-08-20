@@ -116,7 +116,7 @@ if (isset($_GET['url'])) {
 
         async function downloadAndUnzipFiles() {
             const progressElement = document.getElementById('progress');
-            progressElement.innerHTML = 'Obteniendo URLs...'; 
+            progressElement.innerHTML = 'Obteniendo URLs...';
 
             const data = await getUrlsFromServer();
             const totalFiles = data.length;
@@ -137,8 +137,9 @@ if (isset($_GET['url'])) {
             }, {});
 
             let downloadedFiles = 0;
+            const downloadQueue = [];
+            const maxConcurrentDownloads = 5; // Controlar la concurrencia
 
-            // Recorrer cada grupo y descargar/descomprimir archivos
             for (const [productType, subProductTypes] of Object.entries(groupedData)) {
                 const productFolder = mainFolder.folder(productType);
 
@@ -146,51 +147,69 @@ if (isset($_GET['url'])) {
                     const subProductFolder = productFolder.folder(subProductType);
 
                     for (const { url, order_id, order_item_id } of items) {
-                        //console.log(`Downloading ${url} via ?url=${encodeURIComponent(url)}`);
+                        downloadQueue.push(async () => {
+                            try {
+                                const proxyUrl = `?url=${encodeURIComponent(url)}`;
+                                downloadedFiles++;
+                                // Actualiza el progreso de la descarga
+                                progressElement.innerHTML = `Archivos encontrados: ${totalFiles}<br>Descargando archivo ${downloadedFiles} de ${totalFiles}...`;
 
-                        try {
-                            const proxyUrl = `?url=${encodeURIComponent(url)}`;
+                                const blob = await downloadWithRetry(proxyUrl);
+                                const arrayBuffer = await blob.arrayBuffer();
 
-                            downloadedFiles++;
-                            // Actualiza el progreso de la descarga
-                            progressElement.innerHTML = `Archivos encontrados: ${totalFiles}<br>Descargando archivo ${downloadedFiles} de ${totalFiles}...`;
+                                const zip = new JSZip();
+                                const zipContent = await zip.loadAsync(arrayBuffer);
 
-                            const response = await fetch(proxyUrl);
-                            if (!response.ok) {
-                                throw new Error(`Error al descargar ${url}: ${response.statusText}`);
-                            }
-                            const blob = await response.blob();
-                            const arrayBuffer = await blob.arrayBuffer();
+                                // Crear la carpeta para cada order_id y order_item_id
+                                const orderFolder = subProductFolder.folder(`${order_id}_${order_item_id}`);
 
-                            const zip = new JSZip();
-                            const zipContent = await zip.loadAsync(arrayBuffer);
+                                let imageCounter = 0;
 
-                            // Crear la carpeta para cada order_id y order_item_id
-                            const orderFolder = subProductFolder.folder(`${order_id}_${order_item_id}`);
-
-                            let imageCounter = 0;
-
-                            for (const [name, file] of Object.entries(zipContent.files)) {
-                                if (!file.dir) {
-                                    const fileBlob = await file.async("blob");
-                                    const renamedFileName = await renameFileBasedOnResolution(fileBlob, name, order_id, imageCounter);
-                                    orderFolder.file(renamedFileName, fileBlob);
-                                    if (renamedFileName.includes('-vp')) imageCounter++;
+                                for (const [name, file] of Object.entries(zipContent.files)) {
+                                    if (!file.dir) {
+                                        const fileBlob = await file.async("blob");
+                                        const renamedFileName = await renameFileBasedOnResolution(fileBlob, name, order_id, imageCounter);
+                                        orderFolder.file(renamedFileName, fileBlob);
+                                        if (renamedFileName.includes('-vp')) imageCounter++;
+                                    }
                                 }
+                            } catch (error) {
+                                console.error(`Error al descargar archivo ${downloadedFiles}: ${error.message}`);
+                                progressElement.innerHTML += `<br>Error al descargar archivo ${downloadedFiles}: ${error.message}`;
                             }
-                        } catch (error) {
-                            console.error(error);
-                            progressElement.innerHTML += `<br>Error al descargar archivo ${downloadedFiles}: ${error.message}`;
-                        
+                        });
+
+                        if (downloadQueue.length >= maxConcurrentDownloads) {
+                            await Promise.all(downloadQueue.map(fn => fn()));
+                            downloadQueue.length = 0; // Vaciar la cola
                         }
                     }
                 }
             }
-            progressElement.innerHTML = `Archivos encontrados: ${totalFiles}<br>Generando archivo ZIP...`;    
+
+            if (downloadQueue.length > 0) {
+                await Promise.all(downloadQueue.map(fn => fn())); // Descargar cualquier archivo restante
+            }
+
+            progressElement.innerHTML = `Archivos encontrados: ${totalFiles}<br>Generando archivo ZIP...`;
+
             mainZip.generateAsync({ type: 'blob' }).then((content) => {
                 saveAs(content, `${currentDate}~${numeroAleatorio}.zip`);
-                const mainFolderName = `${currentDate}`;
             });
+        }
+
+        async function downloadWithRetry(proxyUrl, maxRetries = 3) {
+            let retries = 0;
+            while (retries < maxRetries) {
+                try {
+                    const response = await fetch(proxyUrl);
+                    if (!response.ok) throw new Error(`Error: ${response.statusText}`);
+                    return await response.blob();
+                } catch (error) {
+                    retries++;
+                    if (retries === maxRetries) throw error;
+                }
+            }
         }
 
         async function getUrlsFromServer() {
@@ -214,7 +233,6 @@ if (isset($_GET['url'])) {
                     }
                 };
                 img.onerror = () => {
-                    //console.warn(`Error al cargar la imagen ${filename}, se usará el nombre original`);
                     resolve(filename); // Mantener el nombre original si hay un error
                 };
                 img.src = URL.createObjectURL(blob);
@@ -224,6 +242,7 @@ if (isset($_GET['url'])) {
         function renameFile(order_id, counter) {
             return `${order_id}-vp${counter}.jpg`;
         }
+
     </script>
 </body>
 </html>
