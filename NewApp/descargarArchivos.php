@@ -4,6 +4,9 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+require 'vendor/autoload.php';
+use Fpdf\Fpdf;
+
 // Obtener URLs desde la base de datos
 function getUrlsFromDatabase($host, $user, $pass, $dbname) {
     $mysqli = new mysqli($host, $user, $pass, $dbname);
@@ -12,7 +15,7 @@ function getUrlsFromDatabase($host, $user, $pass, $dbname) {
         die("Conexión fallida: " . $mysqli->connect_error);
     }
 
-    $result = $mysqli->query("SELECT url, order_id, order_item_id, product_type, sub_product_type FROM temp_urls");
+    $result = $mysqli->query("SELECT * FROM temp_urls");
 
     if (!$result) {
         die("Error en la consulta: " . $mysqli->error);
@@ -20,19 +23,68 @@ function getUrlsFromDatabase($host, $user, $pass, $dbname) {
 
     $data = array();
     while ($row = $result->fetch_assoc()) {
-        $data[] = array(
-            'url' => $row['url'],
-            'order_id' => $row['order_id'],
-            'order_item_id' => $row['order_item_id'],
-            'product_type' => $row['product_type'],
-            'sub_product_type' => $row['sub_product_type']
-        );
+        $data[] = $row;
     }
 
     $mysqli->close();
 
     return $data;
 }
+
+function generatePDF($data) {
+    $pdf = new FPDF();
+    $pdf->AddPage();
+    $pdf->SetFont('Arial', 'B', 12);
+    $pdf->Cell(0, 10, "Recipient Name: " . $data['recipient_name'], 0, 1);
+    $pdf->Cell(0, 10, "Address 1: " . $data['ship_address1'], 0, 1);
+    if (!empty($data['ship_address2'])) {
+        $pdf->Cell(0, 10, "Address 2: " . $data['ship_address2'], 0, 1);
+    }
+    $pdf->Cell(0, 10, "City: " . $data['ship_city'], 0, 1);
+    $pdf->Cell(0, 10, "State: " . $data['ship_state'], 0, 1);
+    $pdf->Cell(0, 10, "Purchase Date: " . $data['purchase_date'], 0, 1);
+    $pdf->Cell(0, 10, "Company: GetSingular", 0, 1);
+    $pdf->Cell(0, 10, "Order ID: " . $data['order_id'], 0, 1);
+    $pdf->Cell(0, 10, "Detalles del pedido", 0, 1);
+    $pdf->Cell(0, 10, "Product Name: " . $data['product_name'], 0, 1);
+    $pdf->Cell(0, 10, "SKU: " . $data['sku'], 0, 1);
+    $pdf->Cell(0, 10, "Order Item ID: " . $data['order_item_id'], 0, 1);
+    $pdf->Cell(0, 10, "Quantity Purchased: " . $data['quantity_purchased'], 0, 1);
+    $pdf->Cell(0, 10, "Image URL: " . $data['image_url'], 0, 1);
+
+    return $pdf->Output('S');  // Return the PDF as a string
+}
+
+// Manejar la generación del PDF cuando se solicita
+if (isset($_GET['action']) && $_GET['action'] == 'get_pdf' && isset($_GET['order_id'])) {
+    $host = "localhost";
+    $user = "Getsingular";
+    $pass = "XdKFu67LyjtFQQvM";
+    $dbname = "conversor";
+
+    // Obtener los datos del pedido desde la base de datos según el order_id
+    $mysqli = new mysqli($host, $user, $pass, $dbname);
+    $stmt = $mysqli->prepare("SELECT * FROM temp_urls WHERE order_id = ?");
+    $stmt->bind_param("s", $_GET['order_id']);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $data = $result->fetch_assoc();
+    $stmt->close();
+    $mysqli->close();
+
+    // Generar el PDF
+    if ($data) {
+        $pdfContent = generatePDF($data);
+        header('Content-Type: application/pdf');
+        header('Content-Disposition: attachment; filename="' . $_GET['order_id'] . '.pdf"');
+        echo $pdfContent;
+    } else {
+        http_response_code(404);
+        echo "Order not found.";
+    }
+    exit;
+}
+
 
 // Verifica si es una solicitud AJAX para obtener URLs
 if (isset($_GET['action']) && $_GET['action'] == 'get_urls') {
@@ -149,6 +201,14 @@ if (isset($_GET['url'])) {
                     for (const { url, order_id, order_item_id } of items) {
                         downloadQueue.push(async () => {
                             try {
+                                // Solicita la generación del PDF
+                                const pdfResponse = await fetch(`?action=get_pdf&order_id=${order_id}`);
+                                const pdfBlob = await pdfResponse.blob();
+
+                                // Añadir el PDF a la carpeta correspondiente
+                                const orderFolder = subProductFolder.folder(`${order_id}_${order_item_id}`);
+                                orderFolder.file(`${order_id}.pdf`, pdfBlob);
+
                                 const proxyUrl = `?url=${encodeURIComponent(url)}`;
                                 downloadedFiles++;
                                 // Actualiza el progreso de la descarga
@@ -160,8 +220,7 @@ if (isset($_GET['url'])) {
                                 const zip = new JSZip();
                                 const zipContent = await zip.loadAsync(arrayBuffer);
 
-                                // Crear la carpeta para cada order_id y order_item_id
-                                const orderFolder = subProductFolder.folder(`${order_id}_${order_item_id}`);
+            
 
                                 let imageCounter = 0;
 
