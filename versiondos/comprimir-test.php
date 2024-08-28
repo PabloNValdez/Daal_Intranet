@@ -123,4 +123,5 @@ $zipPath = zipDirectoryAndCreateLink($salida, $carpeta . $archivo . '.zip');
 //registro("¡Genial! El procesamiento de imagenes finalizo correctamente: Archivo creado $datetime_str.zip ");
 /* echo "Los warning y errores se enviaron a elmatumassa@gmail.com<br>"; */
 echo "Haga clic en el siguiente enlace para descargar el archivo: ";
-echo "<a class='btn btn-success' href='https://chat.getsingular.com/versiondos/descarga.php?file=comprimidos/" . $archivo . ".zip'><i class='bi bi-arrow-down-circle'></i> Descargar</a> <br>";
+//echo "<a class='btn btn-success' href='https://chat.getsingular.com/versiondos/descarga.php?file=comprimidos/" . $archivo . ".zip'><i class='bi bi-arrow-down-circle'></i> Descargar</a> <br>";
+echo "<a class='btn btn-success' href='https://vps-3af07df8.vps.ovh.net/versiondos/descarga.php?file=comprimidos/" . $archivo . ".zip'><i class='bi bi-arrow-down-circle'></i> Descargar</a> <br>";

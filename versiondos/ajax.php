@@ -315,7 +315,9 @@ if ($result === FALSE) {
 
 
                         if (respuesta.ultimaCarpeta) {
-                            var newImageSrc = 'https://chat.getsingular.com/versiondos/' + respuesta.ultimaCarpeta;
+                            //var newImageSrc = 'https://chat.getsingular.com/versiondos/' + respuesta.ultimaCarpeta;
+                            var newImageSrc = 'https://vps-3af07df8.vps.ovh.net/versiondos/' + respuesta.ultimaCarpeta;
+                            
                             $('#imagen').attr('src', newImageSrc);
                         }
                         if (respuesta.titulo) {

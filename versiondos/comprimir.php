@@ -171,5 +171,6 @@ $zipPath = zipDirectoryAndCreateLink($origen, $carpeta . $archivo . '.zip');
 echo '<div class="alert alert-success d-flex align-items-center" role="alert">
   <div>';
   echo "<strong>Haga clic en el siguiente enlace para descargar el archivo: </strong>";
-echo "<a class='btn btn-success' href='https://chat.getsingular.com/versiondos/descarga.php?file=comprimidos/" . $archivo . ".zip'><i class='bi bi-arrow-down-circle'></i> Descargar</a></div>
+//echo "<a class='btn btn-success' href='https://chat.getsingular.com/versiondos/descarga.php?file=comprimidos/" . $archivo . ".zip'><i class='bi bi-arrow-down-circle'></i> Descargar</a></div>
+echo "<a class='btn btn-success' href='https://vps-3af07df8.vps.ovh.net/versiondos/descarga.php?file=comprimidos/" . $archivo . ".zip'><i class='bi bi-arrow-down-circle'></i> Descargar</a></div>
 </div>";
