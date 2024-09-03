@@ -243,6 +243,13 @@
     $allowed_skus_Puzzle = ['609-puzzles-500sin','609-puzzles-500','609-puzzles-100','609-puzzles-200sin','609-puzzles--mad4','609-puzzles-280sin','609-puzzles--mad4sin',
                             '609-puzzles-200', '609-puzzles-100sin', '609-puzzles--mad6sin', '609-puzzles-4en1','609-puzzles--mad6'];
 
+    //--------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //Los SKU asociados a las Fundas
+    $allowed_skus_Fundas = ['41040070','042530001-portatillino-12pp-2caras','042530001-portatillino-14pp-2caras','042530001-portatillino-12pp-1cara','042530001-portatillino-10pp-1cara',
+                            '042530001-portatillino-14pp-1cara','042530001-portatillino-10pp-2caras', 'carcasas2d-apple', '240000010', '240000011', '240000012', '240000013', '041040116',
+                            '041040115', '041040117', '041040118', '41040105', '41040108', '41040106', '41040107', '41040093', '41040092', '41040094', 'carcasas2d-samsung', '041040119',
+                            '041040120','041040121','41040114','41040111','41040113'
+                            ];
 
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------
     $allowed_skus_Otros_Productos = ['Getsingular_Taza_Girona_F', 'Getsingular_Taza_Granada_', 'Getsingular_Taza_RCD_Espa', 'hasta aca esta verificado',
