@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 $ubicacion = '/var/www/html/versiondos/registro.txt';
 $mensaje = "Buenos días! Comenzando el procesamiento";
 file_put_contents($ubicacion, $mensaje . PHP_EOL);
