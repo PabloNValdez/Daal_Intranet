@@ -239,6 +239,12 @@
     $allowed_skus_Espinilleras_Talla_XL = ['240000004-d3xl','240000004-d1xl','240000004-d2xl','240000004-d4xl'];
 
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //Los SKU asociados a los Puzzle
+    $allowed_skus_Puzzle = ['609-puzzles-500sin','609-puzzles-500','609-puzzles-100','609-puzzles-200sin','609-puzzles--mad4','609-puzzles-280sin','609-puzzles--mad4sin',
+                            '609-puzzles-200', '609-puzzles-100sin', '609-puzzles--mad6sin', '609-puzzles-4en1','609-puzzles--mad6'];
+
+
+    //--------------------------------------------------------------------------------------------------------------------------------------------------------------
     $allowed_skus_Otros_Productos = ['Getsingular_Taza_Girona_F', 'Getsingular_Taza_Granada_', 'Getsingular_Taza_RCD_Espa', 'hasta aca esta verificado',
     '679-pride-verde','679-pride-bandera','679-pride','679-pride-amarillo','679-pride-lila','679-pride-naranja','679-pride-azul','679-pride-rojo',
     '936-abuela-scrapbook','936-abuelos-escudo','936-abuela-escudo','936-abuelo-marco','936-abuelo-scrapbook','936-abuelo','936-abuelo-mejorabuelo',
