@@ -253,6 +253,16 @@
                             '041040058'];
 
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //Los SKU asociados a los cojines
+    $allowed_skus_Cojines = ['2483-imp1','coj1744-imp1','1731-imp1','1734-imp1','coj802-imp1', '1739-imp1', '1739-cojmadre-mejormadre','1739-cojmadre-orfanato','1739-cojmadre-mejorabuela',
+                            '1739-cojmadre-chupete','1739-cojmadre-felicidades', '1739-cojmadre-escrito', '1739-cojmadre-mami', '1739-cojmadre-mejormama', '1739-cojmadre-casamama', '1739-cojmadre-mandona',
+                            '1739-cojmadre-encasa', '1739-cojmadre-100%', '1739-cojmama-flores', '1739-cojmadre-gracias', '1739-madre-mejormama', '1739-madre-felicidades','1739-madre-mandona',
+                            '1739-madre-casamama', '1739-madre-escrito', '1739-madre-mejorabuela','1739-mama-flores','1739-madre-encasa','1739-madre-gracias', '1739-madre-mami','1739-madre-100%','coj802',
+                            'coj1744','1739-abuela-aro','1739-abuelo-aro', '1739-abuelo-mejorabuela', '1739-abuela-escudo', '936-1739-abuelo-mejorabuelos', '936-1739-abuela-scrapbook',
+                            '1739-abuelo-mejorabuelo','1739-abuelo-marco', '1739-abuelo-mejorabuelos', '1739-abuelo-escudo', '936-1739-abuela-aro', '936-1739-abuelo-marco','936-1739-abuelo-scrapbook',
+                            '936-1739-abuelo-aro'];
+
+    //--------------------------------------------------------------------------------------------------------------------------------------------------------------
     $allowed_skus_Otros_Productos = ['Getsingular_Taza_Girona_F', 'Getsingular_Taza_Granada_', 'Getsingular_Taza_RCD_Espa', 'hasta aca esta verificado',
     '679-pride-verde','679-pride-bandera','679-pride','679-pride-amarillo','679-pride-lila','679-pride-naranja','679-pride-azul','679-pride-rojo',
     '936-abuela-scrapbook','936-abuelos-escudo','936-abuela-escudo','936-abuelo-marco','936-abuelo-scrapbook','936-abuelo','936-abuelo-mejorabuelo',
