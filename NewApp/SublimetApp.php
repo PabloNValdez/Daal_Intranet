@@ -260,7 +260,15 @@
                             '1739-madre-casamama', '1739-madre-escrito', '1739-madre-mejorabuela','1739-mama-flores','1739-madre-encasa','1739-madre-gracias', '1739-madre-mami','1739-madre-100%','coj802',
                             'coj1744','1739-abuela-aro','1739-abuelo-aro', '1739-abuelo-mejorabuela', '1739-abuela-escudo', '936-1739-abuelo-mejorabuelos', '936-1739-abuela-scrapbook',
                             '1739-abuelo-mejorabuelo','1739-abuelo-marco', '1739-abuelo-mejorabuelos', '1739-abuelo-escudo', '936-1739-abuela-aro', '936-1739-abuelo-marco','936-1739-abuelo-scrapbook',
-                            '936-1739-abuelo-aro'];
+                            '936-1739-abuelo-aro', '1739-abuelo-scrapbook', '936-1739-abuela-escudo', '936-1739-abuelos-escudo', '936-1739-abuelo-mejorabuelo', '1739-abuelos-escudo', '1739-abuela-scrapbook',
+                            '936-1739-abuelo-mejorabuela', '936-1739-abuelo-escudo', '1739-padre-escudo', '1739-padre-felicidades', '1739-padre-todomas', '1739-padre-mejorpapa', '1739-padre-escrito',
+                            '1739-padre-encasa', '1739-padre-mogollon','1739-padre-casapapa','1739-padre-gracias','1739-padre-rayas','1739-padre-chupetepapa','1739-padre-papi', '1739-padre-100%','1739-padre-mejorabuelo',
+                            '936-1739-padre','936-1739-padre-todomas','936-1739-padre-chupetepapa','936-1739-padre-escrito','936-1739-padre-100%','936-1739-padre-escudo','936-1739-padre-mejorpapa','936-1739-padre-gracias',
+                            '936-1739-padre-papi', '936-1739-padre-rayas','936-1739-padre-felicidades','936-1739-padre-casapapa','936-1739-padre-mejorabuelo','936-1739-padre-encasa','936-1739-padre-mogollon',
+                            '936-1739-padre-todomas', '936-1739-padre-chupetepapa', '936-1739-padre-escrito', '936-1739-padre-100%', '936-1739-padre-escudo', '936-1739-padre-mejorpapa','936-1739-padre-gracias',
+                            '936-1739-padre-papi','936-1739-padre-rayas','936-1739-padre-felicidades','936-1739-padre-casapapa','936-1739-padre-mejorabuelo','936-1739-padre-encasa', '936-1739-padre-mogollon',
+                            '1739-lgtbi-cor', '1739-mejor-blanco','1739-amorfam','1739-cupido','1739-mejor-negro','1739-infinito','1739-likesinst','1739-amorsiempre','1739-infinitoro-rosa','1739-marco-cor',
+                            '1739-lgtbi-love-air','1739-tq-fotorosa','1739-tq-fotogris','1739-tq-fotorojo','1739-mejor-rosa'];
 
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------
     $allowed_skus_Otros_Productos = ['Getsingular_Taza_Girona_F', 'Getsingular_Taza_Granada_', 'Getsingular_Taza_RCD_Espa', 'hasta aca esta verificado',
