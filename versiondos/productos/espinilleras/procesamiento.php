@@ -1,15 +1,5 @@
 <?php
-##########################
-##  EN ESTE ARCHIVO SE REALIZAN TODAS LAS PLACAS QUE SE LISTAN A CONTINUACION
-##
-##  CON Y SIN BASE
-##########################
-/* ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL); */
-//include '../../funciones/funciones.php';
-/* include 'funciones/funciones.php';
-require 'vendor/autoload.php'; */
+
 
 use JsonPath\JsonObject;
 //function placasSpotify($json, $ruta, $base)
